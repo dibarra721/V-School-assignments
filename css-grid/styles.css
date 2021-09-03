@@ -1,0 +1,169 @@
+
+body{
+
+    background-color: lightblue;
+  }
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    }
+    @media only screen  and (min-width : 1224px) {
+      /* Styles */
+      }
+  @media screen and (min-width: 400px) {
+    body {
+      background-color: lightgreen;
+    }
+  }
+  
+  @media screen and (min-width: 800px) {
+    body {
+      background-color: lavender;
+    }
+  }
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    width: fit-content;
+    gap: 20px;
+  }
+  .one {
+    background-color: blanchedalmond;
+    grid-column: 1 / 4;
+    grid-row: 1;
+  }
+  .two {
+     background-color: antiquewhite;
+    grid-column: 3 / 5;
+    grid-row: 1 ;
+  }
+  .three {
+      background-color: cornflowerblue;
+    grid-column: 1/2;
+    
+  }
+  .four {
+      background-color: darkgrey;
+    grid-column: 2 /5 ;
+    
+  }
+  .five {
+    background-color: lavender;
+    border:10px solid white;
+    border-radius: 3px;
+    padding: 30px red;
+    grid-column: 1/5;
+
+   
+  }
+
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, 100px);
+    gap: 20px;
+  }
+  .css1 {
+    background-color:yellow ;
+    grid-column: 1 / 4;
+    grid-row: 1;
+  }
+  .css2 {
+     background-color: blue;
+    grid-column: 1/1;
+    grid-row: 2/4;
+    
+  }
+  .css3 {
+    background-color: green;
+    grid-column: 2/4;
+    grid-row:2/2;
+    
+  }
+  .css4 {
+    background-color: blueviolet;
+    grid-column: 2/3 ;
+    grid-row: 3/ 4;
+    
+  }
+  .css5 {
+    background-color: blueviolet;    
+    grid-column: 3;
+    grid-row: 3/4;
+  }
+
+  .phone{
+   
+  box-sizing: content-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  width:auto;
+  height: auto;
+  }
+  
+
+
+  .header{
+    background-color: lemonchiffon;
+    grid-row: 1;
+  }
+  .sidebar{
+    background-color: lightsalmon;
+    grid-row: 2;
+
+  }
+.content{
+  background-color: lightsteelblue;
+  grid-row: 3;
+
+
+}
+.sidebar2{
+  background-color: wheat;
+  grid-row: 4;
+
+
+}
+.footer{
+  background-color: tan;
+  grid-row: 5;
+
+  
+
+}
+
+
+.tablet{
+  box-sizing: content-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  width:auto;
+  height: auto;
+}
+
+
+.headertablet{
+  background-color: lemonchiffon;
+
+}
+.sidebartablet{
+  background-color: rgb(173, 72, 114);
+
+}
+.contenttablet{
+  background-color: rgb(61, 68, 160);
+
+}
+.sidebar2tablet{
+  background-color: rgb(31, 104, 98);
+
+}
+.footertablet{
+  background-color: rgb(172, 157, 29);
+
+}
