@@ -1,0 +1,148 @@
+.phone{
+   
+    box-sizing: content-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    height:100vh;
+    }
+    
+  
+  
+    .header{
+      background-color: lemonchiffon;
+      grid-row: 1;
+    }
+    .sidebar{
+      background-color: lightsalmon;
+      grid-row: 2;
+  
+    }
+  .content{
+    background-color: lightsteelblue;
+    grid-row: 3;
+  
+  
+  }
+  .sidebar2{
+    background-color: wheat;
+    grid-row: 4;
+  
+  
+  }
+  .footer{
+    background-color: tan;
+    grid-row: 5;
+  
+    
+  
+  }
+  
+  
+  .tablet{
+      display: grid;
+      height: 100vh;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: 
+        "headertablet headertablet headertablet headertablet"
+        "sidebartablet contenttablet contenttablet contenttablet"
+        "sidebar2tablet sidebar2tablet sidebar2tablet sidebar2tablet"
+        "footertablet footertablet footertablet footertablet"
+      ;
+      
+  }
+  
+  
+  .headertablet{
+    background-color: lemonchiffon;
+   grid-area: headertablet;
+  
+  }
+  .sidebartablet{
+    background-color: rgb(173, 72, 114);
+    grid-area:sidebartablet ;
+  
+  }
+  .contenttablet{
+    background-color: rgb(61, 68, 160);
+    grid-area: contenttablet ;
+  
+  }
+  .sidebar2tablet{
+    background-color: rgb(31, 104, 98);
+    grid-area: sidebar2tablet;
+  
+  }
+  .footertablet{
+    background-color: rgb(172, 157, 29);
+   grid-area: footertablet;
+  
+  }
+  
+  @media only screen and (max-width:550px){
+.tablet{
+    grid-template-columns:1fr ;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "headertablet headertablet headertablet headertablet"
+    "sidebartablet contenttablet contenttablet contenttablet"
+    "sidebar2tablet sidebar2tablet sidebar2tablet sidebar2tablet"
+    "footertablet footertablet footertablet footertablet";
+    grid-gap: 02rem;
+
+}
+
+  }
+
+  .laptop{
+    display: grid;
+    height: 120vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "lheader lheader lheader lheader"
+      "lsidebar lcontent lcontent lsidebar2"
+      "lfooter lfooter lfooter lfooter";
+
+}
+
+.lheader{
+    background-color: #E7BDB7;
+    grid-area: lheader;
+}
+
+.lsidebar {
+    background-color: #E8AB98;
+   grid-area: lsidebar;
+  
+  }
+  .lcontent{
+    background-color: #8B4F2E;
+    grid-area:lcontent ;
+  
+  }
+  .lsidebar2{
+    background-color: #5B331A;
+    grid-area: lsidebar2;
+  
+  
+  }
+  .lfooter{
+    background-color: #DB92B7;
+   grid-area: lfooter;
+  
+  }
+
+  @media only screen and (max-width:800px){
+    .laptop{
+        grid-template-columns:1fr ;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "lheader lheader lheader lheader"
+        "lsidebar lcontent lcontent lsidebar2"
+        "lfooter lfooter lfooter lfooter";
+        grid-gap: 02rem;
+    }
+}

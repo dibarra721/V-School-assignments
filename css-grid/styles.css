@@ -1,7 +1,16 @@
+.title {
+background-color: coral;
+border: 3px solid #40e0d0;
+box-sizing: border-box;
+font-size: 45px;
+width: intrinsic;          
+width: max-content;
+}
+
 
 body{
 
-    background-color: lightblue;
+    background-color: white
   }
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
@@ -93,77 +102,3 @@ body{
     grid-row: 3/4;
   }
 
-  .phone{
-   
-  box-sizing: content-box;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 20px;
-  width:auto;
-  height: auto;
-  }
-  
-
-
-  .header{
-    background-color: lemonchiffon;
-    grid-row: 1;
-  }
-  .sidebar{
-    background-color: lightsalmon;
-    grid-row: 2;
-
-  }
-.content{
-  background-color: lightsteelblue;
-  grid-row: 3;
-
-
-}
-.sidebar2{
-  background-color: wheat;
-  grid-row: 4;
-
-
-}
-.footer{
-  background-color: tan;
-  grid-row: 5;
-
-  
-
-}
-
-
-.tablet{
-  box-sizing: content-box;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 20px;
-  width:auto;
-  height: auto;
-}
-
-
-.headertablet{
-  background-color: lemonchiffon;
-
-}
-.sidebartablet{
-  background-color: rgb(173, 72, 114);
-
-}
-.contenttablet{
-  background-color: rgb(61, 68, 160);
-
-}
-.sidebar2tablet{
-  background-color: rgb(31, 104, 98);
-
-}
-.footertablet{
-  background-color: rgb(172, 157, 29);
-
-}
