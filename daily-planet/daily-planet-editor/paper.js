@@ -13,9 +13,9 @@ just fix the existing ones.
 // Written by Kent, Clark
 var readlineSync = require('readline-sync')
 
-var enemyName = ["Lex","Batman","Darkseid","Brainiac","General Zod","Doomsday"];
+var enemyName = ["Lex","Batman","Darkseid","Brainiac","General Zod","Doomsday"]
 
-function whoWins (is_there_kryptonite , enemyName ){
+function whoWins(is_there_kryptonite , enemyName ){
     if (!is_there_kryptonite){
         return "Superman beats " + enemyName + "of course";
 }
@@ -35,9 +35,9 @@ for (var i = 0 ; i < enemyName.length; i++){
 
     } else {
         is_there_kryptonite = false;
-    
-    console.log(Who_Wins(is_there_kryptonite,enemyName[i]));
-}}
+    }
+    console.log(WhoWins(is_there_kryptonite, enemyName[i]));
+}
 
 function HowAttractedIsLoisLaneToMe (){
 

@@ -1,12 +1,3 @@
-.title {
-background-color: coral;
-border: 3px solid #40e0d0;
-box-sizing: border-box;
-font-size: 45px;
-width: intrinsic;          
-width: max-content;
-}
-
 
 body{
 
@@ -30,13 +21,32 @@ body{
     }
   }
 
+  .title {
+    background-color: coral;
+    border: 3px solid #40e0d0;
+    box-sizing: border-box;
+    font-size: 45px;
+    width: intrinsic;          
+    width: max-content;
+    }
+
 .wrapper {
+
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-rows: minmax(100px, auto);
-    width: fit-content;
+    height: 100vh;
     gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-template-areas:
+    "one one two two"
+    "three four four four" 
+    "five five five five"
+    ;
+  
   }
+
+
+  
   .one {
     background-color: blanchedalmond;
     grid-column: 1 / 4;
@@ -58,9 +68,7 @@ body{
     
   }
   .five {
-    background-color: lavender;
-    border:10px solid white;
-    border-radius: 3px;
+    background-color: palevioletred;
     padding: 30px red;
     grid-column: 1/5;
 
