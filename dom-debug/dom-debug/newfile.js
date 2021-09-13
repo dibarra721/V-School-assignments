@@ -1,15 +1,14 @@
 const colors = ["red", "blue", "green"]
-
 document.getElementById("add").addEventListener("click", function(e){
     const subItem = createSubItem(e)
     document.getElementById("list").appendChild(subItem)
-    console.log('this clicks')
 })
-
 function createDropDown(){
     const dropDown = document.createElement("select")
+    console.log(dropDown)
     for (let i = 0; i < colors.length; i++){
         const option = document.createElement("option") 
+        console.log(option)
         option.innerHTML = colors[i]
         option.value = colors[i]
         dropDown.append(option)
@@ -19,10 +18,9 @@ function createDropDown(){
     })
     return dropDown
 }
-
 function createSubItem(e){
     const subItem = document.createElement("div")
-    subItemValue= document.getElementById('input').value
+    var subItemValue = document.getElementById("input").value
     console.log(subItemValue)
     subItem.textContent = subItemValue
     const dropDown = createDropDown()
@@ -30,5 +28,3 @@ function createSubItem(e){
     subItem.setAttribute("class", "subItem")
     return subItem
 }
-
-

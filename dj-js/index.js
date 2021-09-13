@@ -30,8 +30,8 @@ document.getElementById("container").addEventListener("wheel", function(){
 
 });
 
-window.addEventListener("wheel", function(){
-  this.document.getElementById("container").style.backgroundColor="orange";
+document.addEventListener("wheel", function(){
+  document.getElementById("container").style.backgroundColor="orange";
 });
 
 //let myDiv = document.querySelector('button');
