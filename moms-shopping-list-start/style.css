@@ -1,15 +1,16 @@
 .title {
     text-align: center;
+    color: cornflowerblue;
+    font-family: monospace;
 }
-
 .main {
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     width: 50%;
     margin: auto;
 }
 
 #add-item {
-    border: 1px solid black;
+    border: 1px solid rgb(229, 122, 243);
 }
 
 .input {
@@ -17,7 +18,7 @@
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(161, 44, 44);
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -29,14 +30,28 @@
 #list {
     flex-direction: column;
     display: flex;
+    font-family: monospace;
 }
 
 #list > li{
     list-style-type: none;
     margin: 10px auto;
+    font-family: monospace;
+
 }
 
 #list div {
     margin-bottom: 10px;
     text-align: center;
+    font-family: monospace;
+
+}
+
+button{
+    background-color: rgb(199, 81, 81);   
+    
+}
+
+body{
+    background-color: bisque;
 }
