@@ -38,16 +38,10 @@ h3.append(deletebutton);
 // now edit button 
 const editbutton = document.createElement("button")
 editbutton.innerText = "Edit"
-
 const textNewInputBox = document.createElement('div');
-
 textNewInputBox.innerHTML = "<input type='text' id = 'newInputBox'>";
-
 h3.append(editbutton);
-
 editbutton.addEventListener('click', event => newlist.appendChild(textNewInputBox))
-
-
 
 
 });
