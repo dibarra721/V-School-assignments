@@ -1,5 +1,21 @@
 
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Styles */
+  }
+  @media only screen  and (min-width : 1224px) {
+    /* Styles */
+    }
+@media screen and (min-width: 400px) {
+  body {
+    background-color: lightgreen;
+  }
+}
 
+@media screen and (min-width: 800px) {
+  body {
+    background-color: lavender;
+  }
+}
 
 .navbar {
     width: auto;
