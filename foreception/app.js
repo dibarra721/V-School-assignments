@@ -37,6 +37,7 @@ function forecepetion(people, alphabetArray){
 console.log(realArray) 
 return realArray
 }
+
 forecepetion(people,alphabet)
 
 
