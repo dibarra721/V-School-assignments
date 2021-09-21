@@ -1,75 +1,77 @@
+
+
 const readlineSync = require('readline-sync');
 
 const name = readlineSync.question('What is your name? ');
 
-readlineSync.question('Hello ' + name + ', welcome to Combat Cat... Press Enter to begin. ');
+readlineSync.question(`Hello ${name}, You have wandered into my Labryinth. May you escape with your life (Press Enter to Continue)`)
 
-const badGuys = ['Oatmeal', 'Fluffy', 'PopTart'];
-const treasure = ['bag of catnip', 'scratch post', 'cardboard box'];
+const enemies = ['Minotaur', 'Harpie', 'Sphinx', 'Mummy'];
+const treasure = ['Health Kit', '50 gold', 'Sword', 'Magic Wand'];
 var prize = [];
-let userHealth = 30;
-const options = ['Walk', 'Exit', 'Print'];
-let pickUp = treasure[Math.floor(Math.random()*treasure.length)];
-
+let playerHealth = 50;
+const menu = ['Walk', 'Abandon', 'Backpack'];
+let collected = treasure[Math.floor(Math.random()*treasure.length)];
 function game(){
-    const attackPower = Math.floor(Math.random() * (8 - 1) + 2);
-    const badGuy = badGuys[Math.floor(Math.random() * badGuys.length)];
-    let badGuysHealth = 30;
-    const badGuysPower = Math.floor(Math.random() * (8 - 3) + 2);
+    const attackPower = Math.floor(Math.random() * (3-2+4) + 4);
+    const enemy = enemies[Math.floor(Math.random() * enemies.length)];
+    let enemyHealth = 30;
+    const enemyPower = Math.floor(Math.random()* (6-4+2)+3);
 
-    const index = readlineSync.keyInSelect(options, 'What would you like to do next?');
+    const index = readlineSync.keyInSelect(menu, 'What would you like to do?');
 
-    if (options[index] == 'Exit') {
-        return userHealth = 0;
-    } else if (options[index] == 'Print'){
-        console.log(name + ': \n' + userHealth + '\nTreasure: ' + pickUp);
-    } else if (options[index] === 'Walk'){
+    if(menu[index] == 'Abandon'){
+        console.log (`${name} has Abadndoned the Labryinth`);
+        return playerHealth = 0;
+    } 
+    else if (menu[index] == 'Backpack'){
+        console.log(`${name}'s backpack contains ${collected} \n Health Bar at ${playerHealth} out of 30`);
+    }
+    else if(menu[index] === 'Walk'){
         let key = Math.random();
         if (key <= .3) {
-            console.log('Walking... no sign of danger here.');
-        } else if (key >= .3) {
-            console.log(badGuy + ' has arrived.');
-
-            while(badGuysHealth > 0 && userHealth > 0) {
-                
-                const user = readlineSync.question('What would you like to do? Enter "r" to run. Enter "a" to attack. ' );
-
-                switch (user) {
-                    case 'r':
-                        const run = Math.random();
-                        if(run < .5) {
-                            console.log('Before you can run away ' + badGuy + ' attacks you with: ' + badGuysPower);
-                        } else {
-                            console.log('You ran away successfully!');
-                            break;
-                        }
-                    case 'a':
-                        badGuysHealth -= attackPower;
-                        console.log('You attacked ' + badGuy + ' with ' + attackPower + ' attack power.');
-
-                        userHealth -= badGuysPower;
-                        console.log('Enemy just attacked you with ' + badGuysPower + ' attack power.');
-                        
-                        if (badGuysHealth <= 0) {
-                            console.log('You killed ' + badGuy + '.\n' + badGuy + ' left: ' + pickUp);
-                            let loot = Math.random();
-                            if (loot <= .3) {
-                                prize.push(pickUp);
+            console.log('Walking...');
+        }
+        else if (key >= .3){
+            console.log (`You have stumbled into a ${enemy}!`);
+            while (enemyHealth > 0 && playerHealth > 0) {
+                const player = readlineSync.question(`Will you run (press "r") or will you stand and fight? (press "f") `);
+                    switch(player){
+                        case 'r':
+                            const run = Math.random();
+                            if (run < .5){
+                                console.log(`${enemy} is faster and hits you for ${enemyPower} damage.`);
                             }
-                        } else if (userHealth <= 0) {
-                            console.log(badGuy + ' has defeated you. You are dead. - 1 of your 9 lives.');
-                        }
-                }   
+                            else {
+                                console.log('You ran away!!');
+                                break;
+                            }
+                        case 'f':
+                            enemyHealth -= attackPower;
+                            console.log(`You attacked ${enemy} for ${attackPower} damage.`);
+                            playerHealth -= enemyPower;
+                            console.log(`You were attacked for ${enemyPower} damage.`);
+                            if (enemyHealth <= 0){
+                                console.log(`You have killed the ${enemy} and found ${collected}.`);
+                                let loot = Math.random();
+                                if (loot <= .3){
+                                    prize.push(collected);
+                                }
+                                }
+                            else if (playerHealth <= 0){
+                                console.log(`${enemy} has killed ${name}. GAME OVER`);
+                            }
+                            }
+
+                    }
             }
         }
     }
-}
-
-while(userHealth > 0) {
-    userRestore = function(){
-        userActive = true;
-        userHealth = 30;
-    };
-    userRestore();
+ while(playerHealth > 0) {
+    playerHealing = function(){
+        playerAlive = true;
+        playerHealth = 30
+    }
+    playerHealing();
     game();
-}
+} 
