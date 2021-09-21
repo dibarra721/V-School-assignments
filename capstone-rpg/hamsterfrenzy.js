@@ -1,12 +1,12 @@
 const readlineSync = require('readline-sync');
 
-const userName = readlineSync.question('Hi! What is your Name? ');
-console.log('Hi ' + userName + '!');
+var userName = readlineSync.question('Hi! What is your Name? ');
+// console.log('Hi ' + userName + '!');
 
-readlineSync.question('Hello ' + userName + ', Weclone to Hamster Battle. Press Enter to begin.');
+readlineSync.question('Hello ' + userName + ', Weclone to Hamster Frenzy. Press Enter to begin.');
 
 const enemies = ['Gerbil', 'Cat', 'Bird'];
-const treasure = ['hamsterball', 'snack', 'backpack'];
+const treasure = ['Hamsterball', 'Snack', 'Backpack'];
 var prize = [];
 let playerHealth = 60;
 const options = ['Walk', 'Exit', 'Print'];
@@ -18,7 +18,7 @@ function game() {
     const enemyPower = Math.floor(Math.random() * (6 - 4 + 2) + 3);
     const enemy = enemies[Math.floor(Math.random() * enemies.length)];
 
-    const index = readlineSync.keyInSelect(options, + userName + 'What would you like to do next?');
+    const index = readlineSync.keyInSelect(options, +  userName + ' What would you like to do next? ');
     console.log(userName + ' What would you like do do next? ')
 
     if (options[index] == 'Exit') {
