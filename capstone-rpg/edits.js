@@ -13,9 +13,9 @@ const options = ['Walk', 'Exit', 'Print'];
 let pickUp = treasure[Math.floor(Math.random() * treasure.length)];
 
 function game() {
-    const attackPower = Math.floor(Math.random() * (10 - 5 + 1)) + 1;
+    const attackPower = Math.floor(Math.random() * (8 - 1) + 2) ;
     let enemyHealth = 30;
-    const enemyPower = Math.floor(Math.random() * (6 - 4 + 2) + 3);
+    const enemyPower = Math.floor(Math.random() * (8 - 3) + 1);
     const enemy = enemies[Math.floor(Math.random() * enemies.length)];
 
     const index = readlineSync.keyInSelect(options, ' What would you like to do next? ');
@@ -25,7 +25,7 @@ function game() {
         // return userHealth = 0;
         console.log('Goodbye', + userName);
     } else if (options[index] == 'Print') {
-        console.log(userName + + playerHealth + treasure + pickUp);
+        console.log(userName  + ': \n' + playerHealth  + '\ntreasure:' + pickUp);
 
     } else if (options[index] === 'Walk') {
         let key = Math.random();
@@ -34,13 +34,15 @@ function game() {
         } else if (key >= .3) {
             console.log(enemy + ' has arrived.');
 
-            const player = readlineSync.question(`Will you run (press "r") or will you stand and fight? (press "f") `);
+            while (enemyHealth > 0 && playerHealth > 0) {
+            
 
-            switch (player) {
+            const player = readlineSync.question(`Will you run (press "r") or will you stand and fight? (press "f") `);
+                switch (player) {
                 case 'r':
                     const run = Math.random();
                     if (run < .5) {
-                        console.log(enemy + '' + 'is faster and hits you for' + '' + enemyPower + '' + 'damage.');
+                        console.log(enemy + ' ' + ' is faster and hits you for ' + ' ' + enemyPower + ' ' + ' damage.');
                     }
                     else {
                         console.log(' You have managed to run away! Congrats');
@@ -50,7 +52,7 @@ function game() {
 
                 case 'f':
                     enemyHealth -= attackPower;
-                    console.log('You attacked ' + '' + enemy + '' + 'for' + attackPower + '' + ' damage');
+                    console.log('You attacked ' + ' ' + enemy  + ' for ' + attackPower + ' ' + ' damage');
                     playerHealth -= enemyPower;
                     console.log('You got attacked with ' + '' + enemyPower + '' + ' damage');
                     if (enemyHealth <= 0) {
@@ -71,14 +73,14 @@ function game() {
 
 
     }
-
+    }
 }
 
 
 while (playerHealth > 0) {
     playerHealing = function () {
         playerAlive = true;
-        playerHealth = 20
+        playerHealth = 60
     }
     playerHealing();
     game();
