@@ -19,26 +19,19 @@ console.log(largest);
 
 var letterArray = (["#3", "$$$", "C%4!", "Hey!"], "!")
 
-function characterString(array, x) {
-
-    const firstCharacter = []
-    for (i = 0; i < array.length; i++) {
-        let arrayValue = array[i].split("")
-
-    }
-    for (j = 0; j < arrayValue.length; j++) {
-        if (arrayValue[j] == x) {
-
-            firstCharacter.push(arrayValue.join(""))
-
+function lettersWithStrings(array, x) {
+    let matches = [];
+    for (let i = 0; i < array.length; i++) {
+        let arrayValue = array[i].split('');
+        for (let k = 0; k < arrayValue.length; k++) {
+            if (arrayValue[k] == x) {
+                matches.push(arrayValue.join(''));
+            } 
         }
-
-
-        return firstCharacter();
-
     }
+    return matches;
 }
-console.log(characterString(["#3", "$$$", "C%4!", "Hey!"], "!"))
+console.log(lettersWithStrings(["#3", "$$$", "C%4!", "Hey!"], "!"))
 
 
 // letterArray[propertyName]
@@ -90,9 +83,35 @@ function isDivisible(num1, num2) {
 
 
 
-
 }
 
 isDivisible(4, 2);
 isDivisible(9, 3);
 isDivisible(15, 4);
+
+
+
+function fizz (){
+
+   
+for (let i = 0; i <= 100; i++){
+    if(i % 15 === 0){
+        console.log('FizzBuzz')
+    }
+    else if (i % 3 === 0){
+        console.log('Fizz')
+    }
+    else if(i % 5 === 0){
+        console.log('Buzz')
+    }
+    else{
+        console.log(i)
+    }
+
+}
+
+}
+
+
+
+fizz();
