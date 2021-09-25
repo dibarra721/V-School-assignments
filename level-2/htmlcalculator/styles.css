@@ -1,0 +1,41 @@
+body{
+    background-color: blanchedalmond;
+}
+
+
+
+results{
+display:flexbox;
+background-color: darkgrey;
+border: darkorchid, 5px;
+position: center;
+width: fit-content;
+height: fit-content;
+
+
+}
+.subResult {
+    background-color: red;
+    font-size: 16px;
+    font-family: monospace;
+    width: fit-content;
+    height: fit-content;
+}
+
+.addResult {
+    background-color: darksalmon;
+    font-size: 16px;
+    font-family: monospace;
+    width: fit-content;
+    height: fit-content;
+
+
+}
+
+.multiplication{
+    background-color: olive;
+    font-size: 16px;
+    font-family: monospace;
+    width: fit-content;
+    height: fit-content;
+}
