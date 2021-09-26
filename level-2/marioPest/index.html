@@ -31,19 +31,60 @@
     <br><br>
     <h2>The Baddies</h2>
     <br><br>
-    <h3> Goombas. Don't let the angel wings fool you. </h3><br>
-    <img src="https://cdn1.bbcode0.com/uploads/2021/9/26/6c30f22eebf55dde60bd034a6a222a69-full.png" border="0" class="baddie" />
-    <br>Price 5 coins<br>
-    <br>
-    <h3>Bob-ombs. They may be cute, but not when they are in your house</h3><br>
-    <img src="https://cdn1.bbcode0.com/uploads/2021/9/26/2c5941514481c7ef84b440be9fbc4121-full.png" border="0" class="baddie" />
-    </a>Price 11 coins
-    <br><br>
-    <h3>Cheep Cheep Not so cheap to remove</h3>
-    <img src="https://cdn1.bbcode0.com/uploads/2021/9/26/36ec1d79205a0a9439dbf170b26dda75-prev.png" border="0" class="baddie" />
+    <form name="marioPest">
+        <h3> Goombas. Don't let the angel wings fool you. </h3><br>
+        <img src="https://cdn1.bbcode0.com/uploads/2021/9/26/6c30f22eebf55dde60bd034a6a222a69-full.png" border="0" class="baddie" />
+        <br>Price 5 coins per Goomba.Input the number of Goombas to find out your price<br>
+        <div id="goombaBaddie">
+            <input type="number" name="numOfGoomba" placeholder="Number of Goomba"> *
+            <input type="number" name="priceOfGoomba" placeholder="5 coins" min="5" max="5">
+            <button id="goombaButton" class="goombaBaddie">Goomba Total</button>
+
+        </div>
+        <!-- Boooombs -->
+        <br>
+        <h3>Bob-ombs. They may be cute, but not when they are in your house</h3><br>
+        <img src="https://cdn1.bbcode0.com/uploads/2021/9/26/2c5941514481c7ef84b440be9fbc4121-full.png" border="0" class="baddie" /> 11 coins per Bob-ombs. Insert total number of Bob-ombs to find total. <br>
+        <div id="bombBaddie">
+            <input type="number" name="numOfBomb" placeholder="Number of Bo-omb"> *
+            <input type="number" name="priceOfBomb" placeholder="7 coins" min="7" max="7">
+            <button id="bombButton" class="bombBaddie">Bomb Total</button>
+
+        </div>
+        <br><br>
+        <h3>Cheep Cheep Not so cheap to remove</h3>
+        <img src="https://cdn1.bbcode0.com/uploads/2021/9/26/36ec1d79205a0a9439dbf170b26dda75-prev.png" border="0" class="baddie" />
+        <br><br> 11 Coins per Cheep Cheep. Insert total number of baddies to find total
+        <Br>
+        <div id="cheepBaddie">
+            <input type="number" name="numOfCheep" placeholder="Number of cheep Cheep"> *
+            <input type="number" name="priceOfCheep" placeholder="11 coins" min="11" max="11">
+            <button id="cheepButton" class="cheepBaddie">Cheep Total</button>
+
+        </div><br><br>
+        <!-- Total Price for Each Baddie && then Total for all the Badddies -->
+        <div id="total" class="totalprice">
+            <h1 class="results" id="results'">Total Prices!</h1>
+            <ul>
+
+                <li id="goombaResult" class="goombaResult"></li>
+                <li id="bombResult" class="bombResult"></li>
+                <li id="cheepResult" class="cheapResult"></li>
+
+                <button id="3baddietotal" class="3baddiettotal">Total for all the Baddies Click </button> Answer will appear below:
+
+
+                <li id="allResult" class="allResult"></li>
+
+            </ul>
 
 
 
+
+
+        </div>
+
+    </form>
 </body>
 <footer>
     <p class="text-center">Copyright &copy; MarioPestControl.com<br>E: mario@pestcontrol.com</p>
