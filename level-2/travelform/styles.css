@@ -1,0 +1,158 @@
+body {
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace
+}
+
+.firstName {
+    background-color: #86d1cb;
+    color: #fad27b;
+}
+
+.lastName {
+    background-color: #86d1cb;
+    color: #fad27b;
+}
+
+.ageinput {
+    background-color: #86d1cb;
+    color: #fad27b;
+}
+
+h1 {
+    color: #32917e;
+    display: inline-flex;
+    margin: auto;
+    padding: auto;
+    font-size: 60px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#firstandlastname {
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #232525;
+    display: inline-flex;
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid #eee;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input[type="number"] {
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid #eee;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    font-family: inherit;
+    font-size: inherit;
+}
+
+#age {
+    font-size: 15px;
+    font-weight: bold;
+    font-family: monospace;
+    color: #232525;
+    display: inline-flex
+}
+
+#travelbox {
+    display: flexbox;
+    width: fit-content;
+    height: fit-content;
+    background-color: peachpuff;
+    padding: auto;
+    font-size: 40px;
+    font-weight: bold;
+    margin: auto;
+    border-radius: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.travelForm {
+    width: fit-content;
+    height: fit-content;
+    border: 5px solid peachpuff;
+    margin: auto;
+}
+
+
+/* container */
+
+label {
+    position: relative;
+    /* to contain absolute elements */
+    padding-left: 30px;
+    /* free space for custom checkbox */
+    cursor: pointer;
+    border: rgb(160, 45, 45), ;
+}
+
+
+/* hide default checkbox  */
+
+label input[type=checkbox] {
+    position: absolute;
+    /* prevent taking any space */
+    /* cross-browser hidingg */
+    width: 0;
+    height: 0;
+}
+
+
+/* custom checkbox */
+
+label span {
+    position: absolute;
+    /* position to the free space in <label> */
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    border: 5px, black;
+    transition: .3s background-color;
+    /* slight transition */
+}
+
+
+/* the check icon */
+
+label span:after {
+    content: "";
+    position: absolute;
+    display: none;
+    /* check icon */
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+label:hover span {
+    background-color: rgb(172, 37, 37);
+}
+
+
+/**** Here's the trick ***/
+
+label input:checked~span {
+    background-color: #0d445a;
+}
+
+label input:checked~span:after {
+    display: block;
+}
