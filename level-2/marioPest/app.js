@@ -18,8 +18,8 @@ console.log(goombaResult)
 goombaResult.addEventListener('click', function(event) {
     event.preventDefault();
     let numofGoomba = form.numOfGoomba.value
-    let priceofGoomba = form.priceOfGoomba.value
-    let goombaPrice = Number(numofGoomba) * Number(priceofGoomba)
+        // let priceofGoomba = form.priceOfGoomba.value
+    let goombaPrice = Number(numofGoomba) * 5
     let li = document.getElementById("goombaResult");
     console.log(li)
     li.textContent = " ";
@@ -35,8 +35,8 @@ console.log(bombResult)
 bombResult.addEventListener('click', function(event) {
     event.preventDefault();
     let numofBomb = form.numOfBomb.value
-    let priceOfBomb = form.priceOfBomb.value
-    let bombPrice = Number(numofBomb) * Number(priceOfBomb)
+        // let priceOfBomb = form.priceOfBomb.value
+    let bombPrice = Number(numofBomb) * 7
     let li = document.getElementById("bombResult");
     console.log(li)
     li.textContent = " ";
@@ -51,8 +51,8 @@ console.log(cheapResult)
 cheapResult.addEventListener('click', function(event) {
         event.preventDefault();
         let numOfCheep = form.numOfCheep.value
-        let priceOfCheep = form.priceOfCheep.value
-        let cheapPrice = Number(numOfCheep) * Number(priceOfCheep)
+            // let priceOfCheep = form.priceOfCheep.value
+        let cheapPrice = Number(numOfCheep) * 11
         let li = document.getElementById("cheepResult");
         console.log(li)
         li.textContent = " ";
