@@ -27,7 +27,7 @@ form.addEventListener('submit', function(event) {
     const li = document.getElementById("allResult")
     li.textContent = " ";
 
-    li.append(combinedTotal)
+    li.append(combinedTotal + 'coins')
 
 
 

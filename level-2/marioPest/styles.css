@@ -187,6 +187,9 @@ input[type="number"] {
     border-radius: 20px;
     box-shadow: 5px5px5px#eee;
     text-shadow: none;
+    width: fit-content;
+    height: fit-content;
+    font-size: 15px;
 }
 
 .form-submit-button:hover {
