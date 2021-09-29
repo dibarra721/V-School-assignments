@@ -1,7 +1,7 @@
 var count = 0;
 var btn = document.getElementById("btn");
 var disp = document.getElementById("display");
-let reset = document.getElementById("reset")
+var refresh = document.getElementById("refresh")
 
 
 
@@ -28,10 +28,14 @@ btn.onclick = function() {
 
 }
 refresh.onclick = function() {
+
+
+
     const clicksClicked = JSON.parse(localStorage.getItem("numberClicks"))
     console.log(clicksClicked[0])
 
     disp.innerHTML = clicksClicked
+
 
 }
 
