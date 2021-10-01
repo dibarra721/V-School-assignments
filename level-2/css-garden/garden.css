@@ -1,0 +1,367 @@
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
+@font-face {
+    font-family: 'verdemoderna';
+	src:url('verdemoderna.woff');
+}
+
+
+body{
+    height: 100%;
+    font-family: 'Libre Baskerville', sans-serif;
+    /* color: #325050; */
+
+}
+    
+
+.container {
+
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas: 
+    "header headerTwo" 
+    "zenSummary authors" 
+    "zenSummaryTwo links" 
+    "zenSummaryThree emptyCell"
+     "footer footer"
+      "icons icons";
+}
+
+/* .container > div {
+    /* border: solid black 2px; */
+/* } */ 
+
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row:1;
+    font-family: 'Julius Sans One' sans-serif;
+    background-attachment: fixed, fixed, fixed,scroll;
+    background-image: url('http://www.csszengarden.com/214/gridlines.png'), url('http://www.csszengarden.com/214/huntington.jpg'), url('http://www.csszengarden.com/214/contours.png');
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    background-color: #2d6360 ;
+    padding-left: 15%;
+    box-shadow: inset 0 0 100px rgb(255 255 255 / 30%);
+}
+
+.headerTwo{
+    grid-column-start: 2;
+    grid-column-end: auto;
+    grid-row:1;
+    color: #fff;
+    font-style: italic;
+    box-shadow: inset 0 0 100px rgb(255 255 255 / 30%);
+  text-align: center;
+  padding: 60px;
+  
+
+}
+
+.zenSummary{
+    /* display: grid; */
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row:2;
+    height: auto;
+    overflow: hidden;
+
+}
+
+.authors{
+    background-color: #e5ede8;
+    grid-column-start: 2;
+    grid-column-end: auto;
+    grid-row: 2;
+    font-family: 'Libre Baskerville', sans-serif;
+}
+
+.authors li{
+    list-style-type: none;
+    border-top: solid 1px #a0b9ad;
+    font-style: normal;
+    margin: 15px 15px;
+    margin-top: 10px;
+    width: auto;
+    
+
+
+}
+
+.authors li:last-child{
+    float: none;
+    width: auto;
+    border-bottom: solid 1px #a0b9ad;
+
+}
+.zenSummaryTwo{
+    background-color: rgba(138,188,159,0.5);
+    background-image: url('http://www.csszengarden.com/214/bamboo.png');
+    background-attachment: fixed, fixed, fixed,scroll;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row:3;
+    /* height: 500px; */
+    overflow: hidden;
+
+
+}
+
+.links{
+
+    background-color: #b1cebd;
+    grid-column-start: 2;
+    grid-column-end: auto;
+    grid-row: 3;
+}
+
+.links li{
+    list-style-type: none;
+    border-top: solid 1px #a0b9ad;
+   font-style: normal;
+   margin: 50px 10px;
+}
+.links li:last-child{
+        float: none;
+        width: auto;
+        border-bottom: solid 1px #a0b9ad;
+      
+}
+
+/* unvisited link */
+a:link {
+    color:#a0b9ad;
+    text-decoration: none;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: green;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #325050;;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }
+
+
+
+.zenSummaryThree{
+    /* display: grid; */
+
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row:4;
+
+}
+
+.emptyCell{
+background-color: #e6eee9;
+    grid-column-start: 2;
+    grid-column-end: auto;
+    grid-row:4;
+
+}
+
+.footer{
+    /* display: flexbox; */
+    grid-row:5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: #134347;
+    color:#8da1a3; 
+    padding: 3em 10%;
+    text-align: center;
+    font-size: 25px;
+    background-attachment: fixed, fixed, fixed,scroll;
+    background-image: url('http://www.csszengarden.com/214/gridlines.png'), url('http://www.csszengarden.com/214/huntington.jpg'), url('http://www.csszengarden.com/214/contours.png');
+    background-repeat: repeat, repeat, repeat, no-repeat;
+
+}
+
+
+a.footlinks{
+
+    color:#fff;
+
+}
+ /* mouse over link */
+ a.footlinks:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+ 
+
+.footerIcons{
+
+    grid-row:6;
+    grid-column-start: 1;
+    grid-column-end:3 ;
+    height: 150px;
+    font-family: 'verdemoderna';
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    color: #fff;
+    background-color: #134347;
+    text-align: center;
+    width: 100%;
+    }
+   
+    
+
+    .icons{
+        font-family: 'verdemoderna';
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 50px;
+        color: #fff;
+        background-color: #134347;
+        text-align: center;
+        width: 100%;
+    }
+
+
+h3{
+    font-family:'Julius Sans One', sans-serif;
+    color: #2e484c;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+p{
+
+    color: #325050;;
+}
+
+h1{
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 3.2em;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    color:#fff;
+}
+
+h2{
+    display: block;
+    color:#fff;
+    font-style: italic;
+}
+
+
+abbr[title] {
+    text-decoration: underline dotted;
+
+}
+
+
+.viewDesigns{
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 39, 43, 0.2);
+    top: 9px;
+    height: 7px;
+    color: white;
+    text-decoration: none;
+    padding: 1em 1.5em;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+@media (max-width: 900px){
+
+    .container {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto auto auto;
+        grid-template-areas: 
+        "header "
+        "headerTwo" 
+        "zenSummary"
+        "zenSummaryTwo" 
+        "zenSummaryThree"
+         "footer"
+         "footericons"
+          "authors"
+          "links";
+          width: 100%;
+    }
+
+
+
+
+    /* use this media query to help these two cells drop to the bottom when screens are smaller */
+    .authors {
+        grid-column-start: 1;
+        grid-row: 8;
+    }
+
+.header{
+    grid-column-start: 1;
+    grid-row: 1;
+
+}
+.headerTwo{
+    grid-column-start: 1;
+    grid-row: 2;
+    background-attachment: fixed, fixed, fixed,scroll;
+    background-image: url('http://www.csszengarden.com/214/gridlines.png'), url('http://www.csszengarden.com/214/huntington.jpg'), url('http://www.csszengarden.com/214/contours.png');
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    background-color: #2d6360 ;
+
+}
+
+.zenSummary{
+    grid-column-start: 1;
+    grid-row: 3;
+
+}
+
+.zenSummaryTwo{
+    grid-column-start: 1;
+    grid-row: 4;
+
+}
+
+.zenSummaryThree{
+    grid-column-start: 1;
+    grid-row: 5;
+
+}
+    .links {
+grid-column-start: 1;
+grid-row: 9;
+
+    } 
+    /* container could use some help so that it's children are full screen width */
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* FLEX */
+/* use flexbox to make the icons behave like css zen garden's social icons */
+.icons {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+.icons > div {
+    width: 40px;
+    height: 40px;
+    background-color: #134347;;
+    border-radius: 50%;
+}

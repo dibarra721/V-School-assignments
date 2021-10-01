@@ -1,0 +1,108 @@
+    body {
+        background-color: #9B5DE5;
+    }
+    
+    #container {
+        display: inline-block;
+        background-color: #FEE440;
+        width: 800px;
+        height: 800px;
+        margin: auto;
+    }
+    
+    #boxOne {
+        display: inline-block;
+        height: 250px;
+        width: 250px;
+        background-color: #00BBF9;
+        transition-duration: 2s;
+    }
+    
+    #boxOne:hover {
+        background-color: firebrick;
+        width: 200px;
+        border-radius: 20px;
+    }
+    
+    #boxTwo {
+        display: inline-block;
+        height: 250px;
+        width: 250px;
+        transition-duration: 2s;
+        background-color: #9B5DE5;
+    }
+    
+    #boxTwo:hover {
+        background-color: #FEEAFA;
+        width: 200px;
+        border-radius: 20px;
+    }
+    
+    #boxThree {
+        display: inline-block;
+        height: 250px;
+        width: 250px;
+        background-color: #F15BB5;
+        transition-duration: 2s;
+    }
+    
+    #boxThree:hover {
+        background-color: #8E9AAF;
+        width: 75px;
+        border-radius: 20px;
+        border-style: groove;
+        border-color: #FEEAFA;
+        border-width: 5px;
+    }
+    
+    #boxFour {
+        display: inline-block;
+        height: 250px;
+        width: 250px;
+        background-color: #00F5D4;
+        transition-duration: 4s;
+    }
+    
+    #boxFour:hover {
+        background-color: #DEE2FF;
+        width: 500px;
+        border-radius: 10px;
+        border-style: ridge;
+        opacity: 0.86;
+        border-color: #8E9AAF;
+    }
+    
+    #boxFive {
+        display: inline-block;
+        height: 250px;
+        width: 250px;
+        background-color: #F15BB5;
+        transition-duration: 2s;
+    }
+    
+    #boxFive:hover {
+        background-color: #DEE2FF;
+        width: 150px;
+        border-radius: 10px;
+        border-style: ridge;
+        opacity: 0.86;
+        padding: 50px;
+        box-shadow: 5px 10px #00bbf9;
+        border-color: #8E9AAF;
+        background-image: linear-gradient(to right, #8E9AAF, #FEEAFA);
+    }
+    
+    #boxSix {
+        display: inline-block;
+        height: 250px;
+        width: 250px;
+        background-color: #00F5D4;
+        transition-duration: 7s;
+    }
+    
+    #boxSix:hover {
+        display: inline-block;
+        height: 250px;
+        width: 250px;
+        background-image: linear-gradient(to bottom right, #f15bb5, #9b5de5);
+    }
