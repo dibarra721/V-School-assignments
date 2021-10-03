@@ -1,7 +1,9 @@
-function fiveAndGreaterOnly(arr) {
-    return arr.filter((larger) => larger > 5)
 
-}
+function fiveAndGreaterOnly(arr) {
+    return arr.filter((num) => num > 5 )
+    
+    
+    }
 // test
 console.log(fiveAndGreaterOnly([3, 6, 8, 2])); /// [6, 8]
 
@@ -20,8 +22,8 @@ function fiveCharactersOrFewerOnly(arr) {
 console.log(fiveCharactersOrFewerOnly(["dog", "wolf", "by", "family", "eaten", "camping"])); // ["by", "dog", "wolf", "eaten"]
 
 
-function peopleWhoBelongToTheIlluminati(arr) {
-    return arr.filter((belong) => belong.member === true)
+function peopleWhoBelongToTheIlluminati(arr){
+    return arr.filter((illumiMember) => illumiMember.member === true);
 
 }
 // test
@@ -37,8 +39,9 @@ console.log(peopleWhoBelongToTheIlluminati([
 //  { name: 'Paris Hilton', member: true },
 //  { name: 'Bob Ziroll', member: true } ]
 
-function ofAge(arr) {
-    return arr.filter((name) => name.age > 18);
+function ofAge(arr){
+    return arr.filter((oldEnough) => oldEnough.age >= 18);
+    
 
 }
 // test

@@ -19,12 +19,14 @@ console.log(stringItUp([2, 5, 100]));
 
 // 3) Capitalize each of an array of names
 
-function capitalizeNames(arr) {
-    let lower = arr.map((lower) => lower.toLowerCase());
+
+function capitalizeNames(arr){
+    const lower = arr.map((lower) => lower.toLowerCase());
     return lower.map(
-        (capitalize) => capitalize.charAt(0).toUpperCase() + capitalize.slice(1)
+        (captailize) => captailize.charAt(0).toUpperCase()+ captailize.slice(1)
     );
 }
+    
 console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]));
 
 function namesOnly(arr) {
@@ -101,7 +103,11 @@ function readyToPutInTheDOM(arr) {
     return arr.map(name => `<h1> ${name.name}</h1><h2>${name.age}</h2>`);
 
 }
-console.log(readyToPutInTheDOM([{
+
+
+
+console.log(readyToPutInTheDOM([
+    {
         name: "Angelina Jolie",
         age: 80
     },
