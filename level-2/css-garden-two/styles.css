@@ -1,9 +1,0 @@
-body {
-    display: grid;
-    grid-template-columns: 700px 300px;
-    grid-template-rows: auto;
-    grid-template-areas: "header headerTwo" 
-    "zenSummary authors" 
-    "zenSuummaryTwo links";
-    
-}

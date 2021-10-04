@@ -12,7 +12,7 @@ var enemies = ["Lex", "Batman", "Darkseid", "Brainiac", "General Zod", "Doomsday
 
 function whoWins(isThereKryptonite, enemyName)
 {
-if (!isThereKryptonite)/* Not sure if that is the proper use of the "!"*/
+if (!isThereKryptonite)
 {
     return "Superman beats " + enemyName + ", of course";
 }

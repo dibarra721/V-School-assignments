@@ -12,7 +12,7 @@ var enemies = ["Lex", "Batman", "Darkseid", "Brainiac", "General Zod", "Doomsday
 
 function whoWins(isThereKryptonite, enemyName)
 {
-if (!isThereKryptonite)/* Not sure if that is the proper use of the "!"*/
+if (!isThereKryptonite)
 {
     return "Superman beats " + enemyName + ", of course";
 }
@@ -35,7 +35,6 @@ for (var i = 0; i < enemies.length; i++)
 
 function howAttractedIsLoisLaneToMe ()
 {
-    // 1 is not at all attracted, 10 is "super" attracted...
     return Math.floor((Math.random() * 10) + 1);
 }
 
