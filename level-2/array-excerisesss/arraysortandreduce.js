@@ -41,40 +41,41 @@ console.log(byAge([
 
 
 function total(arr) {
-    const result = arr.reduce((sum, currentValue) => {
-        sum += currentValue;
-        return sum;
-    });
-    return result;
-}
+    const result =  arr.reduce((final, num) => {
+        final += num;
+        return final ;
+        
+     })
+     return result 
+    
+    }
 
-console.log(total([1, 2, 3]));
 
-function stringConcat(arr) {
-    const string = arr.reduce((finalString, currentValue) => {
-        finalString += currentValue.toString();
-        return finalString;
-    });
+console.log(total([1,2,3])); // 6
 
-    return string;
+ function stringConcat(arr) {
+const string= arr.reduce((finalString, num) =>{
+    finalString += num.toString();
+    return finalString;
+})
+return string;
 
-}
+ }
 
 console.log(stringConcat([1, 2, 3])); // "123"
 
 
 function totalVotes(arr) {
-    const voterObj = arr.reduce((final, currentVote) => {
-
-        if (currentVote.voted) {
-            final++;
-        }
-        return final;
-
-    }, 0);
-    return voterObj;
-
-}
+    const voterResult= arr.reduce((whoVoted, currentVote) => {
+    if(currentVote.voted ){
+    whoVoted ++
+    
+    }
+    return whoVoted;
+    },0)
+    return voterResult;
+    
+    }
 
 var voters = [
     { name: 'Bob', age: 30, voted: true },
@@ -94,15 +95,12 @@ console.log(totalVotes(voters)); // 7
 
 
 function shoppingSpree(arr) {
-    const spreeTotal = arr.reduce((add, totalWish) => {
-
-        add += totalWish.price;
-        return add;
-    }, 0);
-
-
-    return spreeTotal;
-}
+    const priceResult=arr.reduce((totalPrice, price) => {
+        totalPrice += price.price
+        return totalPrice;
+    },0 )
+    return priceResult;
+    }
 
 var wishlist = [
     { title: "Tesla Model S", price: 90000 },
@@ -118,12 +116,12 @@ console.log(shoppingSpree(wishlist)); // 227005
 
 
 function flatten(arr) {
-    const array = arrays.reduce((a, b, c) => {
-        return a.concat(b, c);
-
-    }, []);
-    return array;
-}
+    const flatten= arr.reduce((a, b, c) =>{
+    return a.concat(b,c)
+    }, [])
+    return flatten;
+    }
+     
 
 var arrays = [
     ["1", "2", "3"],
@@ -151,29 +149,29 @@ var voters = [
 ];
 
 function voterResults(arr) {
-    const result = arr.reduce(
-        (accumulator, currentVotes) => {
-            if (currentVotes.age < 26) {
-                accumulator.youth++;
-                if (currentVotes.voted) {
-                    accumulator.youngVotes++;
-                }
-            } else if (currentVotes.age > 35) {
-                accumulator.old++;
-                if (currentVotes.voted) {
-                    accumulator.oldVotes++;
-                }
-            } else {
-                accumulator.mids++;
-                if (currentVotes.voted) {
-                    accumulator.midVotes++;
-                }
+    const restulTwo= arr.reduce((finalvotes, voters) => {
+        if (voters.age < 26){
+            finalvotes.youth++;
+            if(voters.voted){
+                finalvotes.youngVotes ++;
             }
-            return accumulator;
-        }, { youngVotes: 0, youth: 0, midVotes: 0, mids: 0, oldVotes: 0, old: 0 }
+        } else if(voters.age >35 ){
+            finalvotes.old++;
+            if(voters.voted){
+                finalvotes.oldVotes++
+            }
+        } else { 
+            finalvotes.mids ++;
+            if(voters.voted){
+                finalvotes.midVotes++;
+            }
+    
+    } return finalvotes;
+    
+    }, {youngVotes:0, youth:0, midVotes:0, mids: 0, oldVotes: 0, old: 0 }
     );
-    return result;
-}
+    return restulTwo;
+    }
 
 console.log(voterResults(voters)); // Returned value shown below:
 /*
