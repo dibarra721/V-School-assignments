@@ -8,7 +8,6 @@
 body{
     height: 100%;
     font-family: 'Libre Baskerville', sans-serif;
-    /* color: #325050; */
 
 }
     
@@ -27,9 +26,6 @@ body{
       "icons icons";
 }
 
-/* .container > div {
-    /* border: solid black 2px; */
-/* } */ 
 
 
 .header {
