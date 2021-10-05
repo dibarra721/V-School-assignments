@@ -1,94 +1,111 @@
-
-const names = ['Mario', 'Lugi']
-
-const nameChoice= Math.floor(Math.random() * names.length)
-
-
 class Player{
-    constructor(name, totalCoins, statusOption, hasStar){
-    this.name = name
-    this.totalCoins= 0;
-    this.statusOption= ["Powered Up", "Big,Small", "Dead"];
-    this.hasStar= false;
-    this.gameActive= true;
+    constructor(name, totalCoins = 0, hasStar){
+    this.name = name;
+    this.totalCoins= totalCoins;
+    this.hasStar= hasStar;
+    this.statusOption= "Powered Up";
 
 }
+// setName(){
+//     const namePicked= Math.floor(Math.random() * 100)
+//     if (namePicked > 50){
+//         return this.name ='Mario'
+        
+//     } else if (namePicked < 50 ){
+//        return this.name ='Lugi'
+//     }
+// }
 setName(namePicked){
-    this.name= namePicked;
+    if(namePicked === `Mario` || namePicked === `Luigi`) {
+        return this.name = namePicked
+    }
 }
 
 
 gotHit(){
-    if(this.hasStar === true){
-    console.log("You have a star")
-}else if(this.hasStar === false){
-    if(this.statusOption ==="Powered Up"){
-        this.statusOption ="Big"
-    }else if(this.statusOption ==="Big"){
-        this.statusOption = "Small"
-    }else if(this.statusOption ==="Small"){
-        this.statusOption= "Dead"
-        this.gameActive= false
-    }
-}
+
+    const status= ["Powered Up", "Big", "Small", `Dead`]
+  let prevIndex = status.findIndex((status) => status === this.statusOption)
+      if(prevIndex < 3){
+          this.statusOption = status[prevIndex + 1 ]
+        
+          if(prevIndex === 0)    {
+              this.hasStar = false;
+          }
+
+      } else {
+          this.statusOption =  status[prevIndex]
+      }
 
 }
 
 gotPoweredUp(){
-    if(this.statusOption ==="Powered Up" && this.hasStar===true){
-        console.log('You have Star Power')
-        this.hasStar = true
-    }else if(this.statusOption === "Big"){
-        this.statusOption="Powered Up"
-    }else if( this.statusOption==="Small")
-    this.statusOption= "Big"
+    const status= ["Powered Up", "Big", "Small", `Dead`]
+
+    let prevIndex = status.findIndex((status) => status === this.statusOption)
+        if (prevIndex > 0) {
+            this.statusOption = status[prevIndex -1]
+            
+        } else {
+            this.statusOption =status[prevIndex]
+            this.hasStar = true;
+
+        }
+    
+
+  
 }
 
 addCoins(){
-    this.totalCoins ++
+    this.totalCoins++
 }
 
 print(){
 
-    console.log(`Name: ${this.name}
-                Total Coins:${this.totalCoins}
-                Status: ${this.statusOption}
-                Has Star: ${this.hasStar}`)
+    console.log(`Name: ${this.name}`)
+    console.log(`Total Coins:${this.totalCoins}`)
+    console.log( `Status: ${this.statusOption}`)
+    console.log(`Has Star: ${this.hasStar}`)
 }
 
 
 }
 
 
-
-function randomRange(min, max)  {
-    return  Math.random()  * (3 - 0) + 0;
-
-}
-function gameRun(){
-   const number = randomRange()
-
-    if (this.gameActive === true) {
-        players.print()
-        if (number === 0) {
-            players.gotHit
-        } else if (number === 1) {
-            players.gotPowerUp()
-        } else if (number === 2) {
-            players.addCoins()
-        }
-}else {
-    clearInterval(intervalId)
-    console.log("The Game is Over")
-  players.print()
-
+const randomRange = function(player){
+    let randomNum = Math.floor(Math.random() * 3)
+    switch (randomNum) {
+        case 0:
+            player.gotHit()
+            break;
+        case 1:
+            player.gotPoweredUp()
+            break;
+        case 2:
+            player.addCoins()
+            break;
+        default:
+            break;
     }
-}
+}  
+
+let gameActive = true
+
+const character= new Player('Lugi', 0 , true)
+
+const startGame = setInterval(() => {
+    if(gameActive){
+        randomRange(character) ;
+       character.print();
+
+        if(character.statusOption ===`Dead`){
+            gameActive = false 
+        }
+    } else {
+        clearInterval(startGame)
+    }
+
+}, 1000);
 
 
 
-const players = new Player((nameChoice, names[nameChoice]))
-
-let intervalId
-
-intervalId = setInterval(gameRun, 100)
