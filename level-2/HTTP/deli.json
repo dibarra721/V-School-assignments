@@ -1,0 +1,102 @@
+{
+    "appetizers": [
+        {
+            "name": "spring roll",
+            "ingredients": [
+                "rice",
+                "fish sauce",
+                "mint leaves",
+                "peanuts"
+            ],
+            "description": " A refreshing change from your traditional Spring Rolls"
+        },
+        {
+            "name": "vegan tomato flatbread",
+            "ingredients": [
+                "tomato",
+                "flatbread",
+                "peppers"
+            ],
+            "description": "A delicious flatbread for that will fullfill your autumn desires"
+        }
+    ],
+    "cold sandwiches": [
+        {
+            "name": "Buffalo Cauliflower Sandwich",
+            "ingredients": [
+                "califlower",
+                "buffalo chicken",
+                "onion"
+            ],
+            "description": "A sandwhich to fool your non-vegan friends"
+        },
+        {
+            "name": "Chickpea and Avacodo Salad Sandwhich",
+            "ingredients": [
+                "chickpeas",
+                "avacado",
+                "bread"
+            ],
+            "description": "Great for a light dinner"
+        }
+    ],
+    "hot sandwiches": [
+        {
+            "name": "grilled cheese with tomato soup",
+            "ingredients": [
+                "cheese",
+                "bread",
+                "tomato"
+            ],
+            "description": "A fulfilling lunch for those cold days"
+        },
+        {
+            "name": "pastrami sandwhich",
+            "ingredients": [
+                "pastrami",
+                "rye bread",
+                "cheese"
+            ],
+            "description": "This sandwhich needs no explanation"
+        }
+    ],
+    "desserts": [
+        {
+            "name": "vegan icecream",
+            "ingredidents": [
+                "cashew milk",
+                "almonds",
+                "vanilla"
+            ],
+            "description": "A variety of new flavors are avaiable daily"
+        },
+        {
+            "name": "cheeesecake",
+            "ingredidents": [
+                "milk",
+                "sugar",
+                "icing"
+            ],
+            "description": "New York style Cheesecake"
+        }
+    ],
+    "drinks": [
+        {
+            "name": "strawberry lemonade",
+            "ingredidents": [
+                "strawberries",
+                "water",
+                "lemon"
+            ],
+            "description": "A refreshing cold drink"
+        },
+        {
+            "name": "Ginger Soda",
+            "ingredidents": [
+                "ginger",
+                "seltzer water"
+            ],
+            "description": "A drink with some spice"
+        }
+    ]
+}
