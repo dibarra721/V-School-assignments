@@ -5,7 +5,6 @@ function getData() {
     .catch(err => console.log(err))
 }
 
-
 getData()
 
 function listData(data) {
@@ -25,11 +24,13 @@ const newLi = document.createElement("li");
     // price
     const price = document.createElement("price");
     price.textContent = ` Price:  ${data[i].price}`;
+    price.style.fontSize="21px";
     newLi.appendChild(price);
 
     // description
     const des = document.createElement("des");
     des.textContent = ` Description:  ${data[i].description} `;
+    des.style.fontSize="21px";
     newLi.appendChild(des);
 
     // image
@@ -82,10 +83,10 @@ const deleteButton= document.createElement('button')
 deleteButton.setAttribute('type', 'button')
 deleteButton.setAttribute('id', 'button')
 deleteButton.textContent='X'
+deleteButton.style.color="#ffffff"
 deleteButton.style.width= "fit-content"
 deleteButton.style.height="fit-content"
 deleteButton.style.backgroundColor="#e33f84"
-// deleteButton.style.borderRadius= "10px"
 newLi.appendChild(deleteButton)
 
 deleteButton.addEventListener('click', function (event) {
@@ -106,7 +107,6 @@ function clearList() {
     el.removeChild(el.firstChild);
   }
 }
-
 
 const todoForm = document["todoform"];
 
