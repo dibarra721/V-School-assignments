@@ -11,8 +11,6 @@ function myFunction() {
 const form = document.marioPest
 
 
-
-
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     let numOfGoomba = form.numOfGoomba.value
