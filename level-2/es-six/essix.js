@@ -5,7 +5,7 @@
 // John is the pet owner, and
 // his name should be stored differently than the other names.
 
-let name = "John";
+let manName = "John";
 const age = 101;
 
 function runForLoop(pets) {
@@ -22,7 +22,7 @@ function runForLoop(pets) {
     pet.name = name;
     petObjects.push(pet);
   }
-  console.log("man name", name);
+  console.log("man name", manName);
   // man.name= name
   return petObjects;
 }
@@ -67,9 +67,7 @@ const people = [
 // }
 
 const filterForFriendly = (arr) => {
-  return arr.filter(function (person) {
-    return person.friendly;
-  });
+  return arr.filter(person => person.friendly)
 };
 console.log(filterForFriendly(people));
 // Re-write the following functions to be arrow functions:
