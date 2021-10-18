@@ -1,4 +1,4 @@
-let data = [
+const data = [
   {
     place: "Meridian, Idaho",
     price: 40,
@@ -26,7 +26,5 @@ let data = [
     timeToGo: "Spring",
   }
 
-
-
 ]
-export default data
+export default data;

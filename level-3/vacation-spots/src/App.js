@@ -1,23 +1,22 @@
 import React from "react";
-import vacationCard from "./vacationCard";
+import VacationCard from './VacationCard';
 import data from "./data";
 
-
 function App() {
-    const Cards = data.map(item => <vacationCard key ={item.place} location={item} season={item.timeToGo} price={item.price} />)
-return (
+  const cards = data.map((item) => (
+    <VacationCard
+      key={item.id}
+      location={item}
+      timeToGo={item.timeToGo}
+      price={item.price}
+    />
+  ))
+  return (
     <div>
-    <header>Which Vacation Spot is for your</header>
-    {Cards}
-
+      <header>Which Vacation Spot is for your</header>
+      {cards}
     </div>
-    )
+  )
 }
-
-
-
-
-
-
 
 export default App;
