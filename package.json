@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@mui/material": "^5.0.4",
     "pug": "^3.0.2"
   }
 }
