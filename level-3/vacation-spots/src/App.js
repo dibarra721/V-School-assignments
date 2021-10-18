@@ -7,7 +7,7 @@ function App() {
     <VacationCard
       key={item.id}
       location={item}
-      timeToGo={item.timeToGo}
+      time={item.timeToGo}
       price={item.price}
     />
   ))
