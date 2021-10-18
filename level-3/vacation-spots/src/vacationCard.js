@@ -21,10 +21,10 @@ console.log(props);
 
 
     return (
-        <div>
-            <h2>{props.location.place}</h2>
-            <p>Price: {dollar(props.location.price)}<br></br>
-            Best Time to Visit : {props.location.timeToGo}</p>
+        <div className="CardDiv">
+            <h2>{props.location.place}</h2><hr></hr>
+            <p>Price: {dollar(props.location.price)}<br></br><hr></hr>
+            Best Time to Visit : {props.location.timeToGo}</p><hr></hr>
                
         </div>
     )
