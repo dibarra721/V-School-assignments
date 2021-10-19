@@ -12,9 +12,9 @@ function Friend(props) {
 
     return (
         <div className={'card'}>
-            <h1> Name: {props.name}</h1>
-            <h1> Age: {props.age}</h1>
-            <h1> Pets: {PetComponent}</h1>
+            <h1> Name:  {props.name} </h1><hr></hr><br></br>
+            <h1> Age:  {props.age} </h1><hr></hr><br></br>
+            <h1> Pets: {PetComponent} </h1><hr></hr><br></br>
         </div>
     );
     

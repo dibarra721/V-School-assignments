@@ -1,0 +1,27 @@
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    background-color: #FAFAFA;
+}
+
+header {
+    font-family: 'Cutive', serif;
+    font-size: 45px;
+    margin-left: 30%;
+    justify-content: center;
+margin-top: 50px;
+}
+
+.card {
+    margin: 20%;
+    width: 400px;
+    height: fit-content;
+    box-shadow: 0.5rem 0.5rem #00afb5, -0.5rem -0.5rem #ff7700;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+li {
+    display: flex;
+   
+  }
