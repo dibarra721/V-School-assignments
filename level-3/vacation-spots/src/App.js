@@ -13,7 +13,7 @@ function App() {
   ))
   return (
     <div>
-      <header>Which Vacation Spot is for your</header>
+      <header>Which Vacation Spot is for you</header>
       {cards}
     </div>
   )
