@@ -1,6 +1,6 @@
 import React from "react";
-import FriendList from "./FriendList";
-import friends from "./Friend";
+import Friend from "./Friend";
+import friends from "./FriendList";
 
 function App() {
   const friendComponenet = friends.map((friends) => (
