@@ -1,26 +1,22 @@
-import React from "react"
+
 
 function Navbar () {
 return (
-
-    <nav>
-    <a href="http://localhost:3000/">Start Bootstrap</a>
-    <li>
-        <a href="http://localhost:3000/">Home </a>
-    </li>
-    <li>
-        <a href="http://localhost:3000/">About </a>
-    </li>
-    <li>
-        <a href="http://localhost:3000/">Sample Post </a>
-    </li>
-    <li>
-        <a href="http://localhost:3000/">Contact </a>
-    </li>
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+      
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
 </nav>
-
 )
-
 }
 
 

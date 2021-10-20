@@ -1,0 +1,30 @@
+body{
+    font-family: 'Lora', serif;
+
+
+}
+
+Navbar{
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    display: flex;
+/* position: absolute; */
+font-family: 'Open Sans', sans-serif;
+align-items: center;
+font-size: 1.25rem;
+}
+Header{
+    background-image:url ("https://i.ibb.co/G2GdC6B/home-bg.jpg");
+    background: no-repeat center center; 
+ background-color: #6c757d;
+    background-size: cover;
+    background-attachment:scroll;
+    height: fit-content;
+    display: block;
+
+}
+
+
+
+
+
