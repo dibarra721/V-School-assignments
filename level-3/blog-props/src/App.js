@@ -1,25 +1,18 @@
-import React from "react"
-import Header from "./Header"
-import Footer from "./Footer"
-import BlogList from "./BlogList"
-import Navbar from "./Navbar"
-import BlogPost from "./BlogPost"
-import './style.css';
-
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import BlogList from "./BlogList";
+import "./style.css";
 
 function App() {
-return (
-
+  return (
     <div className="App">
-<Header />
-   
-<BlogList />
-<Footer />
+      <Header />
 
+      <BlogList />
+      <Footer />
     </div>
-)
-
-
+  );
 }
 
-export default App
+export default App;

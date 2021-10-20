@@ -1,29 +1,106 @@
 body{
     font-family: 'Lora', serif;
-
-
+    font-size: 1.25rem;
+    margin: 0;
+    display: block;
 }
 
-Navbar{
+.mainNav{
+    transition: background-color 0.2s;
+    backface-visibility: hidden;
     border-bottom: 1px solid transparent;
     background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1030;
     display: flex;
-/* position: absolute; */
 font-family: 'Open Sans', sans-serif;
 align-items: center;
 font-size: 1.25rem;
+flex-wrap: nowrap;
+justify-content: flex-start;
+
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+
+
+.navbar-brand{
+    color:black;
+    font-weight: 800;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+.navbar-collapse{
+display: flex;
+flex-basis: auto;
+align-items: center;
+flex-grow: 1;
+font-size: 1.25rem;
+}
+.navbar-nav {
+flex-direction: row;
+display: flex;
+padding-left: 0px;
+padding-right: 15px;
+margin-bottom: 0;
+list-style: none;
+padding-top: 0 !important;
+padding-bottom: 0 !important;
+margin-left: auto !important;
+margin-block-start: 1em;
+margin-block-end: 1em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+padding-inline-start: 40px;
+}
+ul{
+    margin-top: 0px;
+    margin-block-start: 1em;
+margin-block-end: 1em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+padding-inline-start: 40px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+    margin-right: auto;
+    margin-left: auto;
 }
 Header{
-    background-image:url ("https://i.ibb.co/G2GdC6B/home-bg.jpg");
+    
     background: no-repeat center center; 
  background-color: #6c757d;
     background-size: cover;
     background-attachment:scroll;
-    height: fit-content;
+    width: auto;
+    height: 100vh;
     display: block;
-
+    overflow:hidden
 }
 
+masthead{
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    height: 50vh;
+}
 
 
 

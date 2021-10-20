@@ -8,7 +8,7 @@ function BlogList (){
 <BlogPost
 key={post.id}
 title={post.title}
-subTitle={post.title}
+subTitle={post.subTitle}
 author={post.author}
 date={post.date}
 />
@@ -18,7 +18,7 @@ date={post.date}
 return (
 <div className="blog-list">
 {blogComponent}
-<button>Older Posts</button>
+<button className="oldButton">Older Posts</button>
 <hr/>
 
 </div>

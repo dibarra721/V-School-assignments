@@ -6,7 +6,7 @@ function Header  (props)  {
 
         <>
         <Navbar />
-        <header class="masthead">
+        <header class="masthead" style={{backgroundImage: 'url("https://i.ibb.co/G2GdC6B/home-bg.jpg")'}}>
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     {/* <div class="col-md-10 col-lg-8 col-xl-7"> */}
