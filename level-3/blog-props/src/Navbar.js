@@ -1,7 +1,7 @@
 function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-      <div class="container px-4 px-lg-5">
+    <nav class="mainNav">
+      <div class="container">
         <a class="navbar-brand" href="index.html">
           Start Bootstrap
         </a>
@@ -9,22 +9,22 @@ function Navbar() {
         <div class="navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ">
             <li class="nav-item">
-              <a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">
+              <a class="nav-link" href="index.html">
                 Home
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">
+              <a class="nav-link" href="about.html">
                 About
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">
+              <a class="nav-link" href="post.html">
                 Sample Post
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">
+              <a class="nav-link" href="contact.html">
                 Contact
               </a>
             </li>

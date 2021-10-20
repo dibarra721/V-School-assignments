@@ -6,7 +6,10 @@ body{
 }
 
 .mainNav{
+    display: flex;
+    height: auto;
     transition: background-color 0.2s;
+    transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     border-bottom: 1px solid transparent;
     background: transparent;
@@ -32,7 +35,8 @@ justify-content: flex-start;
 
 
 .navbar-brand{
-    color:black;
+    color:white;
+    text-decoration: none;
     font-weight: 800;
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
@@ -41,15 +45,21 @@ justify-content: flex-start;
     white-space: nowrap;
 }
 .navbar-collapse{
-display: flex;
-flex-basis: auto;
+    display: flex !important;
+    flex-basis: auto;
+    flex-grow: 1;
 align-items: center;
-flex-grow: 1;
-font-size: 1.25rem;
+font-weight: 800;
+
+
+
 }
 .navbar-nav {
+  
+list-style: none;
+text-decoration: none;
 flex-direction: row;
-display: flex;
+ display: flex;
 padding-left: 0px;
 padding-right: 15px;
 margin-bottom: 0;
@@ -61,23 +71,31 @@ margin-block-start: 1em;
 margin-block-end: 1em;
 margin-inline-start: 0px;
 margin-inline-end: 0px;
-padding-inline-start: 40px;
+padding-inline-start: 40px; 
 }
-ul{
-    margin-top: 0px;
-    margin-block-start: 1em;
-margin-block-end: 1em;
-margin-inline-start: 0px;
-margin-inline-end: 0px;
-padding-inline-start: 40px;
+
+.nav-link{
+    list-style: none;
+    text-decoration: none;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+
+}
+.nav-item{
+    text-align: -webkit-match-parent;
+    /* color: white;
+text-decoration: none;
+list-style: none;
+font-weight: 800; */
 }
 
 .container{
     display: flex;
+    width:100%;
     flex-wrap: inherit;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     padding-right: 3rem !important;
     padding-left: 3rem !important;
     margin-right: auto;
@@ -96,12 +114,42 @@ Header{
 }
 
 masthead{
-    background-size: cover;
-    background-position: center;
-    width: auto;
-    height: 50vh;
+    display: block;
+    position: relative;
+    margin-bottom: 3rem;
+    padding-top: 12.5rem;  
+    padding-bottom: 12.5rem;
+}
+
+.containerPostion{
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+    position: relative !important;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
+.mastconatiner{
+    display:flex;
+    color: white;
+    font-family: 'Lora', serif;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+    justify-content: center !important;
 
+}
 
+.innerBox{
+    display: block;
+     flex: 0 0 auto;
+   
+    max-width: 100%;  
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-top: var(--bs-gutter-y);
+
+}
