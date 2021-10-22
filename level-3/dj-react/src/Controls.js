@@ -76,7 +76,7 @@ bigTimeDJFour (){
 
 
 tunesDJ() {
-    new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3').play()
+    new Audio('http://fast.moodmixes.com/images/chillout_preview.mp3').play()
 }
 
 refreshPage() {
