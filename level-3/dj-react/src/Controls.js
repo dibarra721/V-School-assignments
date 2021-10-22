@@ -101,7 +101,7 @@ const boxes= this.state.boxes.map(box => {
 
          <button className='btn' onClick={this.smallTimeDJ}>Small Time DJ</button>
          <button className='btn' onClick={this.partyDJ}>Party DJ</button>
-         <button className='btn' onClick={this.proDJ}>Pro DJ # 1</button>
+         <button className='btn' onClick={this.proDj}>Pro DJ # 1</button>
          <button className='btn' onClick={this.proDJ2}>Pro DJ # 2</button>
          <button className='btn' onClick={this.bigTimeDJ}>Big Time DJ</button>
          <button className='btn' onClick={this.bigTimeDJTwo}>Big Time DJ 2</button>
@@ -109,7 +109,7 @@ const boxes= this.state.boxes.map(box => {
          <button className='btn' onClick={this.bigTimeDJFour}>Big Time DJ 4</button>
      </div>
      <div className='container2'>
-             <button className='btn' onClick={this.playTune}>Play Sound</button>
+             <button className='btn' onClick={this.tunesDJ}>Play Sound</button>
          </div></>
  )
 }
