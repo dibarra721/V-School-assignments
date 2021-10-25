@@ -1,6 +1,6 @@
-import React from "react";
-import Controls from "./Controls";
-import './App.css';
+import React from "react"
+import Controls from "./Controls"
+import './App.css'
 
 class App extends React.Component {
   render() {
