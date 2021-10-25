@@ -1,6 +1,8 @@
 import React from "react";
 import DiceBox from "./DiceBox";
 
+
+
 class App extends React.Component {
   constructor() {
     super();
@@ -54,8 +56,10 @@ class App extends React.Component {
      return (
        <div>
          {dice}
+         <div className="secondBox">
          <button onClick={this.rollDice}>Roll Dice</button>
          <button onClick={this.clearDice}>Clear Dice</button>
+         </div>
        </div>
 
    )
