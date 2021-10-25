@@ -8,7 +8,7 @@ class App extends Component {
       firstName: "",
       allNames: [],
     }
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange(event) {
@@ -16,7 +16,7 @@ class App extends Component {
     const { name, value } = event.target
     this.setState({
       [name]: value,
-    });
+    })
   }
   handleSubmit = (event) => {
     event.preventDefault()
@@ -52,7 +52,7 @@ class App extends Component {
           </ul>
         </form>
       </main>
-    );
+    )
   }
 }
 
