@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './App.css'
 
 class App extends Component {
   constructor() {
@@ -34,7 +35,7 @@ class App extends Component {
 
     return (
       <main>
-        <form onSubmit={this.handleSubmit}>
+        <form  className="form" onSubmit={this.handleSubmit}>
           <input
             placeholder="Name"
             name="firstName"
