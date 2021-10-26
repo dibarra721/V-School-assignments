@@ -55,13 +55,13 @@ render () {
         return (
             <div className="results">
             <li>
-            firstName:{name.firstName}<br/>
-            lastName:{name.lastName}<br/>
-            email:{name.email}<br/>
-            placeOfBirth:{name.placeOfBirth}<br/>
-            phone:{name.phone}<br/>
-            favoriteFood:{name.favoriteFood}<br/>
-            about:{name.about}<br/>
+            First Name:{name.firstName}<br/>
+            Last Name:{name.lastName}<br/>
+            Email:{name.email}<br/>
+            Place Of Birth:{name.placeOfBirth}<br/>
+            Phone:{name.phone}<br/>
+            FavoriteFood:{name.favoriteFood}<br/>
+            About:{name.about}<br/>
           </li>
         </div>
         )
@@ -70,60 +70,62 @@ render () {
     return (
     <div className="App">
         <form className="form" onSubmit={this.handleSubmit}>
-           
+           First Name:
             <input
             placeholder="first name"
+            minLength={"3"}
+            type={"text"}
             name="firstName"
             value={this.state.firstName}
             onChange={this.handleChange}
             required="Required"
-
-
-            />
+                />
             <br/>
+            Last Name:
             <input
             placeholder="last name"
+            minLength={"3"}
+            type={"text"}
             name="lastName"
             value={this.state.lastName}
             onChange={this.handleChange}
             required="Required"
-
-
             />
             <br/>
+            Email:
             <input
+              type="text"  minLength={"3"}
             placeholder="email"
             name="email"
             value={this.state.email}
             onChange={this.handleChange}
             required="Required"
-
-
             />
             <br/>
+            Place of Birth :
             <input
+            type="text"  minLength={"3"}
             placeholder="birth of place"
             name="placeOfBirth"
             value={this.state.placeOfBirth}
             onChange={this.handleChange}
             required="Required"
-
-
             />
             <br/>
 
+            Phone:
             <input
+            type="number" minLength={"10"}
             placeholder="phone"
             name="phone"
             value={this.state.phone}
             onChange={this.handleChange}
             required="Required"
-
-
             />
             <br/>
-
+            Favorite Food:
             <input
+            type="text"  minLength={"3"}
             placeholder="favorite food"
             name="favoriteFood"
             value={this.state.favoriteFood}
@@ -132,19 +134,17 @@ render () {
 
             />
             <br/>
-
-
-            <input
+            About:
+            <textarea
+            type="text" minLength={"3"}
             placeholder="about"
             name="about"
             value={this.state.about}
             onChange={this.handleChange}
             required="Required"
-
-
-            />
+           textarea/>
             <br/>
-            <button>Submit</button>
+            <button >Submit</button>
         </form>
 <div className="results">
         <h4>{this.state.firstName}<br/>

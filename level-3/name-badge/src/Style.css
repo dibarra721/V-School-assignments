@@ -1,6 +1,7 @@
 body{
-    color:black;
+    color:#1f4590;
     background-color: blanchedalmond;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .results{
@@ -8,13 +9,38 @@ body{
     color: white;
     height: fit-content;
     width: fit-content;
+    list-style: none;
+    display: flex;
+    border: solid black 3px;
+    border-radius: 1rem;
+    width: 700px;
+    margin: auto;
+    height: fit-content;
+}
+
+.App{
+    display: flexbox;
 }
 
 form {
+    display: inline-flexbox;
+    padding-left: 10px;
     border: 2px solid black;
     width: 50vw;
     height: 40vh;
-    border-radius: 25px;
+    border-radius: 15px;
     margin: auto;
     margin-top: 5vh;
+  }
+
+  button {
+    width: fit-content;
+    background-color:#1f4590;
+    color:#f0b666;
+  }
+
+  li {
+    width: 200px;
+    list-style: none;
+    display: flex;
   }
