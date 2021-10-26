@@ -4,8 +4,8 @@ import "./Style.css"
 
 
 class App extends Component {
-    constructor (props){
-    super (props)
+    constructor (){
+    super ()
     this.state = {
         firstName: "",
         lastName: "",
@@ -30,18 +30,22 @@ handleChange(event) {
 }
 handleSubmit = (event) => {
     event.preventDefault();
-    this.setState((prevState) => {
-      return {
-        firstName: "",
-        lastName: "",
-        email: "",
-        placeOfBirth: "",
-        phone:'',
-        favoriteFood: "",
-        about: "",
-        allBadge:[...prevState.allBadge]
+          const newItem= {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
+        placeOfBirth: this.state.placeOfBirth,
+        phone:this.state.phone,
+        favoriteFood: this.state.favoriteFood,
+        about: this.state.about,}
+
+        this.setState((prevState) => {
+            return {
+        allBadge:[...prevState.allBadge,
+        newItem
+    ]
       }
-    })
+        })
 }
 
 render () {
@@ -49,16 +53,17 @@ render () {
     const badgeListComponent = this.state.allBadge.map((name) => {
     
         return (
+            <div className="results">
             <li>
-            firstName:{name.firstName}
-            lastName:{name.lastName}
-            email:{name.email}
-            placeOfBirth:{name.placeOfBirth}
-            phone:{name.phone}
-            favoriteFood:{name.favoriteFood}
-            about:{name.about}
+            firstName:{name.firstName}<br/>
+            lastName:{name.lastName}<br/>
+            email:{name.email}<br/>
+            placeOfBirth:{name.placeOfBirth}<br/>
+            phone:{name.phone}<br/>
+            favoriteFood:{name.favoriteFood}<br/>
+            about:{name.about}<br/>
           </li>
-        
+        </div>
         )
     })
 
@@ -141,7 +146,7 @@ render () {
             <br/>
             <button>Submit</button>
         </form>
-
+<div className="results">
         <h4>{this.state.firstName}<br/>
         {this.state.lastName}<br/>
         {this.state.email}<br/>
@@ -151,7 +156,7 @@ render () {
         {this.state.about}<br/></h4>
 
         {badgeListComponent}
-
+</div>
     
     </div>
 

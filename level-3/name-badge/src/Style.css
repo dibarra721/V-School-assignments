@@ -1,3 +1,15 @@
+body{
+    color:black;
+    background-color: blanchedalmond;
+}
+
+.results{
+    background-color: red;
+    color: white;
+    height: fit-content;
+    width: fit-content;
+}
+
 form {
     border: 2px solid black;
     width: 50vw;
