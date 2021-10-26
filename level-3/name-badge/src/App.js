@@ -4,7 +4,7 @@ import "./Style.css"
 
 
 class App extends Component {
-    constructor (){
+    constructor (props){
     super ()
     this.state = {
         firstName: "",
@@ -43,9 +43,20 @@ handleSubmit = (event) => {
             return {
         allBadge:[...prevState.allBadge,
         newItem
-    ]
+    ],
       }
+      
         })
+
+        this.setState({
+            firstName: "",
+            lastName: "",
+            email: "",
+            placeOfBirth: "",
+            phone:"",
+            favoriteFood: "",
+            about: "",
+          });
 }
 
 render () {
