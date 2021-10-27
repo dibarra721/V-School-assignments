@@ -22,19 +22,26 @@ class HitList extends Component {
   render() {
     const list = this.state.hitList.map((name, index) => {
       return (
+        
         <div className="hitList" key={index}>
           <p className="name">Name:{name.name}</p>
           <img className="image" src={name.image} alt=""></img>
         </div>
+        
       )
     })
   
     return (
-      <div>
-        <h1>The hit List</h1>
+    
+    <><div className="container">
+    <header className="header">
+        <h1>Don Carleone's Hit List</h1>
+      </header>
 
-        <div className="theList">{list}</div>
-      </div>
+          <div className="theList">{list}</div>
+          </div>
+          </>
+        
     );
   }
 }

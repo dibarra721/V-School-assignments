@@ -1,10 +1,21 @@
 body{
     color: black;
+   
+    grid-template-columns: 1fr, 1fr;
 
 }
 
+.image{
+    display: flex;
+}
+
 h1{
-    color: black;
+    color: red;
+    font-family: 'Asul', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    background-color: black;
+
 }
 
 .image {
@@ -16,3 +27,29 @@ h1{
     font-size: 25px;
     color: burlywood;
 }
+
+.hitList{
+    display: grid;
+    /* height: fit-content;
+    width: fit-content; */
+    grid-template-columns: 33%, 33%,33%;
+    background-color: lightgray;
+    list-style: none;
+    
+    
+}
+
+/* .theList{
+    position: relative;
+    text-align: center;
+} */
+
+ .container{
+    display: grid;
+    grid-template-columns: 33%, 33%, 33%;
+    grid-template-rows: auto; 
+    /* height: fit-content; */
+    background-color: lightgray;
+    list-style: none;
+    
+} 
