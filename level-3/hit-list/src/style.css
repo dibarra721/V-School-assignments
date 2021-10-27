@@ -1,55 +1,34 @@
 body{
     color: black;
-   
-    grid-template-columns: 1fr, 1fr;
+    font-family: 'Lora', serif;
 
 }
 
-.image{
-    display: flex;
+.images{
+    width:250px;
+    height:250px;
+}
+
+.nameContainer {
+    display: grid;
+    background-color: lightgray;
+    grid-template-columns: 300px 300px 300px;
 }
 
 h1{
     color: red;
     font-family: 'Asul', sans-serif;
     font-size: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     text-align: center;
     background-color: black;
 
 }
 
-.image {
-    width: 250px;
-    height: 250px;
 
-}
-.name {
+.names {
     font-size: 25px;
     color: burlywood;
 }
 
-.hitList{
-    display: grid;
-    /* height: fit-content;
-    width: fit-content; */
-    grid-template-columns: 33%, 33%,33%;
-    background-color: lightgray;
-    list-style: none;
-    
-    
-}
-
-/* .theList{
-    position: relative;
-    text-align: center;
-} */
-
- .container{
-    display: grid;
-    grid-template-columns: 33%, 33%, 33%;
-    grid-template-rows: auto; 
-    /* height: fit-content; */
-    background-color: lightgray;
-    list-style: none;
-    
-} 

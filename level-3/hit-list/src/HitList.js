@@ -24,8 +24,8 @@ class HitList extends Component {
       return (
         
         <div className="hitList" key={index}>
-          <p className="name">Name:{name.name}</p>
-          <img className="image" src={name.image} alt=""></img>
+          <p className="names">Name:{name.name}</p>
+          <img className="images" src={name.image} alt=""></img>
         </div>
         
       )
@@ -33,13 +33,13 @@ class HitList extends Component {
   
     return (
     
-    <><div className="container">
+    <>
     <header className="header">
         <h1>Don Carleone's Hit List</h1>
       </header>
 
-          <div className="theList">{list}</div>
-          </div>
+          <div className="nameContainer">{list}</div>
+          
           </>
         
     );
