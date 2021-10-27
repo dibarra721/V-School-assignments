@@ -27,7 +27,7 @@ class RandomColor extends Component{
   render () {
 
     return(
-      <div style={{backgroundColor : `#${this.state.color[0].hex}`, height:"600px", display:"block"}}>
+      <div style={{backgroundColor : `#${this.state.color[0].hex}`, height:"550px", display:"block"}}>
         <button onClick={this.handleChange}>Click to Change Color</button>
       </div>
     )
