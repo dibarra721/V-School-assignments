@@ -1,11 +1,8 @@
-# {
+body{
     box-sizing: border-box;
     font-size: 0px;
     float: left;
-    
 
-
-    
 }
 
 .color-box{
@@ -63,5 +60,3 @@
         display: inline-block;
         width: 24%;
     }
-
-} 

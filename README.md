@@ -1,3 +1,3 @@
 # assignments
 
-These are just projects for school :) 
+V School Projects, HTML, React, Node, CSS
