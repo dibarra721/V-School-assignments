@@ -57,8 +57,8 @@ class App extends React.Component {
        <div>
          {dice}
          <div className="secondBox">
-         <button onClick={this.rollDice}>Roll Dice</button>
-         <button onClick={this.clearDice}>Clear Dice</button>
+         <button className= "roll" onClick={this.rollDice}>Roll Dice</button>
+         <button className= "clear" onClick={this.clearDice}>Clear Dice</button>
          </div>
        </div>
 
