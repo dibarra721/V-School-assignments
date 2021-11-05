@@ -4,11 +4,6 @@ body{
 
 .diceContainer{
 background-color: #e99557;
-/* height: fit-content;
-display: inline-block;
-margin-bottom: 30px;
-padding-bottom: 22px; */
-
 height: 400px;
 max-width: 500px;
 padding: 1rem;

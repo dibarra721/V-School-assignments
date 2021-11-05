@@ -1,115 +1,98 @@
-import React from "react";
-import "./App.css"
+import React, { useState, useEffect } from "react";
 
 
-function Play() {
-    const [memes, setMemes] = React.useState({
-        topText: "",
-        bottomText: "",
-        randomImage: "" 
-    })
-    const [memeIndex, setMemeIndex] = React.useState(0);
-    const [captions, setCaptions] = React.useState([])
+function MemeGenerator() {
+    const [memes, setMemes] = useState([])
+    const [generatedMemes, setGeneratedMemes] = useState([])
+    const [memeIndex, setMemeIndex] = useState(0);
+    const [captions, setCaptions] = useState([]);
+
+    const generateMeme = (e) => {
+        e.preventDefault();
+        const currentMeme = memes[memeIndex];
+        const formData = new FormData();
+
+        formData.append('username', 'VschoolTesting');
+        formData.append('password', 'Testing1');
+        formData.append('template_id', currentMeme.id);
+        captions.map((c, index) => formData.append(`boxes[${index}][text]`, c));
+        console.log(generatedMemes)
+
+        fetch('https://api.imgflip.com/caption_image', {
+            method: 'POST',
+            body: formData
+        }).then(res => {
+            res.json().then(res => {
+                setGeneratedMemes(res.data.url);
+                console.log(res.data.url)
+                return generatedMemes
+            });
+        });
+    };
 
 
-function getMemeImage() {
-    const randomNum= Math.floor(Math.random() * memes.length)
-    const url=memes[randomNum].url
-    setMemes(prevMeme => ({
-        ...prevMeme,
-        randomImage:url
-    }))
-}const generatedMeme= (e) => {
-
-    const {name,value} = e.target.value || 
-    setCaptions(prevCaptions => ({
-        ...prevCaptions,
-        [name] :value
-           }))
-        }
-
-console.log(generateMeme)
-
-React.useEffect(() => {
-    fetch("https://api.imgflip.com/get_memes")
-    .then(res => res.json())
-    .then(data => setMemes(data.data.memes))
-    
-}, []);
-
-React.useEffect(() => {
-    if (memes.length) {
-        console.log(memes[memeIndex].box_count.value)
-        setCaptions(Array(memes[memeIndex].box_count).fill(''));
-    }
-}, [memeIndex, memes]);
-
-const updateCaption = (e, index) => {
-    e.preventDefault()
-    setCaptions(prevCaptions => ({
-        ...prevCaptions,
-        setCaptions
-    },[]))
-
-        captions.map((box_count, i) => {
-            if (index === i) {
-                
-                return updateCaption;
-            } else {
-                console.log(box_count.value)
-                return box_count;
+    useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes").then(res => res.json()).then(res => {
+            const memes = res.data.memes;
+            for (let i = memes.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * i);
+                const temp = memes[i];
+                memes[i] = memes[j];
+                memes[j] = temp;
             }
-        })
-    ;
-};
+            setMemes(memes);
+        });
+    }, []);
+
+    useEffect(() => {
+        if (memes.length) {
+            setCaptions(Array(memes[memeIndex].box_count).fill(''));
+        }
+    }, [memeIndex, memes]);
 
 
-
-return (
-    memes.length ?
-        <div className='container'>
-
-
-            <form onSubmit={generateMeme}>
-                {
-                    captions.map((c, index) => (
-                        <input onChange={(e) => updateCaption(e, index)} key={index} />
-
-                    ))
+    const updateCaption = (e, index) => {
+        const text = e.target.value || '';
+        setCaptions(
+            captions.map((box_count, i) => {
+                if (index === i) {
+                    return text;
+                } else {
+                    return box_count;
                 }
-                <li className='memeCaptions'>{captions[0]}</li>
-                <li className='memeCaptions'>{captions[1]}</li>
-                <li className='memeCaptions'>{captions[2]}</li>
-                <li className='memeCaptions'>{captions[3]}</li>
-                <li className='memeCaptions'>{captions[4]}</li>
-                <img src={memes[memeIndex].url} alt='meme' />
-                <button className='generateNewMeme'>Generate</button>
-                <button onClick={() => setMemeIndex(memeIndex + 1)} className='skipButton'>Refresh</button>
-            </form>
+            })
+        );
+    };
 
 
-        </div> : <></>
-)
+    return (
+        memes.length ?
+            <div className='container'>
+
+
+                <form onSubmit={generateMeme}>
+                    {
+                        captions.map((c, index) => (
+                            <input onChange={(e) => updateCaption(e, index)} key={index} required />
+                        ))
+                    }
+                    <img src={memes[memeIndex].url} alt='meme' />
+                    {/* {captions.map((inputText, caption) => {
+                        console.log(inputText)
+                        return <h1 className='caption' key={caption}>{inputText}</h1>
+                    })} */}
+                    <button className='generateButton'>Generate</button>
+                    <button onClick={() => setMemeIndex(memeIndex + 1)} className='skipButton'>Refresh</button>
+                </form>
+                {generatedMemes.length ?
+                    <div className='previewMeme'>
+                        <img src={generatedMemes} alt={generatedMemes} />
+                        <p><a href={generatedMemes}>{generatedMemes}</a></p>
+                    </div>
+                    : null
+                }
+            </div> : <> </>
+    )
 }
 
 export default MemeGenerator;
-
-
-
-            {/* <button onClick={{generateMeme}} className='generateNewMeme'>Generate</button>
-            <button onClick={() => setMemeIndex(memeIndex + 1)} className='skipButton'>Refresh</button>
-            {
-                captions.map((c, index) => (
-                    <input onChange={(e) => updateCaption(e, index)} key={index} />
-                ))
-            }
-            <li>{captions[0]}</li>
-            <li>{captions[1]}</li>
-            <li>{captions[2]}</li>
-            <li>{captions[3]}</li>
-            <li>{captions[4]}</li>
-            <img src={memes[memeIndex].url} alt='meme' />
-        </div> : <></> */}
-)
-}
-export default Play;

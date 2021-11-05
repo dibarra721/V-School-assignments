@@ -1,84 +1,76 @@
-import React from "react"
-import "./App.css"
+import React, { useState, useEffect } from "react";
 
- function Playdos() {
-    const [meme, setMeme] = React.useState({
-        topText: "",
-        bottomText: "",
-        randomImage: "http://i.imgflip.com/1bij.jpg" 
 
-        
-    })
-    const [allMemes, setAllMemes] = React.useState([])
+function Playdos() {
+    const [upperText, setUpperText] = useState("")
+    const [lowerText, setLowerText] = useState("")
+    const [allMemes, setAllMemes] = useState([])
+    const [meme, setMeme] = useState(null)
+    const [randomMeme, setRandomMeme] = useState();
 
-    const [captions, setCaptions] = React.useState([])
-    
-    React.useEffect(() => {
+    const refreshMeme = () => {
         fetch("https://api.imgflip.com/get_memes")
-            .then(res => res.json())
-            .then(data => setAllMemes(data.data.memes))
+            .then((response) => response.json())
+            .then((response) => setAllMemes(response.data.memes))
+            .catch()
+    };
+
+    useEffect(() => {
+        refreshMeme()
     }, [])
-    
 
-    
-    function getMemeImage() {
-        const randomNumber = Math.floor(Math.random() * allMemes.length)
-        const url = allMemes[randomNumber].url
-        setMeme(prevMeme => ({
-            ...prevMeme,
-            randomImage: url
-        }))
-        
+    const getRandomMeme = (event) => {
+        event.preventDefault()
+        const randomNum = Math.floor(Math.random() * Math.floor(allMemes.length));
+        setRandomMeme(allMemes[randomNum].url);
+    };
+   
+
+
+    const generateMeme = (e) => {
+        e.preventDefault();
+        setMeme(randomMeme)
+ const handleTop = (event) => {
+        setUpperText(event.target.value)
+    };
+    const handleBottom = (event) => {
+        setLowerText(event.target.value)
+    };
+
+        console.log(meme)
+
     }
-    
-    function handleChange(event) {
-        const {name, value} = event.target
-        setCaptions(prevCaptions => ({
-            ...prevCaptions,
-            [name]: value
-         
-        }))
-    }
-    
-
-
-
     return (
-        <main>
-            <div className="form">
-                <input 
-                    type="text"
-                    placeholder="Top text"
-                    className="form--input"
-                    name="topText"
-                    value={meme.topText}
-                    onChange={handleChange}
-                />
-                <input 
-                    type="text"
-                    placeholder="Bottom text"
-                    className="form--input"
-                    name="bottomText"
-                    value={meme.bottomText}
-                    onChange={handleChange}
-                />
-                <button 
-                    className="form--button"
-                    onClick={getMemeImage}
-                >
-                    Get a new meme image 🖼
-                </button>
-            </div>
 
-{/* <button onClick={} >Your Meme</button> */}
+        <div>
+            <form onSubmit={generateMeme} className="meme-form">
+                <input
 
+                    type="text"
+                    name="upperText"
+                    placeholder="top text"
+                    value={upperText}
+                    onChange={handleTop}
+                />
+                <input
+
+                    type="text"
+                    name="lowerText"
+                    placeholder="bottom text"
+                    value={lowerText}
+                    onChange={handleBottom}
+                />
+                <button onClick={getRandomMeme} >Refresh</button>
+                <button>Generate Meme</button>
+            </form>
             <div className="meme">
-                <img src={meme.randomImage} className="meme--image" />
-                <h2 className="meme--text top">{meme.topText}</h2>
-                <h2 className="meme--text bottom">{meme.bottomText}</h2>
+                <img src={randomMeme} alt='' />
+                <p></p>
+                <h2 className="top">{upperText}</h2>
+                <h2 className="bottom">{lowerText}</h2>
             </div>
-        </main>
-    )
-    }
+        </div>
+    );
+}
 
 export default Playdos;
