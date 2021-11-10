@@ -1,149 +1,109 @@
 import React, { useState, useEffect } from "react";
-import "./App.css"
-import EditMeme from "./EditMeme";
+import Meme from "./Meme";
 
 function MemeGenerator() {
-    const [newText, setNewText] = useState({
-        topText: "",
-        bottomText: "",
-        image:"",
-    })
-    const [randomImg, setRandomImg] = useState("http://i.imgflip.com/1bij.jpg")
     const [memes, setMemes] = useState([])
-    const [generatedMemes, setGeneratedMemes] = useState([{
-        topText: "",
-        bottomText: "",
-        image:"", 
-    }])
-    // const [memeIndex, setMemeIndex]= useState(0)
+    const [generatedMemes, setGeneratedMemes] = useState([{ data: '' }])
+    const [memeIndex, setMemeIndex] = useState(0);
+    const [captions, setCaptions] = useState([]);
+    const [generatedMeme, setGeneratedMeme] = useState([{
+        box_count: 0,
+        topText: '',
+        bottomText: '',
+        url: ''
+
+    }]);
 
 
-
-    useEffect(() => {
-        fetch("https://api.imgflip.com/get_memes")
-            .then(response => response.json())
-            .then(response => {
-                const [memes ] = response.data
-                setMemes([{...memes}]);
-            })
-    }, [])
-
-
-
-    function handleChange(event) {
-        const { name, value } = event.target
-
-        setNewText({
-            ...newText,
-            [name]: value
+    const generateMeme = (e) => {
+        e.preventDefault();
+        const currentMeme = memes[memeIndex];
+        const formData = new FormData();
+        formData.append('username', 'VschoolTesting');
+        formData.append('password', 'Testing1');
+        formData.append('template_id', currentMeme.id);
+        captions.map((c, index) => formData.append(`boxes[${index}][text]`, c));
+        console.log(generatedMemes)
+        fetch('https://api.imgflip.com/caption_image', {
+            method: 'POST',
+            body: formData
         })
-    }
+            .then(res => {
+                res.json().then(res => {
+                    setGeneratedMemes(prevGeneratedMemes => ([...prevGeneratedMemes,
+                    { data: res.data }]));
+                    console.log(res.data.url)
+                    // return generatedMemes
+                });
+            });
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        const randNum = Math.floor(Math.random() * memes.length)
-        const randMemeImg = memes[randNum].url
-       return  setRandomImg(randMemeImg)
-        
-    }
+        console.log(generatedMemes)
 
-const handleGenerator = (e ) => {
-    e.preventDefault()
+    };
+    useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes").then(res => res.json()).then(res => {
+            const memes = res.data.memes;
+            for (let i = memes.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * i);
+                const temp = memes[i];
+                memes[i] = memes[j];
+                memes[j] = temp;
+            }
+            setMemes(memes);
+        });
+    }, []);
+    useEffect(() => {
+        if (memes.length) {
+            setCaptions(Array(memes[memeIndex].box_count).fill(''));
+            console.log(memeIndex)
+        }
+    }, [memeIndex, memes]);
+    const updateCaption = (e, index) => {
+        const text = e.target.value || '';
+        setCaptions(
+            captions.map((box_count, i) => {
+                if (index === i) {
+                    return text;
+                } else {
+                    return box_count;
+                }
+            })
+        );
+    };
+    console.log(generatedMemes)
+    const mappedMemes = generatedMemes.map(meme =>
 
-
-setGeneratedMemes(prevGeneratedMemes => [
-    ...prevGeneratedMemes,{
-     topText:newText.topText,
-    bottomText:newText.bottomText,
-    image:randomImg,
-}])
-
-
- console.log (generatedMemes)
-   
-}
-
-    
-
-    return (
-
-        
-        <><div>
-        <h2>Create your meme</h2>
-                
-                <form className="memeForm" onSubmit={handleGenerator}>
-                <input
-                    type="text"
-                    name="topText"
-                    placeholder="Top Text"
-                    value={newText.topText}
-                    onChange={handleChange} />
-                <input
-                    type="text"
-
-                    name="bottomText"
-                    placeholder="Bottom Text"
-                    value={newText.bottomText}
-                    onChange={handleChange} />
-
-                <button onClick={handleSubmit}>Refresh Generator</button>
-                <button type="submit">Generate your Meme </button>
-            </form>
-
-
-
-
-            <h2>List of Memes</h2>
-
-            {memes}
-
-            <img className="memeImg" src={randomImg} alt="" />
-    <h2 className="top">{generatedMemes.topText}</h2>
-    <h2 className="bottom">{generatedMemes.bottomText}</h2> */
-
-
-
- {/* {mappedMeme.length ? mappedMeme: null} */}
-
-
-
- {/* const mappedMeme = 
-    generatedMemes.map((generatedMemes,index) => 
-    <EditMeme 
-    key={generatedMemes+index} 
-    meme={generatedMemes} 
-    img={randomImg}
-    //  delete={handleChange}
-     edit={handleChange}
-     
-     
-     />) */}
-
-        </div>
-        
-        
-        <div className="meme">
-
-
-{/* 
-                {generatedMemes.topText}
-                {generatedMemes.bottomText}
-                <img className="memeImg" src={randomImg} alt={randomImg} />, */}
-
-{/* 
-
-
-/* {* 
-                <img className="memeImg" src={randomImg} alt="" />
-    <h2 className="top">{generatedMemes.topText}</h2>
-    <h2 className="bottom">{generatedMemes.bottomText}</h2> */}
-
-
-            </div></>  
-
+        <Meme url={meme.data.url} />
 
     )
+
+    return (
+        memes.length ?
+            <div className='container'>
+                <form onSubmit={generateMeme}>
+                    {
+                        captions.map((c, index) => (
+                            <input onChange={(e) => updateCaption(e, index)} key={index} required />
+                        ))
+
+                    }
+                    <img src={memes[memeIndex].url} alt='meme' />
+
+                    <button className='generateButton'>Generate</button>
+                    <button onClick={() => setMemeIndex(memeIndex + 1)} className='skipButton'>Refresh</button>
+                </form>
+
+                <div className='previewMeme'>
+                    <h1>Meme Preview</h1>
+                    {
+                        mappedMemes
+                    }
+                </div>
+
+            </div> :
+            <>
+                <h2>Memes Will be shown here!</h2>
+            </>
+    )
 }
-
-
 export default MemeGenerator;
