@@ -4,18 +4,29 @@ body{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+
+/* .container{
+background-color: burlywood;
+height: 800px;
+width: 500px;
+border: red;
+margin: auto;
+} */
+
+
 .results{
+
     background-color: red;
     color: white;
     height: fit-content;
-    width: fit-content;
+    width: 400px;
     list-style: none;
-    display: flex;
-    border: solid black 3px;
+    display: inline-flex;
+    border: solid black 1px;
     border-radius: 1rem;
-    width: 700px;
     margin: auto;
-    height: fit-content;
+   
+    
 }
 
 .App{

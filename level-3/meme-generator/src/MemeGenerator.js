@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Meme from './Meme';
+import './App.css'
 
 const MemeGenerator = () => {
     const [memes, setMemes] = useState([])
@@ -14,8 +15,8 @@ const MemeGenerator = () => {
     }
     const editMeme = (id) => {
         setGeneratedMemes(
-            prevGeneratedMemes => prevGeneratedMemes.updateCaption()
-        )
+            prevGeneratedMemes => prevGeneratedMemes.map (meme => meme.page_url === id ? return meme))
+        
     }
 
     const generateMeme = (e) => {

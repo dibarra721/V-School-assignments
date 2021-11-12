@@ -64,6 +64,7 @@ render () {
     const badgeListComponent = this.state.allBadge.map((name) => {
     
         return (
+            
             <div className="results">
             <li>
             First Name:{name.firstName}<br/>
@@ -75,6 +76,7 @@ render () {
             About:{name.about}<br/>
           </li>
         </div>
+        
         )
     })
 
@@ -157,18 +159,21 @@ render () {
             <br/>
             <button >Submit</button>
         </form>
+
+
+        <div className="container">
 <div className="results">
-        <h4>{this.state.firstName}<br/>
+        {/* <h4>{this.state.firstName}<br/>
         {this.state.lastName}<br/>
         {this.state.email}<br/>
         {this.state.phone}<br/>
         {this.state.favoriteFood}<br/>
         {this.state.placeOfBirth}<br/>
-        {this.state.about}<br/></h4>
+        {this.state.about}<br/></h4> */}
 
         {badgeListComponent}
 </div>
-    
+    </div>
     </div>
 
     )
