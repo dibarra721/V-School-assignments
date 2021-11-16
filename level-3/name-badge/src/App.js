@@ -83,7 +83,7 @@ render () {
     return (
     <div className="App">
         <form className="form" onSubmit={this.handleSubmit}>
-           First Name:
+           First Name:  
             <input
             placeholder="first name"
             minLength={"3"}
@@ -170,6 +170,7 @@ render () {
         {this.state.favoriteFood}<br/>
         {this.state.placeOfBirth}<br/>
         {this.state.about}<br/></h4> */}
+<h1>Name Badges Displayed Below </h1>
 
         {badgeListComponent}
 </div>

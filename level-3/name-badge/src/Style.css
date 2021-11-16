@@ -1,6 +1,6 @@
 body{
-    color:#1f4590;
-    background-color: blanchedalmond;
+    color:#edf2f4;
+    background-color: #8d99ae;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
@@ -15,15 +15,10 @@ margin: auto;
 
 
 .results{
-
-    background-color: red;
-    color: white;
-    height: fit-content;
-    width: 400px;
-    list-style: none;
-    display: inline-flex;
-    border: solid black 1px;
-    border-radius: 1rem;
+  display: grid;
+   
+     height: fit-content;
+    width: fit-content;
     margin: auto;
    
     
@@ -34,24 +29,44 @@ margin: auto;
 }
 
 form {
+  background-color: #ef233c;
     display: inline-flexbox;
     padding-left: 10px;
-    border: 2px solid black;
+    padding-right: 10px;;
+    border: 2px solid #d90429;
     width: 50vw;
     height: 40vh;
     border-radius: 15px;
     margin: auto;
+    color: #edf2f4;
     margin-top: 5vh;
   }
 
+  input{
+  
+    margin-left: 10px;
+    margin-bottom: 8px;
+
+  }
+
   button {
+    margin-top: 5px;
+    padding-left: 10px;
     width: fit-content;
     background-color:#1f4590;
     color:#f0b666;
   }
 
   li {
-    width: 200px;
+    padding-top: 5px;
+    border-radius: 1rem;
+padding-left: 8px;
+    width: 500px;
+    height: fit-content;
     list-style: none;
-    display: flex;
+    columns: 1fr;
+    grid-row: auto;
+    background-color: #2b2d42;
+    margin-bottom: 10px;
+
   }
