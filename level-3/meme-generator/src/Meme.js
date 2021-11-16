@@ -1,18 +1,55 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Card } from 'react-bootstrap'
+import './App.css'
 function Meme(props) {
+    const [showEdit, setShowEdit] = useState(false)
+    const [captions, setCaptions] = useState([])
 
+    const updateCaption = (e, index) => {
+        console.log("Current value: ", e.target.value)
+        const { value } = e.target
+        setCaptions(prevCaptions => {
+            return prevCaptions.map((text, i) => {
+                if (index === i)
+                    return value
+                else
+                    return text
+            })
+        })
+    };
+    useEffect(() => {
+        setCaptions(Array(props.boxCount).fill(''));
+    }, [props.boxCount])
     return props.url ?
-
-        //get same image as well as the form to match box_count
-        //manage own version of caption state, need to target the specific image 
         <>
+            <Card>
+                <div className="text-center" >
+                    <div style={{ display: 'inline-block' }}>
+                        <img src={props.url} alt='oops Its Broken' />
+                        <button style={{ margin: 'auto', justifyContent: 'center', backgroundColor: '#fdf0d5', color: '#c1121f' }} onClick={
+                            () => setShowEdit(prevShowEdit => !prevShowEdit)
+                        }>EDIT MEME</button>
+                        <button style={{ margin: 'auto', display: 'block', backgroundColor: '#c1121f', color: '#fdf0d5' }} onClick={() => props.handleDelete(props.rId)} >DELETE THIS MEME</button>
+                        {showEdit &&
+                            <form style={{ display: 'block' }}>
+                                {
+                                    captions.map((c, index) => (
+                                        <input value={c} onChange={(e) => updateCaption(e, index)} key={index}
+                                        />
+                                    ))
+                                }
+                                <button style={{ backgroundColor: '#e76f51', color: '#fefae0' }} onClick={(e) => {
+                                    e.preventDefault()
+                                    props.handleEdit(props.id, props.memeId, captions)
+                                }
 
-            <div>
-                <img src={props.url} alt='oops Its Broken' />
-                <button style={{ marginTop: '10px', backgroundColor: '#780000' }}>UPDATE THIS MEME</button>
-                {/* filter for delete */}
-                <button onClick={() => props.handleDelete(props.rId)} style={{ backgroundColor: '#FDF0D5', color: '#780000' }}>DELETE THIS MEME</button>
-            </div>
+
+                                }>Submit Changes</button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </Card>
         </>
         : null
 }
