@@ -29,12 +29,12 @@ function Meme(props) {
                         <button style={{ margin: 'auto', justifyContent: 'center', backgroundColor: '#fdf0d5', color: '#c1121f' }} onClick={
                             () => setShowEdit(prevShowEdit => !prevShowEdit)
                         }>EDIT MEME</button>
-                        <button style={{ margin: 'auto', display: 'block', backgroundColor: '#c1121f', color: '#fdf0d5' }} onClick={() => props.handleDelete(props.rId)} >DELETE THIS MEME</button>
+                        <button style={{ margin: 'auto', backgroundColor: '#c1121f', color: '#fdf0d5' }} onClick={() => props.handleDelete(props.rId)} >DELETE THIS MEME</button>
                         {showEdit &&
-                            <form style={{ display: 'block' }}>
+                            <form>
                                 {
                                     captions.map((c, index) => (
-                                        <input value={c} onChange={(e) => updateCaption(e, index)} key={index}
+                                        <input className='renderInputs' value={c} onChange={(e) => updateCaption(e, index)} key={index}
                                         />
                                     ))
                                 }
