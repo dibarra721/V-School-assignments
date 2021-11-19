@@ -1,35 +1,31 @@
-import React, { Component } from "react";
+import React, { useState, useEffect} from "react";
 import "./style.css";
+import TheList from './TheList.js'
 
-class HitList extends Component {
-  state = {
-    hitList: []
-  }
 
-  componentDidMount() {
+function HitList () {
+
+  const [hitList, SetHitList] =useState([])
+
+useEffect(()  => {
     fetch(
       "https://raw.githubusercontent.com/VSchool/vschool-api/master/static/hitlist.json"
     )
       .then((response) => response.json())
-      .then((data) => {
-        this.setState({
-          hitList: data
-        });
-        console.log(data)
+      .then(data => {
+        SetHitList(() => [...data])
+    
       })
-  }
+  }, [])
 
-  render() {
-    const list = this.state.hitList.map((name, index) => {
-      return (
-        
-        <div className="hitList" key={index}>
-          <p className="names">Name:{name.name}</p>
-          <img className="images" src={name.image} alt=""></img>
-        </div>
-        
-      )
-    })
+
+
+  const list = hitList.map((name, index) => 
+  <TheList
+  key={index}
+  name={name}
+/>)
+      
   
     return (
     
@@ -38,12 +34,13 @@ class HitList extends Component {
         <h1>Don Carleone's Hit List</h1>
       </header>
 
-          <div className="nameContainer">{list}</div>
+          <div className="nameContainer">
+            {list}
+            </div>
           
           </>
         
     );
-  }
-}
-
+ 
+          }
 export default HitList
