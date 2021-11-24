@@ -1,0 +1,52 @@
+body{
+  background-color: #ffc8dd;
+  color:#cdb4db,
+}
+
+.nameContainer{
+  margin: auto;
+  border: #a2d2ff, 2px;
+}
+
+.box{
+  border-style: solid;
+  border-color: #a2d2ff;
+  border-radius: 6px;
+  background-color:#ffafcc ;
+  width: 300px;
+  height: fit-content;
+  margin-left: 5px;
+  margin: auto;
+}
+
+form{
+  margin-left: 5px;
+  padding-left: 6px;
+  border: #a2d2ff, 2px;
+
+}
+
+.nameBadge{
+  border: #a2d2ff, 2px;
+}
+
+button{
+  background-color: #bde0fe;
+  color: #ffafcc;
+
+}
+
+.nameContainer{
+  list-style: none;
+  color: #cdb4db;
+  width: 400px;
+  border: solid;
+  border-radius: 6px;
+ border-color:#ffafcc;
+ background-color:#bde0fe ;
+
+}
+
+h1{
+  color:#cdb4db;
+}
