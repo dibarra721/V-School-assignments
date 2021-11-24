@@ -21,7 +21,7 @@ export default function Main() {
     <Route path="/services" element={<Services />}render={() => <Services/>} />
 
     </Routes>
-      <h3>here is some main text</h3>
+     
       </div>
       
     )
