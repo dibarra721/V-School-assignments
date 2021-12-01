@@ -66,10 +66,11 @@ return (
     zipcode,
     weather,
     getAstro,
-    getWeather
+    getWeather,
+    setZipCode,
 }}>
     {props.children}
-    
+
 </Context.Provider>
 
 

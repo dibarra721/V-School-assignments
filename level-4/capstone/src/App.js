@@ -1,7 +1,12 @@
 import './App.css';
 import React from "react"
 import Form from './Form';
-import { ContextProvider } from './Context';
+// import { Link,Routes,Route} from "react-router-dom"
+// import Moon from "./Moon"
+import "./App.css"
+// import Horoscope from "./Horoscope"
+// import { ContextProvider } from './Context';
+// import NavBar from './NavBar';
 
 export default function App() {
   return (
@@ -9,14 +14,10 @@ export default function App() {
 <div>
 
 
-<ContextProvider>
-
-
-
-    <h2>THis is a test this will be where my routes are Hello WOrld </h2>
+    <h2>THis is a test this will be where Nav Will Be </h2>
+ 
 <Form/>
-  
-  </ContextProvider>
+ 
     </div>
   )
 }

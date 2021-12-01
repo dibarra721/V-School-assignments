@@ -35,6 +35,48 @@ li a:hover {
 
 
 .astroResults{
-  color: #ffd60a;
+  margin-left:45%;
+  color: #d71db2;
+  background-color:#000814 ;
+  border-radius: 10px;
+  margin-left: 5px;
+  text-align: center;
+  width: 300px;
 }
 
+form{
+  margin-left: 40%;
+  background-color:#ffc300 ;
+  color:000814 ;
+  height: 100px;
+  width: 300px;
+  border-radius: 2px;
+}
+
+input{
+  margin-left:5px;
+  margin-top: 10px;
+  background-color: antiquewhite;
+
+}
+
+h2{
+  color: #ffd60a;
+  text-align: center;
+}
+
+h3{
+  background-color:#d71db2;
+  color: #4a38bc;
+}
+
+.weatherResults{
+  margin-left:45%;
+  color: #d71db2;
+  background-color:#4a38bc ;
+  border-radius: 10px;
+  margin-left: 5px;
+  text-align: center;
+  width: 300px;
+
+}

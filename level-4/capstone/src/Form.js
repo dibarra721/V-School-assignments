@@ -17,23 +17,23 @@ function Form() {
                   type="number"
                   value={context.zipcode}
                   onChange={(e) => context.setZipCode(e.target.value)}
-                  placeholder="Enter Zip" />
-              <button oClick={context.getWeather}>Get Your Weather</button>
-              <button oClick={context.getAstro}>Get Your Astronomy</button>
+                  placeholder="Enter Zip Code" />
+              <button onClick={context.getWeather}>Get Your Weather</button>
+              <button onClick={context.getAstro}>Get Your Astronomy</button>
           </form>
       </div>
 
 
       <div className="astroResults">
-      {astroData.status === 200 ?
+      {context.astroData.status === 200 ?
 
 <div className='astroResults'>
 <h3>Astronomy Data for Today</h3><br/>
-    <p className="temp">Moonrise: {astroData.astronomy.astro.moonrise}</p>
-    <p className="temp">Sunrise: {astroData.astronomy.astro.sunrise}</p>
-    <p className="temp">Sunset: {astroData.astronomy.astro.sunset}</p>
-    <p className="temp">Moonset: {astroData.astronomy.astro.moonset}</p>
-    <p className="temp">Moonphase: {astroData.astronomy.astro.moon_phase}</p>
+    <p className="temp">Moonrise: {context.astroData.astronomy.astro.moonrise}</p>
+    <p className="temp">Sunrise: {context.astroData.astronomy.astro.sunrise}</p>
+    <p className="temp">Sunset: {context.astroData.astronomy.astro.sunset}</p>
+    <p className="temp">Moonset: {context.astroData.astronomy.astro.moonset}</p>
+    <p className="temp">Moonphase: {context.astroData.astronomy.astro.moon_phase}</p>
 
 </div>
 : null
@@ -45,13 +45,13 @@ function Form() {
 
 <div className="weatherResults">
 
-{weather.status === 200 ?
+{context.weather.status === 200 ?
 
 <div className='weatherResults'>
-<h3>Weather Data for Today</h3><br/>
-    <p className="temp">Temperature: {weather.current.temp_f}</p>
-    <p className="temp">Icon: {weather.current.condition.icon}</p>
-
+<h4>Weather Data for Today</h4><br/>
+    <p className="temp">Temperature: {context.weather.current.temp_f}</p>
+    <p className="temp">Icon: {context.weather.current.condition.icon}</p>
+<br/>
 
 </div>
 : null
