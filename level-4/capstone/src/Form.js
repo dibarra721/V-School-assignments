@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { Context } from "./Context";
+// import './src/Images'
 
 function Form() {
   // const [astroData, SetAstroData]= useState({})
   // const [weather, SetWeather] = useState ({})
   // const [zipcode, setZipCode]=useState("")
+  document.body.style.backgroundColor = "#001d3d";
 
   const context = useContext(Context);
 
@@ -18,6 +20,7 @@ function Form() {
                   value={context.zipcode}
                   onChange={(e) => context.setZipCode(e.target.value)}
                   placeholder="Enter Zip Code" />
+                  <br/>
               <button onClick={context.getWeather}>Get Your Weather</button>
               <button onClick={context.getAstro}>Get Your Astronomy</button>
           </form>
@@ -50,7 +53,12 @@ function Form() {
 <div className='weatherResults'>
 <h4>Weather Data for Today</h4><br/>
     <p className="temp">Temperature: {context.weather.current.temp_f}</p>
-    <p className="temp">Icon: {context.weather.current.condition.icon}</p>
+    {/* <p className="temp">Icon: <img 
+    alt=""
+    src= {{context.weather.current.condition.${icon}}
+    "//cdn.weatherapi.com/weather/Images/day/116.png"
+    
+    </p> */}
 <br/>
 
 </div>

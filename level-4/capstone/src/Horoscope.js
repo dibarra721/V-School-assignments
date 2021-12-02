@@ -1,7 +1,8 @@
 import React, {useState} from "react"
-import './Horoscope.css'
+// import './Horoscope.css'
 
 export default function Horoscope(){
+  document.body.style.backgroundColor = "#d71db2";
 
    
     const [astro, setAstro]=useState({

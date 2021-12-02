@@ -1,10 +1,12 @@
-import React, { useContext} from "react"
-import { Context } from "./Context";
+// import React, { useContext} from "react"
+// import { Context } from "./Context";
+import React from "react"
 
 export default function Moon(){
     // const [astroData, setAstro]=useState({})
 
-    const context = useContext(Context);
+    // const context = useContext(Context);
+    document.body.style.backgroundColor = "#4a38bc";
 
 
 return(

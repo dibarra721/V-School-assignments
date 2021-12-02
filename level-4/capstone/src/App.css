@@ -1,6 +1,7 @@
 body{
-  background-color:#001d3d;
-  color:#ffd60a,
+  color:#ffd60a;
+  margin:0px;
+  padding-top: 0px;
 
 }
 .results{
@@ -8,12 +9,14 @@ body{
   font-size: 36px;
 }
 
+
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin-top: 0px;
+  padding-top: 0;
   overflow: hidden;
   background-color: #000814;
+  font-family: 'M PLUS 1 Code', sans-serif;
 }
 
 /* li {
@@ -21,8 +24,9 @@ ul {
 } */
 
 li a {
+ 
   display: block;
-  color: white;
+  color: #d71db2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -30,7 +34,7 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #D6D2D2;
+  background-color: #ffc300;
 }
 
 
@@ -51,12 +55,15 @@ form{
   height: 100px;
   width: 300px;
   border-radius: 2px;
+  box-shadow: 5px 5px 4px 2px #d71db2;
 }
 
 input{
-  margin-left:5px;
+  margin-left:70px;
   margin-top: 10px;
-  background-color: antiquewhite;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 2px;
 
 }
 
@@ -78,5 +85,13 @@ h3{
   margin-left: 5px;
   text-align: center;
   width: 300px;
+
+}
+
+button{
+  background-color: #d71db2;
+  border-radius: 5px;
+  color: #ffd60a;
+  margin-left: 15px;
 
 }
