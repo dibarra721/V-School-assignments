@@ -1,8 +1,8 @@
-import React, {useState} from "react"
+import React, { useContext} from "react"
 import { Context } from "./Context";
 
 export default function Moon(){
-    const [astroData, setAstro]=useState({})
+    // const [astroData, setAstro]=useState({})
 
     const context = useContext(Context);
 
@@ -11,7 +11,7 @@ return(
 <>
  <div className="moonDiv">
 
-        <img src="https://images.unsplash.com/photo-1535332371349-a5d229f49cb5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80" />
+        <img alt="" src="https://images.unsplash.com/photo-1535332371349-a5d229f49cb5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80" />
         <br />
         <p>The Moon is earth's oldest temple holding the potency of countless prayers since the dawn of time..
             a bells whose ringing brings you into the field of the Mother, where body and soul quietly drink.<br />
@@ -25,7 +25,7 @@ return(
 
 <h2>Todays Moon Phase</h2>
 
-            {context.astroData.astronomy.astro.moon_phase}
+            {/* {context.astroData.astronomy.astro.moon_phase} */}
 
 
             <h6>Read more about the Moon Phases down Below</h6><br/>
