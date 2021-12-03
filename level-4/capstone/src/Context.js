@@ -16,19 +16,20 @@ const getWeather =(e) => {
       fetch(`${URL}&q=${zipcode}`,
     )
     .then ((response)=> {
-      // SetResponse([response])
       if (response.ok) {
         console.log(response.status)
-        return response.status.json();
+        return response.json();
     }else {
       if (response.status === 404)
       return alert ("Not sure what happened, try again")
     }
     })
     .then ((data)=> {
-      SetWeather([data]);
+      SetWeather(data);
       SetViewW(true)
-      console.log(weather)
+      console.log(data)
+      console.log(data.current.condition.icon)
+
     })
   }
   

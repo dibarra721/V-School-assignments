@@ -63,11 +63,14 @@ function Form() {
           <div className="weatherResults">
             <h4>Weather Data for Today</h4>
             <br />
+            <p className="location">
+              Temperature: {context.weather.current.temp_f}
+            </p>
             <p className="temp">
               Temperature: {context.weather.current.temp_f}
             </p>
-            <p className="temp" /> Icon:
-            <img alt="whoops" src={context.condition.icon}/>
+            <p className="icon" > Icon:</p>
+            <img alt="whoops" src={context.weather.current.condition.icon}/>
           
             <br />
           </div>
