@@ -6,6 +6,8 @@ function ContextProvider(props) {
 const [astroData, SetAstroData]= useState({})
 const [weather, SetWeather] = useState ({})
 const [zipcode, setZipCode]=useState("")
+const [viewA, SetViewA]=useState(false)
+const [viewW, SetViewW]=useState(false)
 
 
 const getWeather =(e) => {
@@ -14,9 +16,10 @@ const getWeather =(e) => {
       fetch(`${URL}&q=${zipcode}`,
     )
     .then ((response)=> {
+      // SetResponse([response])
       if (response.ok) {
         console.log(response.status)
-        return response.json();
+        return response.status.json();
     }else {
       if (response.status === 404)
       return alert ("Not sure what happened, try again")
@@ -24,6 +27,7 @@ const getWeather =(e) => {
     })
     .then ((data)=> {
       SetWeather([data]);
+      SetViewW(true)
       console.log(weather)
     })
   }
@@ -55,6 +59,7 @@ const getWeather =(e) => {
     })
     .then ((data)=> {
       SetAstroData(data);
+      SetViewA(true)
       console.log(data)
     })
   }
@@ -63,6 +68,8 @@ return (
     <div>
 <Context.Provider value={{
     astroData,
+    viewA,
+    viewW,
     zipcode,
     weather,
     getAstro,
