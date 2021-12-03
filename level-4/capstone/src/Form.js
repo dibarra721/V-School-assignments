@@ -64,7 +64,7 @@ function Form() {
             <h4>Weather Data for Today</h4>
             <br />
             <p className="location">
-              Temperature: {context.weather.current.temp_f}
+              Location: {context.weather.location.name}
             </p>
             <p className="temp">
               Temperature: {context.weather.current.temp_f}

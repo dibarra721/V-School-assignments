@@ -16,7 +16,9 @@ ul {
   padding-top: 0;
   overflow: hidden;
   background-color: #000814;
+  background-image: url("https://i.ibb.co/d2qdjgB/PS-Overlay-Night-Sky-2.jpg");
   font-family: 'M PLUS 1 Code', sans-serif;
+  font-weight: 600;
 }
 
 /* li {
@@ -96,3 +98,5 @@ button{
   margin-left: 15px;
 
 }
+
+
