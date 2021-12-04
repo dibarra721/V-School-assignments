@@ -33,13 +33,7 @@ const getWeather =(e) => {
     })
   }
   
-//   In Case I can't use context on the Form *
-  // function handleChange(e){
-  //   const {name, value} = e.target
-  //       setZipCode({
-  //           [name]: value
-  //       })
-  // }
+
   const getAstro=(e) => {
     e.preventDefault()
     const URL= "http://api.weatherapi.com/v1/astronomy.json?key=63c946476ed74b1489f174418212611"
@@ -61,6 +55,7 @@ const getWeather =(e) => {
     .then ((data)=> {
       SetAstroData(data);
       SetViewA(true)
+      setZipCode("")
       console.log(data)
     })
   }

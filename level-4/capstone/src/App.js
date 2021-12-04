@@ -9,18 +9,20 @@ import NavBar from "./NavBar";
 
 export default function App() {
 
-  const color= {backgroundColor:'#d71db2'}
   return (
         
     <><NavBar />
  <>
       <Routes>
+
         <Route path="/form" element={<Form />} render={() => <Form />} />
         <Route path="/moon" element={<Moon />} render={() => <Moon />} />
-        <Route style={color} path="/horoscope" element={<Horoscope />} render={() => <Horoscope />} />
+        <Route path="/horoscope" element={<Horoscope />} render={() => <Horoscope />} />
+        <Route path="/"  element={<Form />}  render={() => <Form />}/>
+
       </Routes>
 
-
+{/* <h2>Hello Welcome to this Site. You can grab your weather and astronomy. You can also grab your horoscope. Click from one of the options from the Navigtion Bar.</h2> */}
     </></>
     
 
