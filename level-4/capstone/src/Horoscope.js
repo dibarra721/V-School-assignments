@@ -41,8 +41,8 @@ export default function Horoscope(){
           onChange={ (e) => SetSign(e.target.value)}
           value={sign}
           placeholder='Enter Sign' />
-          <button className="submitButton" onClick={handleSubmit}>Get Your Horoscope</button>
-         </form> 
+          <center><button className="submitButton" onClick={handleSubmit}>Get Your Horoscope</button>
+        </center> </form> 
       </div>
 
         {view === true ? (

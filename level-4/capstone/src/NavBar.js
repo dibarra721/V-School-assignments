@@ -11,6 +11,7 @@ export default function NavBar(){
 
  <nav>
   <ul>
+  <li><Link to="/">Home</Link></li>
   <li><Link to="/form">Weather and Astronomy</Link></li>
   <li><Link to="/moon">Moon Phase</Link></li>
   <li><Link to="/horoscope">Horoscope</Link></li>

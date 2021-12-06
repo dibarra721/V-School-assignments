@@ -1,21 +1,40 @@
 body{
   color:#ffd60a;
   margin:0px;
+  margin-top: 0px;
   padding-top: 0px;
   font-family: 'Lora', serif;
-
-
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+ 
 }
-/* .results{
-  color: black;
-  font-size: 36px;
-} */
+h4{
+  background-color: #d71db2;
+  padding-bottom:9px ;
+}
 
+h7{
+  font-family: 'Lora', serif;
+  font-style: italic;
+  text-align: center;
+  margin-left: 16px;
+  padding-left: 10px;
+}
+.moonDiv{
+  align-items: center;
+  margin-left: 10px;
+}
 
+img{
+
+  margin-left: 40%;
+}
 ul {
   list-style-type: none;
   margin-top: 0px;
   padding-top: 0;
+  padding-left:0px;
   overflow: hidden;
   background-color: #000814;
   background-image: url("https://i.ibb.co/d2qdjgB/PS-Overlay-Night-Sky-2.jpg");
@@ -23,9 +42,6 @@ ul {
   font-weight: 600;
 }
 
-/* li {
-  /* float: left; 
-} */
 
 li a {
  
@@ -54,7 +70,10 @@ li a:hover {
 }
 
 form{
-  margin-left: 40%;
+  align-self: center;
+  margin: auto;
+  margin-bottom: 10px;
+  align-content: center;
   background-color:#ffc300 ;
   color:000814 ;
   height: 100px;
@@ -65,8 +84,9 @@ form{
 }
 
 input{
-  margin-left:70px;
+  margin-left:77px;
   margin-top: 10px;
+  align-items: center;
   background-color: white;
   margin-bottom: 10px;
   border-radius: 2px;
@@ -82,10 +102,21 @@ h3{
   background-color:#d71db2;
   color: #4a38bc;
 }
+.weatherBox{
+  margin: 10%;
+  margin-left: 40%;
+}
+
+/* .container { 
+  margin: 20%;
+  margin-left: 40%;
+} */
 
 .weatherResults{
-  margin-left:45%;
-  color: #d71db2;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffc300;
   background-color:#4a38bc ;
   border-radius: 10px;
   margin-left: 5px;
@@ -125,4 +156,29 @@ h6{
   background-color:#000814 ;
   color: #d71db2;
   text-align: center;
+  width: fit-content;
+ margin: auto;
+}
+
+
+footer{
+  width: 100%;
+  background-color:#000814; 
+  color: #ffc300;
+  margin-top: auto;
+  text-align: center;
+  height: 68px;
+
+}
+
+h1{
+  text-align: center;
+}
+
+
+#more {display: none;}
+
+.myBtn{
+  align-items: center;
+  margin-left: 40%;
 }

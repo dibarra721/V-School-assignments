@@ -2,15 +2,11 @@ import React, { useContext } from "react";
 import { Context } from "./Context";
 
 function Form() {
-  // const [astroData, SetAstroData]= useState({})
-  // const [weather, SetWeather] = useState ({})
-  // const [zipcode, setZipCode]=useState("")
+
   document.body.style.backgroundColor = "#001d3d";
 
   const context = useContext(Context);
   
-//  var iconCode= context.weather.current.condition.icon
-
   return (
     <>
       <div className="form">
@@ -56,9 +52,8 @@ function Form() {
          : null}
 
       </div>
-<br/>
-      <div className="weatherResults">
-        <h1>ATest</h1>
+
+      <div className="weatherBox">
         {context.viewW === true ? (
           <div className="weatherResults">
             <h4>Weather Data for Today</h4>
@@ -67,16 +62,18 @@ function Form() {
               Location: {context.weather.location.name}
             </p>
             <p className="temp">
-              Temperature: {context.weather.current.temp_f}
+              Temperature: {context.weather.current.temp_f}°F
             </p>
             <p className="icon" > Icon:</p>
             <img alt="whoops" src={context.weather.current.condition.icon}/>
-          
+
             <br />
           </div>
         ) : null}
       </div>
+
+      
     </>
-  );
+  )
 }
-export default Form;
+export default Form
