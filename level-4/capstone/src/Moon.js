@@ -38,11 +38,11 @@ return(
             a bells whose ringing <br/> brings you into the field of the Mother, where body and soul quietly drink.<br />
            -Dana Gerhardt</center> 
         </h6>
-        <h1>The Lunar Month</h1><br />
+        <h1>The Lunar Month</h1>
         <center>
-        <h5>The moon appears to change shape in the sky,throughout the month.In fact what is happening is 
+        <h2>The moon appears to change shape in the sky,throughout the month.In fact what is happening is 
             the moon is changing its position in relation to the Sun and Earth. the angles between the Moon  and the Sun as the Moon orbits around the 
-            Earth causes different amounts of the Moon to be illuminated from our point here on Earth. The Moon has a 29 1/2- day cycle.</h5>
+            Earth causes different amounts of the Moon to be illuminated from our point here on Earth. The Moon has a 29 1/2- day cycle.</h2>
             </center>
 
 {context.viewM === true?

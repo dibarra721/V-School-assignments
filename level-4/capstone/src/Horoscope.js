@@ -47,7 +47,7 @@ export default function Horoscope(){
 
         {view === true ? (
       <div className='results'>
-        <h6> Your horoscope for {astro.json.current_date}</h6>
+        <h2> Your horoscope for {astro.json.current_date}</h2>
     
     <p className="temp">Description: {astro.json.description}</p>
     <p className="temp">Color: {astro.json.color}</p>
@@ -60,8 +60,7 @@ export default function Horoscope(){
         ) : null}
     
         
-          {/* {weather.moon_phase} */}
-        
+      
         
         </div>
     )
