@@ -56,7 +56,6 @@ const getWeather =(e) => {
       if (response.status === 400)
       window.location.reload();
       return alert ("Please make sure Zip Code is correct. Page Will Refresh")
-      SetViewA(false)
     }
     })
     .then ((data)=> {

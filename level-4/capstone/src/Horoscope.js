@@ -29,7 +29,7 @@ export default function Horoscope(){
     return (
       <div className="intel">
         <center>
-        <img src="https://i.ibb.co/z7Mhj5R/toppng-com-astrology-wheel-constellations-astrology-wheel-800x796.png" alt="toppng-com-astrology-wheel-constellations-astrology-wheel-800x796" border="0" className="center"/>
+        <img src="https://i.ibb.co/z7Mhj5R/toppng-com-astrology-wheel-constellations-astrology-wheel-800x796.png" alt="astrology-wheel" border="0" className="center"/>
         </center> 
 
       <center><h6> What Are the Zodiac Sign Dates?</h6>

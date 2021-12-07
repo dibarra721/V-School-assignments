@@ -30,7 +30,9 @@ export default function Moon(){
 return(
 
  <div className="moonDiv">
-        <img id="img" alt="" src="https://images.unsplash.com/photo-1535332371349-a5d229f49cb5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80" height={350} width={250}  />
+   <center>
+        <img className="img" alt="moonImg" src="https://i.ibb.co/fCJNbHg/Smallmoondd.png" />
+        </center>
         <br />
         <h6><center>The Moon is earth's oldest temple holding the potency of countless prayers since the dawn of time..
             a bells whose ringing <br/> brings you into the field of the Mother, where body and soul quietly drink.<br />
