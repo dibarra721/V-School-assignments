@@ -12,23 +12,25 @@ function Form() {
       <div className="form">
         <h2>Enter your Zip Code to get Weather or Astronomy Information</h2>
 
-        <form>
+        <form onSubmit={context.getWeather} >
           <input
             type="number"
             value={context.zipcode}
             onChange={(e) => context.setZipCode(e.target.value)}
             placeholder="Enter Zip Code"
+            
           />
           <br />
-          <button onClick={context.getWeather}>Get Your Weather</button>
+          <button >Get Your Weather</button>
           <button onClick={context.getAstro}>Get Your Astronomy</button>
         </form>
+        
       </div>
 
       <div className="container">
      
 
-        {context.viewA === true ? 
+        {context.viewA === true ? (
           <div className="astroResults">
            
            <h3>Astronomy Data for Today</h3>
@@ -49,7 +51,7 @@ function Form() {
               Moonphase: {context.astroData.astronomy.astro.moon_phase}
             </p>
           </div>
-         : null}
+        ): null}
 
       </div>
 

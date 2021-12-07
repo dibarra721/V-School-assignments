@@ -3,12 +3,11 @@ body{
   margin:0px;
   margin-top: 0px;
   padding-top: 0px;
-  font-family: 'Lora', serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
- 
+  margin-bottom: 0;
+  font-family: 'Lora', serif;  
 }
+
+
 h4{
   background-color: #d71db2;
   padding-bottom:9px ;
@@ -25,6 +24,9 @@ h6{
 .moonDiv{
   align-items: center;
   margin-left: 10px;
+ grid-row: 2/2;
+
+
 }
 
 img{
@@ -41,6 +43,8 @@ ul {
   background-image: url("https://i.ibb.co/d2qdjgB/PS-Overlay-Night-Sky-2.jpg");
   font-family: 'M PLUS 1 Code', sans-serif;
   font-weight: 600;
+  height: fit-content;
+  grid-row: 1/1;
 }
 
 
@@ -64,7 +68,7 @@ li a:hover {
   color: #d71db2;
   background-color:#ffc300 ;
   border-radius: 30px;
-  margin-left: 5px;
+  margin: auto;
   text-align: center;
   width: 300px;
   height: auto;
@@ -73,6 +77,7 @@ li a:hover {
 form{
   align-self: center;
   margin: auto;
+  margin-top: 10px;
   margin-bottom: 10px;
   align-content: center;
   background-color:#ffc300 ;
@@ -97,22 +102,30 @@ input{
 h2{
   color: #ffd60a;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
+  /* background-color: #d71db2; */
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 8px;
+
+
 }
 
 h3{
   background-color:#d71db2;
-  color: #4a38bc;
+  color: #ffd60a;
 }
 .weatherBox{
   margin: 10%;
   margin-left: 40%;
+  padding-bottom: 150px;
 }
 
-/* .container { 
-  margin: 20%;
-  margin-left: 40%;
-} */
+.navBar{
+  grid-row-start: 1;
+  grid-row-end: 1;
+  height: 10%;
+}
 
 .weatherResults{
   display: block;
@@ -144,14 +157,17 @@ button{
 p{
   font-weight: 600;
   text-align: center;
+  margin-left: 10px;
 
 }
 .results{
   background-color:#4a38bc ;
-  width: fit-content;
+  width: 600px;
   color: #ffd60a;
   font-size: 25px;
   font-family: 'Rokkitt', serif;;
+  margin: auto;
+
 }
 h5{
   font-size: 36px;
@@ -169,7 +185,9 @@ footer{
   color: #ffc300;
   margin-top: auto;
   text-align: center;
-  height: 68px;
+  height: 50px;
+padding-bottom: 5px;
+bottom: 0;
 
 }
 
@@ -178,7 +196,7 @@ h1{
 }
 
 
-#more {display: none;}
+#more {display: none;;}
 
 .myBtn{
   align-items: center;
@@ -188,4 +206,19 @@ h1{
 .moonPhase{
   background-color: #d71db2;
   color: #ffd60a;
+}
+
+.home{
+  width: 600px;
+  margin: auto;
+  height: auto;
+  padding-bottom: 100px;
+}
+span{
+  font-family: 'Lora', serif;
+  font-style: italic;
+  text-align: center;
+  margin-left: 16px;
+  padding-left: 10px;
+  font-size: 24px;
 }

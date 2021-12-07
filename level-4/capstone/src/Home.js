@@ -4,12 +4,24 @@ import React from "react"
 
 export default function Home(){
 return(
+    <div className="home">
     <center>
-   <h1> Welcome !<br/>
-   Your one stop shop for Today's Weather, Astronomy and Horoscope.<br/>
-   Click from one of the above Options to get your desired information. The Horoscope section is an ode to the early 2000's.
-   Not only do you get a bite- sized description for the day, you also get a lucky time, color, and ❤️ Match. </h1>
-   <h2>In the Future I hope to find a Moon API that can easily render information on the phases of the moon. For now there are a couple of extra clicks involved to find information on the current Moon Phase .</h2></center>
+   <h1> Welcome Here are some tips for how to best use this site<br/></h1>
+   <span>Weather  and Astronomy</span>
+   <p>Your one stop shop to grab your current weather, and astronomy
+       Want to know when the sun rises and sets?
+       Want to plan a night hike, but are wondering what the moons illumination is. Then 
+    be sure yo grab your astronomy for the day.<br/><br/>
+    <span>Moon Phase</span><br/>
+    On the Moon Phase Page, it is the most beneficial to use it after grabbing your astronomy.
+    Once you grab your astronomy head over to the Moon Phase Page where todays Moon Phase will be available to you.  to get information on the current moon phase.<br/><br/>
+<span>Horoscope</span><br/>
+An ode to the early 2000's where you can grab your horoscope for the day as well as other fun bite sized information.
+   </p>
+   
+
+   </center>
+   </div>
 )
 
 

@@ -14,10 +14,9 @@ export default function App() {
 
   return (
         
-    <><NavBar />
- <>
+    <div className="wrapper">
+      <NavBar />
       <Routes>
-
         <Route path="/form" element={<Form />} render={() => <Form />} />
         <Route path="/moon" element={<Moon />} render={() => <Moon />} />
         <Route path="/horoscope" element={<Horoscope />} render={() => <Horoscope />} />
@@ -25,10 +24,9 @@ export default function App() {
 
       </Routes>
 
-
-    </>
+    
       <Footer/>
-      </>
+      </div>
 
   )
 }

@@ -27,11 +27,9 @@ export default function Moon(){
 
 
 
-
 return(
-<>
- <div className="moonDiv">
 
+ <div className="moonDiv">
         <img id="img" alt="" src="https://images.unsplash.com/photo-1535332371349-a5d229f49cb5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80" height={350} width={250}  />
         <br />
         <h6><center>The Moon is earth's oldest temple holding the potency of countless prayers since the dawn of time..
@@ -49,11 +47,12 @@ return(
 <div className="moonphase">
 
 <h2>Todays Moon Phase: {context.astroData.astronomy.astro.moon_phase} <br/>
- Read More about this Phase Blow </h2>
+ </h2>
 </div>
 :null}
 
             <h6>Read more about the Moon Phases down Below</h6><br/>
+             {/* eslint-disable-next-line */}
           <center> <span id="dots">🌙</span></center>
            <span id="more">
 
@@ -89,7 +88,7 @@ The Moon is now becoming less visible from here on out. This time of the cycle i
 
           
 
-            </div>  </>
+            </div>  
 
 
 

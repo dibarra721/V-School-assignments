@@ -22,8 +22,10 @@ const getWeather =(e) => {
         console.log(response.status)
         return response.json();
     }else {
-      if (response.status === 404)
-      return alert ("Not sure what happened, try again")
+      if (response.status === 400)
+      console.log(response.status)
+      window.location.reload();
+      return alert ("Please make sure your ZipCode is correct. Page Will refresh")
     }
     })
     .then ((data)=> {
@@ -51,8 +53,10 @@ const getWeather =(e) => {
         console.log(response.status)
         return response.json();
     }else {
-      if (response.status === 404)
-      return alert ("Not sure what happened, try again")
+      if (response.status === 400)
+      window.location.reload();
+      return alert ("Please make sure Zip Code is correct. Page Will Refresh")
+      SetViewA(false)
     }
     })
     .then ((data)=> {
@@ -64,29 +68,6 @@ const getWeather =(e) => {
     })
   }
       
-  // const moreDays=(e) => {
-  //   e.preventDefault()
-  //   const URL= "http://api.weatherapi.com/v1/forecast.json?key=63c946476ed74b1489f174418212611"
-  //   fetch(`${URL}&q=${zipcode}&days=${day}`,
-  //   )
-   
-  //   .then ((response)=> {
-  //     if (response.ok) {
-  //       console.log(response.status)
-  //       return response.json();
-  //   }else {
-  //     if (response.status === 404)
-  //     return alert ("Not sure what happened, try again")
-  //   }
-  //   })
-  //   .then ((data)=> {
-  //     SetForeCast(data);
-  //     SetViewF(true)
-  //     setZipCode("")
-  //     console.log(data)
-  //   })
-  // }
-
 
 return ( 
     <div>
