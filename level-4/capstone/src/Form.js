@@ -3,13 +3,13 @@ import { Context } from "./Context";
 
 function Form() {
 
-  document.body.style.backgroundColor = "#001d3d";
+  // document.body.style.backgroundColor = "#001d3d";
 
   const context = useContext(Context);
   
   return (
-    <>
-      <div className="form">
+   
+      <div className="formWrapper">
         <h2>Enter your Zip Code to get Weather or Astronomy Information</h2>
 
         <form onSubmit={context.getWeather} >
@@ -25,7 +25,7 @@ function Form() {
           <button onClick={context.getAstro}>Get Your Astronomy</button>
         </form>
         
-      </div>
+  
 
       <div className="container">
      
@@ -74,8 +74,8 @@ function Form() {
         ) : null}
       </div>
 
-      
-    </>
+      </div>
+    
   )
 }
 export default Form

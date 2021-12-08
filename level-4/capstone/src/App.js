@@ -10,7 +10,7 @@ import Home from "./Home";
 import Footer from "./Footer";
 
 export default function App() {
-  document.body.style.backgroundColor = "#d71db2";
+  // document.body.style.backgroundColor = "#d71db2";
 
   return (
         

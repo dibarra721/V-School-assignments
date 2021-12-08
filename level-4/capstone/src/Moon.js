@@ -6,7 +6,7 @@ export default function Moon(){
     // const [astroData, setAstro]=useState({})
 
     const context = useContext(Context);
-    document.body.style.backgroundColor = "#4a38bc";
+    // document.body.style.backgroundColor = "#4a38bc";
 
     function myFunction() {
         var dots = document.getElementById("dots");
@@ -41,8 +41,8 @@ return(
         <h1>The Lunar Month</h1>
         <center>
         <h2>The moon appears to change shape in the sky,throughout the month.In fact what is happening is 
-            the moon is changing its position in relation to the Sun and Earth. the angles between the Moon  and the Sun as the Moon orbits around the 
-            Earth causes different amounts of the Moon to be illuminated from our point here on Earth. The Moon has a 29 1/2- day cycle.</h2>
+            the moon is changing its position in relation to the Sun and Earth. The angles between the Moon  and the Sun shift as the Moon orbits around the 
+            Earth causing different amounts of the Moon to be illuminated from our view point here on Earth. The Moon has a 29 1/2- day cycle.</h2>
             </center>
 
 {context.viewM === true?

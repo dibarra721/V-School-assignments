@@ -1,16 +1,18 @@
 body{
-  color:#ffd60a;
+  color:#000814;
   margin:0px;
   margin-top: 0px;
   padding-top: 0px;
   margin-bottom: 0;
   font-family: 'Lora', serif;  
+  width: 100%;
+  display: inline;
+  background-color: whitesmoke;
+
+
 }
 
-img{
-  height: 300px;
-  width: auto;
-}
+
 h4{
   background-color: #d71db2;
   padding-bottom:9px ;
@@ -73,6 +75,9 @@ li a:hover {
   height: auto;
 }
 
+.formDiv{
+  width: 100%;
+}
 form{
   align-self: center;
   margin: auto;
@@ -99,12 +104,13 @@ input{
 }
 
 h2{
-  color: #ffd60a;
+  color: #4a38bc;
   text-align: center;
   font-size: 20px;
-  /* background-color: #d71db2; */
   width: fit-content;
   margin: auto;
+  margin-top: 15px;
+  padding-top: 90px;
   margin-bottom: 8px;
 
 
@@ -180,9 +186,11 @@ h5{
 
 
 footer{
+  
+  border-top: 2px solid #4a38bc;
   width: 100%;
-  background-color:#000814; 
-  color: #ffc300;
+  /* background-color:#000814;  */
+  color: #d71db2;
   margin-top: auto;
   text-align: center;
   height: 50px;
@@ -210,7 +218,7 @@ h1{
 }
 
 .home{
-  width: 600px;
+  width: 100%;
   margin: auto;
   height: auto;
   padding-bottom: 100px;
@@ -222,4 +230,40 @@ span{
   margin-left: 16px;
   padding-left: 10px;
   font-size: 24px;
+}
+
+.card{
+  padding-top:  100px;
+  margin: auto;
+  width: 315px; height:100px;
+ position: relative; 
+  cursor: pointer ; 
+  /* background-color: #d71db2; */
+}
+
+.content{
+  margin-top: 20px;
+  cursor: pointer ; 
+  position:absolute;
+  width: 100%;
+  bottom: 0;
+  height: 100px;
+  padding: .04em 1.5em;
+  background-color: #4a38bc ;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  transform: scale(0.9);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.164);
+  box-shadow: 0 0 20px rgba(0,0,0,.144);
+  overflow: hidden;
+  transition: all .4s;
+}
+
+.content p{
+  font-size: 0.9em;
+}
+.card:hover .content{
+  height: 260px;
+  background-color: #d71db2;
 }

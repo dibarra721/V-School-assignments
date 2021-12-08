@@ -4,7 +4,7 @@ import React from "react"
 export default function Footer(){
 
 return(
-    <footer>Diana Ibarra © 2021 <br/>
+    <footer>AstroWeather© 2021 <br/>
 
 <a href="https://github.com/dibarra721/assignments/tree/main/level-4/capstone">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-github git-icon git-icon-hover" viewBox="0 0 16 16">

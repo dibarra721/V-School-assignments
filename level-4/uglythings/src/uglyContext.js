@@ -6,12 +6,7 @@ const UglyThingsContext = React.createContext();
  
 function UglyContextProvider(props) {
 
-  const [listOfUgly, setListOfUgly] = useState([{
-          title: "pickle man ", 
-          description: "because he is a farmer ", 
-          imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRvrvoh2qt0MWS_pNOB1conRkh-ZYOZyPCDZDV76SDb4bq5ugJj3HHlJfhpAnYxmxYsY&usqp=CAU", 
-        }
-  ])
+  const [listOfUgly, setListOfUgly] = useState([])
   const handleSubmit = (newItem) => {
       axios.post("https://api.vschool.io/dianaibarra/thing", newItem)
           .then(response => {
