@@ -267,3 +267,9 @@ span{
   height: 260px;
   background-color: #d71db2;
 }
+
+.sign{
+  /* margin: auto; */
+  /* align-items: center; */
+  justify-content: center;
+}

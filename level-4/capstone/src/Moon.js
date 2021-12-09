@@ -60,7 +60,7 @@ return(
 
             <h1>The New Moon</h1>
             <p>Keywords: a clean slate, potential, dreams <br/>
-            A time to plant the Seeds of your Future. A time to dive into your desires and to think about what you want todo. 
+            A time to plant the seeds of your future. A time to dive into your desires and to think about what you want todo, during the upcoming weeks.
             </p>
             <h1>The Waxing Crescent Moon </h1>
             <p>Keywords: courage, moving forward, faith <br/>

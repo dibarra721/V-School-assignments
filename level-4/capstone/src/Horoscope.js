@@ -17,9 +17,10 @@ export default function Horoscope() {
 
     .then((json) => {
       setAstro({ json });
-      SetSign("");
+      // SetSign("");
     });
-  console.log(astro);
+  console.log(astro)
+  console.log(sign);
  }
  
   useEffect(() => {
@@ -83,15 +84,33 @@ export default function Horoscope() {
 
       <div className="astrologyBox" >
         <form onSubmit={handleSubmit}>
-          <input
+          {/* <input
             type="text"
             onChange={(e) => SetSign(e.target.value)}
             value={sign}
             placeholder="Enter Sign"
             required
-          />
+          /> */}
+<center>
+<select name="signs" id="sign"  onChange={(e) => SetSign(e.target.value)}  value={sign} required>
+        <option value="cancer">Cancer</option> 
+        <option value="leo">Leo</option>
+        <option value="virgo">Virgo</option>
+        <option value="libra">Libra</option>
+        <option value="scorpio">Scorpio</option>
+        <option value="sagittarius">Sagittarius</option>
+        <option value="capricorn">Capricorn</option>
+        <option value="aquarius">Aquarius</option>
+        <option value="pisces">Pisces</option>
+        <option value="aries"> Aries </option>
+        <option value="taurus"> Taurus</option>
+        <option value="gemini"> Gemini</option>
+       
+      </select>
+      </center>
+
           <center>
-            {" "}
+           <br/>
             <button className="submitButton">Get Your Horoscope</button>
           </center>
         </form>
