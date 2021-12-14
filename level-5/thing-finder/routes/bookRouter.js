@@ -14,21 +14,20 @@ const books =[
 
 // get all
 bookRouter.get("/", (req, res) => {
-    res.send(bounties)
+    res.send(books)
 })
 
 // get one
-bookRouter.get("/:bountiesId", (req, res) => {
-    const bountiesId= req.params.bountiesId
-    const foundBounty = bounties.find(bounty => bounty._id === bountiesId)
-res.send(foundBounty)
-    // console.log(req.params.id)
+bookRouter.get("/:booksId", (req, res) => {
+    const booksId= req.params.booksId
+    const foundBook = books.find(book => book._id === booksId)
+res.send(foundBook)
 })
 
 // get by type
-bookRouter.get("/search/type", (req, res) => {
-    const type= req.query.type
-    const filteredType= bounties.filter(bounty => bounty.type === type)
+bookRouter.get("/search/genre", (req, res) => {
+    const type= req.query.genre
+    const filteredType= books.filter(book => book.genre === type)
     res.send(filteredType)
 })
 

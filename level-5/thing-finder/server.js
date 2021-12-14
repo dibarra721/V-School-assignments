@@ -5,7 +5,7 @@ const app = express()
 app.use(express.json())
 
 // routes
-app.use("/bounties", require("./routes/bookRouter.js"))
+app.use("/books", require("./routes/bookRouter.js"))
 
 
 // Server Listen 1st argument is port, second is the callback function

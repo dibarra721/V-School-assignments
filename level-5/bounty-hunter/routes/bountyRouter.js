@@ -50,7 +50,7 @@ bountyRouter.post("/", (req, res) => {
     const newBounty = req.body
     newBounty._id = uuidv4()
     bounties.push(newBounty)
-    res.send(`Successfully added ${newBounty.firstName} to the list`)
+    res.send(newBounty)
 })
 
 
