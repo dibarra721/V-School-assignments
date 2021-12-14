@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express()
+const morgan = require("morgan")
 
 
 
@@ -7,6 +8,7 @@ const app = express()
 
 // middleweare for every request
 app.use(express.json())
+app.use(morgan('dev')) 
 
 
 

@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const bountyRouter = express.Router()
 const { v4: uuidv4 } = require('uuid');
 
@@ -28,9 +28,24 @@ bountyRouter.get("/search/type", (req, res) => {
     res.send(filteredType)
 })
 
+// delete one
+bountyRouter.delete("/:bountiesId", (req, res) => {
+    const bountiesId= req.params.bountiesId
+    const bountyIndex= bounties.findIndex(bounty => bounty._id === bountiesId)
+    bounties.splice(bountyIndex,1)
+    res.send("you have deleted a bounty")
 
 
+})
 
+// put 
+bountyRouter.put("/:bountiesId", (req, res) => {
+    const bountiesId= req.params.bountiesId
+    const bountyIndex= bounties.findIndex(bounty => bounty._id === bountiesId)
+    const updatedBounties= Object.assign(bounties[bountyIndex], req.body)
+    res.send(updatedBounties)
+})
+// post
 bountyRouter.post("/", (req, res) => {
     const newBounty = req.body
     newBounty._id = uuidv4()
