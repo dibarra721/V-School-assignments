@@ -1,7 +1,10 @@
 {
   "dependencies": {
     "@mui/material": "^5.0.4",
+    "express": "^4.17.1",
     "pug": "^3.0.2",
-    "readline-sync": "^1.4.10"
+    "react-router-dom": "^6.0.2",
+    "readline-sync": "^1.4.10",
+    "uuid": "^8.3.2"
   }
 }
