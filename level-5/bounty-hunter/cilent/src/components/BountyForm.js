@@ -23,7 +23,10 @@ export default function BountyForm(props) {
   }
 
   return (
+<div className="formContainer">
+
     <form onSubmit={handleSubmit}>
+      <h1>Add Your Bounty</h1>
       First Name:
       <input
         type="text"
@@ -72,5 +75,6 @@ export default function BountyForm(props) {
       </select>
       <button>{props.btnText}</button>
     </form>
+    </div>
   );
 }

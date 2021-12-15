@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import axios from "axios"
 import Bounty from './components/Bounty.js'
 import BountyForm from "./components/BountyForm.js"
+import "./App.css"
 
 
 export default function App() {
@@ -43,7 +44,10 @@ useEffect(() => {
 
 
   return ( 
-    <><div className="bountyContainer">
+
+    <>
+    
+    <div className="bountyContainer">
       <BountyForm
         submit={addBounty} 
         btnText="Add Bounty"/>
@@ -57,7 +61,8 @@ useEffect(() => {
           deleteBounty={deleteBounty} />
         )}
 
-      </div></>
+      </div>
+      </>
   )
   
 }
