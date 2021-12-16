@@ -1,15 +1,13 @@
 import React,{useState} from "react"
-import AddBountyForm from "./BountyForm.js"
+import BountyForm from "./BountyForm.js"
 
 
 export default function Bounty (props) {
-const {firstName, lastName, bounty, _id, living, type} =props
+
+const {firstName, lastName, bounty, _id, living, type, imgUrl, deleteBounty,btnText} =props
 
 
 const [editToggle, setEditToggle]= useState(false)
-
-
-
 
 
 
@@ -32,10 +30,16 @@ const [editToggle, setEditToggle]= useState(false)
 
 :
 <>
-<AddBountyForm
+<BountyForm
 firstName={firstName}
-living={living}
+lastName={lastName}
+_id={_id}
+bounty={bounty}
+imgUrl={imgUrl}
 btnText="Submit Edit"
+submit={props.editBounty}
+// toggleEdit={setEdit}
+
 />
 <button onClick={() => setEditToggle(prevToggle => !prevToggle)}>Close</button>
     </>

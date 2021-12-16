@@ -13,7 +13,8 @@ const bountySchema = new Schema({
         require: true
     },
     living: {
-        type: Boolean,
+        type: String,
+        enum: ['alive', 'dead'],
         require: true
     },
     bounty: {

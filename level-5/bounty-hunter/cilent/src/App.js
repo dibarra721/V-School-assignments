@@ -34,6 +34,15 @@ function deleteBounty(bountyId) {
   .catch(err => console.log(err))
 }
 
+function handleFilter(e){
+  if(e.target.value === "reset") {
+    getBounties()
+  }
+  axios.get(`/bounties/search/type?type=${e.target.value}`)
+  .then(res => setBounties(res.data))
+  .catch(err => console.log(err))
+}
+
 
 
 useEffect(() => {
@@ -51,6 +60,16 @@ useEffect(() => {
       <BountyForm
         submit={addBounty} 
         btnText="Add Bounty"/>
+
+    <h4>Filter by Type</h4>
+    <select onChange={handleFilter} className="filter">
+    <option value="reset">All Bounties</option>
+    <option value="Jedi">Jedi</option>
+    <option value="Sith">Sith</option>
+
+    </select>
+
+
 
     </div>
     <div className="bounties">

@@ -37,16 +37,18 @@ height: 100%;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
-  height: 222px;
- /* grid-row-end:3; */
+  height: 244px;
+
 }
 
 
  input{
-   margin-bottom: 5px;
+   margin-bottom: 7px;
    margin-left: 2px;
  }
-
+#type{
+  margin-bottom: 7px;
+}
 
 
 

@@ -6,19 +6,19 @@ export default function BountyForm(props) {
     lastName: props.lastName || "",
     living: props.living || "",
     type: props.type || "",
-    bounty: props.bounty || "",
+    bounty: props.bounty || 0,
     imgUrl: props.imgUrl || "",
   };
   const [inputs, setInputs] = useState(intiInputs);
 
   function handleChange(e) {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setInputs((prevInputs) => ({ ...prevInputs, [name]: value }));
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.addBounty(inputs);
+    props.submit(inputs, props._id);
     setInputs(intiInputs);
   }
 
@@ -30,7 +30,7 @@ export default function BountyForm(props) {
       First Name:
       <input
         type="text"
-        name=""
+        name="firstName"
         value={inputs.firstName}
         onChange={handleChange}
         placeholder="First Name"
@@ -40,17 +40,25 @@ export default function BountyForm(props) {
       Last Name:
       <input
         type="text"
-        name=""
+        name="lastName"
         value={inputs.lastName}
         onChange={handleChange}
         placeholder="Last Name"
         required
       />
       <br />
+      Living:
+      
+      <select id="type" onChange={handleChange} value={inputs.living} name="type">
+        <option>Select Status</option>
+        <option value="alive">Alive</option>
+        <option value="dead">Dead</option>
+      </select>
+      <br />
       Bounty:
       <input
         type="number"
-        name=""
+        name="bounty"
         value={inputs.bounty}
         onChange={handleChange}
         placeholder="Bounty"
@@ -60,19 +68,20 @@ export default function BountyForm(props) {
       Image:
       <input
         type="text"
-        name=""
+        name="imgUrl"
         value={inputs.imgUrl}
         onChange={handleChange}
         placeholder="Img Url"
         required
       />
       <br />
-      <label id="type">Jedi or Sith</label>
-      <select id="type" onChange={handleChange} value={inputs.type}>
+     Jedi or Sith 
+      <select id="type" onChange={handleChange} value={inputs.type} name="type">
         <option>Select Type</option>
         <option value="Jedi">Jedi</option>
         <option value="Sith">Sith</option>
       </select>
+
       <button>{props.btnText}</button>
     </form>
     </div>
