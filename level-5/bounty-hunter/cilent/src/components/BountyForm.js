@@ -5,28 +5,31 @@ export default function BountyForm(props) {
     firstName: props.firstName || "",
     lastName: props.lastName || "",
     living: props.living || "",
-    type: props.type || "",
     bounty: props.bounty || 0,
     imgUrl: props.imgUrl || "",
+    type: props.type || "",
   };
   const [inputs, setInputs] = useState(intiInputs);
 
   function handleChange(e) {
     const { name, value } = e.target
-    setInputs((prevInputs) => ({ ...prevInputs, [name]: value }));
+    setInputs(prevInputs => ({...prevInputs, [name]: value }));
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    props.submit(inputs, props._id);
-    setInputs(intiInputs);
-  }
+  function handleSubmit(e){
+    e.preventDefault()
+    props.submit(inputs, props._id)
+    setInputs(intiInputs)
+    if(props._id){
+        props.toggleEdit(prevEdit => !prevEdit)
+    }
+}
 
   return (
 <div className="formContainer">
 
     <form onSubmit={handleSubmit}>
-      <h1>Add Your Bounty</h1>
+      <h2>Add Your Bounty</h2>
       First Name:
       <input
         type="text"
@@ -48,12 +51,15 @@ export default function BountyForm(props) {
       />
       <br />
       Living:
-      
-      <select id="type" onChange={handleChange} value={inputs.living} name="type">
-        <option>Select Status</option>
-        <option value="alive">Alive</option>
-        <option value="dead">Dead</option>
-      </select>
+      <input
+        type="text"
+        name="living"
+        value={inputs.living}
+        onChange={handleChange}
+        placeholder="Alive or Dead"
+        required
+      />
+      <br />
       <br />
       Bounty:
       <input
@@ -75,12 +81,22 @@ export default function BountyForm(props) {
         required
       />
       <br />
-     Jedi or Sith 
-      <select id="type" onChange={handleChange} value={inputs.type} name="type">
-        <option>Select Type</option>
+     Jedi or Sith :
+
+   <input
+        type="text"
+        name="type"
+        value={inputs.type}
+        onChange={handleChange}
+        placeholder="Sith or Jedi"
+        required
+      /> 
+
+      {/* <select onChange={handleChange} value={inputs.type} name="type" required> */}
+        {/* <option>Select Type</option>
         <option value="Jedi">Jedi</option>
         <option value="Sith">Sith</option>
-      </select>
+      </select> */}
 
       <button>{props.btnText}</button>
     </form>

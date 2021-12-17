@@ -8,6 +8,11 @@ import "./App.css"
 export default function App() {
 const [bounties, setBounties] =useState([])
 
+
+useEffect(() => {
+  getBounties()
+}, [])
+
 function getBounties(){
   axios.get("/bounties")
   .then(res => setBounties(res.data))
@@ -44,10 +49,15 @@ function handleFilter(e){
 }
 
 
+ function editBounty(updates, bountyId){
+  axios.put(`/bounties/${bountyId}`, updates)
+      .then(res => {
+          setBounties(prevBounties => prevBounties.map(bounty => bounty._id !== bountyId ? bounty : res.data))
+      })
+      .catch(err => console.log(err))
+}
 
-useEffect(() => {
-  getBounties()
-}, [])
+
 
 
 
@@ -56,6 +66,11 @@ useEffect(() => {
 
     <>
     
+    <div className="headerBounty">
+            <h1>Track your Bounties </h1>
+        </div>
+
+
     <div className="bountyContainer">
       <BountyForm
         submit={addBounty} 
@@ -77,6 +92,8 @@ useEffect(() => {
         <Bounty
           {...bounty}
           key={bounty._id}
+          btnText="edit"
+          editBounty={editBounty}
           deleteBounty={deleteBounty} />
         )}
 

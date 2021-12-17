@@ -10,18 +10,20 @@ const {firstName, lastName, bounty, _id, living, type, imgUrl, deleteBounty,btnT
 const [editToggle, setEditToggle]= useState(false)
 
 
-
     return(
 
 
         <div className="bountyCard">
             { !editToggle ?
-                <><h1>First Name:{firstName}</h1>
-                <h1>Last Name:{lastName}</h1>
-                <p>{living}</p>
-                <p>{bounty}</p>
-                <p>{type}</p>
-                <button className="deleteButton" onClick={() => props.deleteBounty(_id)}>Delete</button>
+                <>
+             <img src={imgUrl} alt="image notfound" style={{height: "150px", width: "150px"}}/>
+
+                <h2>First Name: {firstName}<br/>
+                Last Name: {lastName}</h2><br/>
+                <p>Living: {living}<br/>
+               Bounty :&euro; {bounty}<br/>
+                Type:{type}<br/></p>
+                <button className="deleteButton" onClick={() => deleteBounty(_id)}>Delete</button>
                 <button
                 className="editButton"
                 onClick={() => setEditToggle(prevToggle => !prevToggle)}>Edit</button>
@@ -34,11 +36,12 @@ const [editToggle, setEditToggle]= useState(false)
 firstName={firstName}
 lastName={lastName}
 _id={_id}
+type={type}
 bounty={bounty}
 imgUrl={imgUrl}
 btnText="Submit Edit"
 submit={props.editBounty}
-// toggleEdit={setEdit}
+toggleEdit={setEditToggle}
 
 />
 <button onClick={() => setEditToggle(prevToggle => !prevToggle)}>Close</button>
@@ -48,5 +51,7 @@ submit={props.editBounty}
 
                 }
         </div>
+
+        
     )
 }

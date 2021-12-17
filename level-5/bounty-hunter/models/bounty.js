@@ -6,30 +6,31 @@ const Schema = mongoose.Schema
 const bountySchema = new Schema({
     firstName: {
         type: String,
-        require: true
+        required: true
     },
     lastName: {
         type: String,
-        require: true
+        required: true
     },
     living: {
         type: String,
-        enum: ['alive', 'dead'],
-        require: true
+        enum: ['Alive', 'Dead'],
+        required: true
     },
     bounty: {
         type: Number,
         required: true
     },
-    type: {
-        type: String,
-        enum: ['Jedi', 'Sith'],
-    },
     imgUrl:{
         type: String,
         required: true
-    }
+    },
 
+    type: {
+        type: String,
+        enum: ['Jedi', 'Sith'],
+        
+}
     
 })
 
