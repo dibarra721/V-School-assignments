@@ -4,7 +4,7 @@ import BountyForm from "./BountyForm.js"
 
 export default function Bounty (props) {
 
-const {firstName, lastName, bounty, _id, living, type, imgUrl, deleteBounty,btnText} =props
+const {firstName, lastName, bounty, _id, living, type, imgUrl, deleteBounty} =props
 
 
 const [editToggle, setEditToggle]= useState(false)
@@ -16,7 +16,7 @@ const [editToggle, setEditToggle]= useState(false)
         <div className="bountyCard">
             { !editToggle ?
                 <>
-             <img src={imgUrl} alt="image notfound" style={{height: "150px", width: "150px"}}/>
+             <img src={imgUrl} alt=" notfound" style={{height: "150px", width: "150px"}}/>
 
                 <h2>First Name: {firstName}<br/>
                 Last Name: {lastName}</h2><br/>

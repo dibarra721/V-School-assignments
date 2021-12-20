@@ -83,20 +83,20 @@ export default function BountyForm(props) {
       <br />
      Jedi or Sith :
 
-   <input
+   {/* <input
         type="text"
         name="type"
         value={inputs.type}
         onChange={handleChange}
         placeholder="Sith or Jedi"
         required
-      /> 
+      />  */}
 
-      {/* <select onChange={handleChange} value={inputs.type} name="type" required> */}
-        {/* <option>Select Type</option>
+       <select onChange={handleChange} value={inputs.type} name="type" required>
+        <option>Select Type</option>
         <option value="Jedi">Jedi</option>
         <option value="Sith">Sith</option>
-      </select> */}
+      </select>
 
       <button>{props.btnText}</button>
     </form>
