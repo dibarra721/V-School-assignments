@@ -9,16 +9,16 @@ import Form from "./components/Form";
 export default function App() {
 
   return(
-    <div className="wrapper">
+    <><div className="wrapper">
       <NavBar />
-      Hello anything 
+      Hello anything
       <Routes>
-      <Route path="/"  element={<Form />}  render={() => <Form/>}/>
-      <Route path="/journals"  element={<JournalList/>}  render={() => <JournalList/>}/>
+        <Route path="/" element={<Form />} render={() => <Form />} />
+        <Route path="/journals" element={<JournalList />} render={() => <JournalList />} />
 
       </Routes>
 
-      <Footer />
-    </div>
+
+    </div><Footer /></>
   )
 }

@@ -11,7 +11,7 @@ function Journals(){
 
 return (
     <div className="journalContainer">
-        {journalList.map(journal => 
+        {journalList ? journalList.map(journal => 
         <Journal
 
             {... journalList}
@@ -19,7 +19,7 @@ return (
             btnText="edit"
             editJournal={editJournal}
             deleteJournal={deleteJournal} />
-            )}
+            ): null}
 
 
     </div>

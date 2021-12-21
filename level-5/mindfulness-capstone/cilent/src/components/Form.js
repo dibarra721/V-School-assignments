@@ -2,16 +2,16 @@ import React, {useState , useContext} from "react"
 import { Context } from '../Context'
 
 
-export default function Form () {
+export default function Form (props) {
 
-const context=useContext(Context)
+const {addJournal, _id, toggleEdit, btnText} = useContext(Context)
 
 const intiInputs = {
-    date: context.date ||"",
-    meditation: context.meditation || "",
-    movement: context.movement || "",
-    feeling: context.feeling || "",
-    note: context.note || ""
+    date: "",
+    meditation: "",
+    movement: "",
+    feeling:"",
+    note: ""
 }
 
 const [inputs, setInputs]=useState(intiInputs)
@@ -23,10 +23,10 @@ function handleChange(e) {
 
 function handleSubmit(e){
     e.preventDefault()
-    context.addJournal(inputs, context._id)
+    addJournal(inputs, _id)
     setInputs(intiInputs)
-    if(context._id){
-        context.toggleEdit(prevEdit => !prevEdit)
+    if(_id){
+        toggleEdit(prevEdit => !prevEdit)
     }
     
 }
@@ -80,13 +80,13 @@ function handleSubmit(e){
                  Notes:
                  <input
                  type="text"
-                 name="feeling"
+                 name="note"
                  value={inputs.note}
                  onChange={handleChange}
                  placeholder="Any extra notes. How long did I mediate for? Was it morning "
                  required
                  />
-<button>{context.btnText}</button>
+<button>{btnText}</button>
 
 
 

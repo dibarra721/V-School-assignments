@@ -4,6 +4,8 @@ import React from "react"
 export default function Footer(){
 
 return(
+
+    <div className="footerBox">
     <footer>Mindfulness Journal © 2021 <br/>
 
 <a href="https://github.com/dibarra721/assignments/tree/main/level-4/capstone">
@@ -13,5 +15,6 @@ return(
                     </a>
 
     </footer>
+    </div>
 )
 }

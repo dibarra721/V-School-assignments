@@ -1,18 +1,28 @@
 body{
   margin: 0;
+  margin-bottom: 0;
 }
+
+nav ul li:first-child a {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+nav ul li:last-child a {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
 
 
 ul {
   list-style-type: none;
   margin-top: 0px;
-  padding-top: 0;
-  padding-left:0px;
+  padding-top: 0px;
+ width: 100%;
   overflow: hidden;
   background-color: #f6f7f1;
  font-family: 'Monda', sans-serif;
   font-weight: 600;
-  
   grid-row: 1/1;
   grid-column-start: 1;
   grid-column-end:4 ;
@@ -22,11 +32,17 @@ ul {
   grid-row: 1/1;
   grid-column-start: 1;
   grid-column-end:4 ;
+  width: 100%;
 
 }
 
 li a {
- 
+  float: left;
+  width: 30%;
+  /* padding-left: 30px; */
+ /* padding-right: 10px; */
+ /* margin-right: 180px;
+ margin-left: 35px; */
   display: block;
   color: #db9487;
   text-align: center;
@@ -40,11 +56,12 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   background-color: #a1c9c9;
+  transition: 2s;
 }
 
 .wrapper{
- 
-height:100vh; width:100%;
+ margin: 0;
+height:100%; width:100%;
 margin-top: 0px;
 margin-bottom: 0px;
 /* grid-row: 1/1; */
@@ -57,9 +74,51 @@ grid-template-rows: 100px 200px 60px; */
 
 #root{
   display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 500px 500px 400px;
   width: 100%;
-  
   bottom: 0;
+  }
+
+  footer{
+    grid-row-start: 4;
+    grid-row-end:4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+     bottom: 0;
+  }
+
+  .footerBox{
+    
+    grid-row-start: 4;
+    grid-row-end:4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: 100px;
+    bottom: 0;
+    border: 1px solid rebeccapurple;
+  }
+
+  .formWrapper{
+    display: block;
+    align-self: center;
+    margin-left: 35%;
+    
+    border: 1px solid;
+    width: fit-content;
+
+
+  }
+
+
+  form{
+    grid-row-start: 2;
+    grid-row-end:3;
+    grid-column:2/3;
+  }
+
+  input{
+    margin-bottom: 7px;
+    margin-left: 2px;
   }
