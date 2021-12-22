@@ -2,12 +2,14 @@ const express = require("express")
 const app = express()
 const morgan = require("morgan")
 const mongoose = require("mongoose")
+var cors = require('cors')
 
 
 
 // middleweare for every request
 app.use(express.json())
 app.use(morgan('dev')) 
+app.use(cors())
 
 
 // connect to DB
@@ -23,8 +25,6 @@ app.use((err,req, res, next) => {
 console.log(err)
 return res.send({errMsg : err.message})
 })
-
-
 
 
 

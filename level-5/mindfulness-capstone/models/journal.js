@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 // journal blueprint
 
-const journalSchema = new Schema ({
+const journalSchema = new Schema({
 
         date:{
             type:String,

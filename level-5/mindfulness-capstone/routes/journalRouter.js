@@ -1,12 +1,12 @@
 const express = require("express");
 const journalRouter = express.Router();
-const Journal= require("../models/journal.js");
+const Journal = require("../models/journal.js");
 
 
 
 // get all Journal entries 
 
-journalRouter.get("/", ( req, res, next) => {
+journalRouter.get("/", (req, res, next) => {
     Journal.find((err, journals) => {
         if (err) {
             res.status(500)

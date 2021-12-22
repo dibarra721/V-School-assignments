@@ -1,6 +1,9 @@
 body{
   margin: 0;
   margin-bottom: 0;
+  background-color: #f6f7f1;
+  color: black;
+  /* display: flex; */
 }
 
 nav ul li:first-child a {
@@ -33,6 +36,7 @@ ul {
   grid-column-start: 1;
   grid-column-end:4 ;
   width: 100%;
+  height: 300px;;
 
 }
 
@@ -60,6 +64,7 @@ li a:hover {
 }
 
 .wrapper{
+  display: grid;
  margin: 0;
 height:100%; width:100%;
 margin-top: 0px;
@@ -67,15 +72,18 @@ margin-bottom: 0px;
 /* grid-row: 1/1; */
 grid-column-start: 1;
 grid-column-end:4 ;
+grid-row-start: 1;
+grid-row-end: 3;
+grid-template-columns: repeat(3, 1fr);
 /* grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(3);
-grid-template-rows: 100px 200px 60px; */
+grid-template-rows: repeat(3); */
+grid-template-rows: 100px 500px 200px;
 }
 
 #root{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 500px 500px 400px;
+  grid-template-rows: 100px 500px 200px;
   width: 100%;
   bottom: 0;
   }
@@ -103,22 +111,87 @@ grid-template-rows: 100px 200px 60px; */
   .formWrapper{
     display: block;
     align-self: center;
-    margin-left: 35%;
-    
-    border: 1px solid;
+    margin-left: 5%;
+    width: 300px;
+    border-radius: 10px;
     width: fit-content;
+    max-height: max-content;
+    box-shadow:#a1c9c9 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 
 
   }
 
+  h1{
+    font-family: 'Oranienbaum', serif;
+   text-align: center;
+
+  }
 
   form{
+    margin-left: 3px;
+    width: 400px;
+    padding-top: 3px;
+    background-color: #f6f7f1;
     grid-row-start: 2;
     grid-row-end:3;
     grid-column:2/3;
+    color:#34a0a4;
+    font-family:'Zilla Slab', serif;
+    font-weight: 300;
+    border-radius: 5px;
   }
 
   input{
+
     margin-bottom: 7px;
-    margin-left: 2px;
+    margin-left: 4px;
+    border: none;
+    border-bottom: 1px solid #34a0a4;
   }
+  input:focus{
+    border-bottom: 1px solid #db9487;
+  }
+
+
+  .currentJournal{
+   margin-left: 100px;
+    align-self: center;
+    text-align: center;
+    grid-row-start:3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-row-end: 3;
+    width: fit-content;
+    border: rebeccapurple 1px solid;
+    font-family:'Zilla Slab', serif;
+    font-weight: 300;
+    
+  }
+  button{
+    background-color: #db9487;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .p{
+    margin-right: 3px;
+    margin-left: 2px;
+
+  }
+
+  h5{
+    font-family: 'Oranienbaum', serif;
+font-size: large;
+  }
+
+  .heading{
+    margin: auto;
+    margin-left: 9px;
+   
+  }
+
+
+  .quote{
+    margin: auto;
+  }
+  
