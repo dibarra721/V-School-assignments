@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import JournalList from "./components/JournalList"
 import Form from "./components/Form";
 import Mindfulness from "./components/Mindfulness";
+import Journal from "./components/Journal";
 
 export default function App() {
 
@@ -14,9 +15,9 @@ export default function App() {
       <NavBar />
     
       <Routes>
-        <Route path="/" element={<Form />} render={() => <Form />} />
+        <Route path="/" element={<Journal />} render={() => <Journal />} />
         <Route path="/journals" element={<JournalList />} render={() => <JournalList />} />
-        <Route path="/mindfulness" element={<JournalList />} render={() => <Mindfulness />} />
+        <Route path="/mindfulness" element={<Mindfulness />} render={() => <Mindfulness />} />
 
       </Routes>
 
