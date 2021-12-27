@@ -6,15 +6,15 @@ import { Context } from '../Context'
 export default function Form (props) {
 
 const {btnText}=props
-const {addJournal, _id, toggleEdit,} = useContext(Context)
+const {addJournal, _id, toggleEdit} = useContext(Context)
 // const [dailyQuote, SetDailyQuote]=useState([])
 
 const intiInputs = {
-    date: "",
-    meditation: "",
-    movement: "",
-    feeling:"",
-    note: ""
+    date:props.date|| "",
+    meditation:props.meditation || "",
+    movement:props.movement || "",
+    feeling:props.feeling||"",
+    note: props.note||""
 }
 
 const [inputs, setInputs]=useState(intiInputs)
@@ -28,7 +28,8 @@ function handleChange(e) {
 
 function handleSubmit(e){
     e.preventDefault()
-    addJournal(inputs, _id)
+    console.log("handle submit was called")
+    props.submit(inputs, props._id)
     setInputs(intiInputs)
     if(_id){
         toggleEdit(prevEdit => !prevEdit)

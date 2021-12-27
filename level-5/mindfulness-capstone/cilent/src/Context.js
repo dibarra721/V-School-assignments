@@ -12,20 +12,6 @@ const [currentJournal, setCurrentJournal]= useState({})
 
 // axios requests
 
-
-// useEffect(() => {
-// const getJournals = () => {
-//     axios.get('/journals')
-//     .then(res => setJournals(res.data))
-//     .catch(err => console.log(err.response.data.errMsg))
-//     console.log(journals)
-// }
-// getJournals()
-
-// }, [])
-
-
-
 function getJournals(){
     axios.get('/journals')
     .then(res => setJournals(res.data))
@@ -68,6 +54,25 @@ function editJournal(updates , journalId){
     
 }
 
+function handleMovement(e){
+    if(e.target.value === "reset") {
+      getJournals()
+    }
+    axios.get(`/journals/search/movement?movement=${e.target.value}`)
+    .then(res => setJournals(res.data))
+    .catch(err => console.log(err))
+  }
+
+  function handleMeditation(e){
+    if(e.target.value === "reset") {
+      getJournals()
+    }
+    axios.get(`/journals/search/meditation?meditation=${e.target.value}`)
+    .then(res => setJournals(res.data))
+    .catch(err => console.log(err))
+  }
+
+
 
 
 
@@ -81,6 +86,8 @@ return(
                 getJournals,
                 deleteJournal,
                 editJournal,
+                handleMovement,
+                handleMeditation,
                 currentJournal,
                 journals,
                 // btnText

@@ -47,7 +47,7 @@ journalRouter.put("/:journalId", (req, res, next) => {
     Journal.findOneAndUpdate(
         { _id : req.params.journalId},
         req.body,
-        {new:true},
+        {new: true},
         (err, updatedJournal) => {
             if(err){
                 res.status(500)
@@ -72,6 +72,29 @@ journalRouter.delete("/:journalId", (req, res, next) => {
         })
 })
 
+// filter by movement
+
+journalRouter.get("/search/movement", (req, res, next) => {
+    Journal.find({ movement: req.query.movement}, (err, journals) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(journals)
+    })
+   })
+
+
+//    filter by meditation 
+journalRouter.get("/search/meditation", (req, res, next) => {
+    Journal.find({ meditation: req.query.meditation}, (err, journals) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(journals)
+    })
+   })
 
 
 
