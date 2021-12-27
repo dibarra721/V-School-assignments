@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"
 import "./App.css"
-import Journal from "./components/Journal"
 
 const Context = React.createContext()
 
@@ -10,20 +9,36 @@ function ContextProvider(props) {
 const [journals, setJournals]= useState([])
 const [currentJournal, setCurrentJournal]= useState({})
 
-useEffect(() => {
-    getJournals()
- }, [])
- 
 
 // axios requests
 
 
+// useEffect(() => {
+// const getJournals = () => {
+//     axios.get('/journals')
+//     .then(res => setJournals(res.data))
+//     .catch(err => console.log(err.response.data.errMsg))
+//     console.log(journals)
+// }
+// getJournals()
+
+// }, [])
+
+
+
 function getJournals(){
-    axios.get("/journals")
+    axios.get('/journals')
     .then(res => setJournals(res.data))
     .catch(err => console.log(err.response.data.errMsg))
     console.log(journals)
 }
+
+useEffect(() => {
+    getJournals()
+    console.log(journals)
+ }, [])
+ 
+
 
 function addJournal(newJournal) {
     axios.post('/journals', newJournal)
@@ -47,7 +62,7 @@ function deleteJournal(journalId) {
 function editJournal(updates , journalId){
     axios.put(`./journals/${journalId}`, updates)
     .then(res => {
-        setJournals(prevJournals => prevJournals.map(journal => journal._id !== journalId ? journal :res.data))
+        setJournals(prevJournals => prevJournals.map(journal => journal._id !== journalId ? journal : res.data))
     })
     .catch(err => console.log(err))
     
@@ -58,17 +73,6 @@ function editJournal(updates , journalId){
 
 return(
     <>
-    {/* <div>
-        {journals ? journals.map(journal => <Journal
-
-            {...journalList}
-            key={journal._id}
-            btnText="edit"
-            editJournal={editJournal}
-            deleteJournal={deleteJournal} />
-        ) : null}
-    </div> */}
-        
         <Context.Provider
             value={{
                 addJournal,
