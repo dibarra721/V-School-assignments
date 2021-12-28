@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import JournalList from "./components/JournalList"
 import Mindfulness from "./components/Mindfulness";
 import Home from "./components/Home";
+import NotFound from "./components/NotFound";
 
 export default function App() {
 
@@ -14,9 +15,11 @@ export default function App() {
       <NavBar />
     
       <Routes>
-        <Route path="/" element={<Home />} render={() => <Home />} />
-        <Route path="/journals" element={<JournalList />} render={() => <JournalList />} />
-        <Route path="/mindfulness" element={<Mindfulness />} render={() => <Mindfulness />} />
+        <Route  exact path="/" element={<Home />} render={() => <Home />} />
+        <Route exact path="/journals" element={<JournalList />} render={() => <JournalList />} />
+        <Route exact path="/mindfulness" element={<Mindfulness />} render={() => <Mindfulness />} />
+        <Route path= "*"element={<NotFound/>} render={() => <NotFound />} />
+       
 
       </Routes>
 
