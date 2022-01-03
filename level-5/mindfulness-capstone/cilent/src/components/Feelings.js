@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from "react-router-dom"
+
 
 
 
@@ -18,6 +20,10 @@ export default function Feelings() {
           
         />
       </center>
+
+
+      <br/>
+      Click  <Link to ="/">here</Link>  to fill out your Journal Entry for the day.
 </div>
     )
 }

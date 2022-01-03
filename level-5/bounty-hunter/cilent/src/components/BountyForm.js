@@ -51,14 +51,13 @@ export default function BountyForm(props) {
       />
       <br />
       Living:
-      <input
-        type="text"
-        name="living"
-        value={inputs.living}
-        onChange={handleChange}
-        placeholder="Alive or Dead"
-        required
-      />
+      <select onChange={handleChange} value ={inputs.living} type="living" id="living"  name="living" required>
+        
+    <option >Alive or Dead</option>
+    <option value='Alive'>Alive</option>
+    <option value='Dead'>Dead</option>
+
+    </select>
       <br />
       <br />
       Bounty:
