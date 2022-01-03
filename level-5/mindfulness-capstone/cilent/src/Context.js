@@ -8,6 +8,7 @@ function ContextProvider(props) {
 
 const [journals, setJournals]= useState([])
 const [currentJournal, setCurrentJournal]= useState({})
+const [view, SetView]= useState(false)
 
 
 // axios requests
@@ -30,6 +31,7 @@ function addJournal(newJournal) {
     axios.post('/journals', newJournal)
     .then ( res => {
         setCurrentJournal(res.data)
+        SetView(true)
         setJournals(prevJournals => [...prevJournals, res.data])
         console.log(journals)
         console.log(currentJournal)
@@ -89,6 +91,7 @@ return(
                 handleMovement,
                 handleMeditation,
                 currentJournal,
+                view,
                 journals,
                 // btnText
             }}

@@ -1,6 +1,5 @@
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import {Context} from "../Context"
-import Form from "./Form";
 import Journal from "./Journal";
 
 function JournalList(props){

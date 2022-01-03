@@ -1,4 +1,5 @@
 import React,{useContext, useState, useEffect} from "react"
+import {Link} from "react-router-dom"
 import Form from "./Form.js"
 import axios from "axios"
 import { Context } from '../Context'
@@ -6,7 +7,7 @@ import { Context } from '../Context'
 export default function Home(props) {
 
 const [dailyQuote, SetDailyQuote]=useState([])
-const {currentJournal, addJournal } = useContext(Context)
+const {currentJournal, addJournal, view } = useContext(Context)
 
 
 // daily quote api
@@ -30,7 +31,8 @@ return(
 
 {dailyQuote ? dailyQuote.map(dailyQuote => <p>{dailyQuote.q}<br />-{dailyQuote.a}</p>) : null}
 </div><div className="heading">
-    <h5>Welcome to your Mindfulness Journal. Below you will find a feelings wheel if you are having trouble with describing how you are feeling.
+    <h5>Welcome to your Mindfulness Journal. Feelings can be difficult to navigate or identify. Click  <Link to ="/feelings">here</Link>  
+ to access a Feelings Wheel.
         If you head over to Journal Entries you will be able to view edit and delete entries.You can expand the text area for the notes section.
     </h5>
 </div>
@@ -43,8 +45,8 @@ return(
 
 
 <div className="currentJournal">
+        {view === true ? <p>
 <h1> Todays Entry </h1>
-        {currentJournal ? <p>
             Date:{currentJournal.date}<br/>
             Did I meditate:{currentJournal.meditation}<br/>
 
@@ -54,6 +56,7 @@ return(
 
         </p> : null}
     </div>
+
 
 </>
 

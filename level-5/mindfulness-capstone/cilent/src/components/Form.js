@@ -1,4 +1,4 @@
-import React, {useState , useContext} from "react"
+import React, {useState, useContext} from "react"
 import { Context } from '../Context'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,10 +8,11 @@ import "react-datepicker/dist/react-datepicker.css";
 export default function Form (props) {
 
 const {btnText}=props
-const {addJournal, _id, toggleEdit} = useContext(Context)
+const { _id, toggleEdit} = useContext(Context)
+
 
 const [date, setDate] = useState(new Date()); 
- const handleCalendarClose = () => console.log("Calendar closed");
+const handleCalendarClose = () => console.log("Calendar closed");
 const handleCalendarOpen = () => console.log("Calendar opened");
 
 
@@ -61,6 +62,8 @@ function handleSubmit(e){
                 selected={date}
                 name="date"
                 value={inputs.date}
+                timeInputLabel="Time:"
+                locale="en-GB"
                 dateFormat="MM/dd/yyyy h:mm aa"         
                 timeFormat="HH:mm"
                 onChange={date => setDate(date)}
@@ -114,7 +117,7 @@ function handleSubmit(e){
                     What time of day was it "
                      
                     />
-                <button>{props.btnText}</button>
+                <button>{btnText}</button>
 
 
 

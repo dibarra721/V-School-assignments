@@ -4,7 +4,7 @@ import Form from "./Form.js"
 
 export default function Journal (props) {
 
-    const {date, meditation, _id,  movement, feeling, note, deleteJournal, editJournal} = props
+    const {date, meditation, _id,  movement, feeling, note} = props
 
     const [editToggle, setEditToggle]= useState(false)
      
