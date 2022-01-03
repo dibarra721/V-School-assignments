@@ -16,6 +16,7 @@ return(
 
 <a href="https://www.3ho.org/alternate-nostril-breathing">Alternate Nostril Breathing</a>
 
+<a href="https://www.mind.org.uk/information-support/drugs-and-treatments/mindfulness/mindfulness-exercises-tips/">Mindfulness for Mental health </a>
 
     
     </>
