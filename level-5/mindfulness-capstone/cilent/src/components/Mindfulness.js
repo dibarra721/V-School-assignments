@@ -7,7 +7,24 @@ export default function Mindfulness() {
 
 
 return(
-    <h1>Hello world</h1>
+    <><h1>A Number of Resources to incorporate mindfulness into your life</h1><br />
+    
+    
+
+    <a href="https://www.mindful.org/take-a-mindful-moment-5-simple-practices-for-daily-life/">5 Mindfulness Practices</a>
+<br/>
+
+<a href="https://www.3ho.org/alternate-nostril-breathing">Alternate Nostril Breathing</a>
+
+
+    
+    </>
+
+
+
+
+
+
 )
 
 
