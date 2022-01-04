@@ -108,7 +108,7 @@ footer {
   height: 70px;
   bottom: 0;
   color: whitesmoke;
-  border-top: 1px solid #f6f7f1;
+
 }
 
 .formWrapper {
@@ -133,8 +133,10 @@ h1 {
 h2 {
   font-family: "Oranienbaum", serif;
   grid-column: 2/3;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+
 }
 
 form {
@@ -211,6 +213,8 @@ h5 {
   font-weight: bold;
 }
 .container {
+  margin-top: 30px;
+  padding-top: 30px;
   grid-column: 2/4;
   grid-row: 2/3;
   overflow-y: auto;
@@ -259,4 +263,9 @@ h4{
   font-family: "Zilla Slab", serif;
 font-size: x-large;
 text-align: center;
+}
+
+.links{
+  grid-column: 2/3;
+  grid-row: 3/4;
 }

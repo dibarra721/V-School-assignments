@@ -18,11 +18,11 @@ return (
 
             { !editToggle ?
                 <>
-                    <h2>Date: {date}</h2>
+                    <p>Date: {date}</p>
                     <p>Did I meditate: {meditation}<br />
                         Did I move: {movement}<br />
-                        How do I feel:{feeling}<br />
-                        Notes:{note}
+                        How do I feel: {feeling}<br />
+                        Notes: {note}
                     </p>
                     <button className="deleteButton" onClick={() => props.deleteJournal(_id)}>Delete Entry </button>
                     <button
