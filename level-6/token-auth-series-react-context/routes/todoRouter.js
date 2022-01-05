@@ -13,6 +13,20 @@ todoRouter.get("/", (req, res, next) => {
 });
 
 
+
+// get to do by user ID
+
+todoRouter.get("/user", (req, res, next) => {
+    Todo.find({user : req.user._id},
+         (err, todos) => {
+        if(err){
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(todos)
+    })
+})
+
 todoRouter.post("/", (req, res, next) => {
     const todo = new Todo(req.body);
     todo.user = req.user._id
@@ -26,7 +40,8 @@ todoRouter.post("/", (req, res, next) => {
 });
 
 todoRouter.get("/:todoId", (req, res, next) => {
-    Todo.findOne({_id: req.params.todoId, user: req.user._id}, (err, todo) => {
+    Todo.findOne({_id: req.params.todoId, user: req.user._id},
+         (err, todo) => {
         if (err) {
             res.status(500);
             return next(err);
@@ -56,7 +71,8 @@ todoRouter.put("/:todoId", (req, res, next) => {
 });
 
 todoRouter.delete("/:todoId", (req, res, next) => {
-    Todo.findOneAndRemove({_id: req.params.todoId, user: req.user._id}, (err, todo) => {
+    Todo.findOneAndDelete({_id: req.params.todoId, user: req.user._id}, 
+        (err, todo) => {
         if (err) {
             res.status(500);
             return next(err);
