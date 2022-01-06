@@ -12,13 +12,23 @@ export default function UserProvider(props) {
 
   const [userState, SetUserState] = useState(initState);
 
-function signUp(credentials) {
+function signup(credentials) {
     axios.post("/auth/signup", credentials)
     .then(res => console.log(res))
-    .catch(err => console.log(err))
+    .catch(err => console.log(err.response.data.errMsg))
 
 }
 
+function login(credentials) {
+
+    axios.post("/auth/login", credentials)
+    .then(res => console.log(res))
+    .catch(err => console.log(err.response.data.errMsg))
+
+
+
+
+}
 
 
 
@@ -27,6 +37,8 @@ function signUp(credentials) {
     <UserContext.Provider
       value={{
         ...userState,
+        signup,
+        login
       }}
     >
       {props.children}
