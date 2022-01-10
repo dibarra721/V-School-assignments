@@ -28,8 +28,8 @@ authRouter.post("/signup", (req, res, next) => {
 
           // If the user signs up, we might as well give them a token right now
           // So they don't then immediately have to log in as well
-          const token = jwt.sign(savedUser.toObject(), process.env.SECRET);
-          return res.status(201).send({success: true, user: savedUser.toObject(), token});
+          const token = jwt.sign(savedUser.withoutPassword(), process.env.SECRET);
+          return res.status(201).send({success: true, user: savedUser.withoutPassword(), token});
       });
   });
 })
@@ -40,23 +40,29 @@ authRouter.post("/signup", (req, res, next) => {
 authRouter.post("/login", (req, res, next) => {
   User.findOne({username: req.body.username.toLowerCase()}, (err, user) => {
       if (err) {
+          res.status(500)
           return next(err);
-      };
-      // If that user isn't in the database OR the password is wrong:
-      if (!user || user.password !== req.body.password) {
-         res.status(403);
-         return next(new Error("Email or password are incorrect"));
+      }
+      if(!user) {
+          res.status(403)
+          return next(new Error ("username or password are incoorect"))
       }
 
-      // If username and password both match an entry in the database,
-      // create a JWT! Add the user object as the payload and pass in the secret.
-      // This secret is like a "password" for your JWT, so when you decode it
-      // you'll pass the same secret used to create the JWT so that it knows
-      // you're allowed to decode it.
-      const token = jwt.sign(user.toObject(), process.env.SECRET);
+      user.checkPassword(req.body.password, (err, isMatch) => {
+        if(err) {
+            res.status(403)
+            return next(new Error ("username or password are incoorect"))
+        }
+        if(!isMatch){
+            res.status(403)
+            return next (new Error ("username or password are inncorect"))
+        }
+        const token = jwt.sign(user.withoutPassword(), process.env.SECRET);
+  
+        // Send the token back to the client app.
+        return res.send({token: token, user: user.withoutPassword(), success: true})
+      })
 
-      // Send the token back to the client app.
-      return res.send({token: token, user: user.toObject(), success: true})
   });
 });
 

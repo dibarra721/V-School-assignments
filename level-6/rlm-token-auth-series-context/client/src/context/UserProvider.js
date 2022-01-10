@@ -43,6 +43,7 @@ export default function UserProvider(props) {
         const { user, token } = res.data;
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(user));
+        getUserTodos()
         SetUserState((prevUserState) => ({
           ...prevUserState,
         }));
@@ -60,6 +61,19 @@ function logout () {
         todos: []
     })
 }
+
+function getUserTodos() {
+  userAxios.get("api/todo/user")
+    .then(res => {
+      SetUserState(prevState => ({
+        ...prevState,
+        todos: res.data
+      }))
+    })
+    .catch(err => console.log(err))
+}
+
+
 
 function addTodo(newTodo) {
 userAxios.post("/api/todo", newTodo)
