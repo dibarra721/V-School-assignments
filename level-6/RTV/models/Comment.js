@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const CommentSchema = new Schema({
   comment: {
     type: String,
-    date:Date.now
+    
   },
   issue: {
     type: Schema.Types.ObjectId,
@@ -14,6 +14,10 @@ const CommentSchema = new Schema({
     type: Schema.Types.ObjectId,
     required: true,
     ref: "User",
+  },
+  date:{
+    type: Date,
+    default: Date.now
   }
 })
 module.exports = mongoose.model("Comment", CommentSchema)

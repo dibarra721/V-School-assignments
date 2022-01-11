@@ -4,9 +4,9 @@ const User = require("../models/User")
 const jwt = require("jsonwebtoken")
 
 //signup
-AuthRouter.route("/signup")
-  .post((req, res, next) => {
-    User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
+AuthRouter.post("/signup", ( req, res, next) => {
+ 
+    User.findOne({ username: req.body.username.toLowerCase()}, (err, user) => {
       if(err){
         res.status(500)
         return next(err)
@@ -22,7 +22,7 @@ AuthRouter.route("/signup")
           return next(err)
         }
         const token = jwt.sign(savedUser.withoutPassword(), process.env.SECRET)
-        return res.status(201).send({token, user: savedUser.withoutPassword()})
+        return res.status(201).send({ success: true, token, user: savedUser.withoutPassword()})
       })
     })
   })

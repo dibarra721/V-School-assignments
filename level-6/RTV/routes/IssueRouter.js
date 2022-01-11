@@ -5,6 +5,31 @@ const Issue = require("../models/Issue")
 const ObjectId = require("mongodb").ObjectId
 const jwt = require("jsonwebtoken")
 
+
+// get all issues
+IssueRouter.get("/", (req, res, next) => {
+    Issue.find((err, issues) => {
+        if(err){
+            res.status(500)
+            return next(err)
+        }
+        return res.status.apply(200).send(issues)
+    })
+})
+
+
+// get issue by userid
+IssueRouter.get("/user", ( req, res, next) => {
+    
+})
+
+
+
+
+
+
+
+
 // vote issue
 
 IssueRouter.put("/like/:issueId", (req, res, next) => {
