@@ -3,10 +3,10 @@ import React from "react"
 
 export default function AuthForm(props) {
     const { 
-      formTitle,
-      formBtn,
+      // formTitle,
+      btnText,
       errMsg, 
-      toggleForm, 
+      // toggleForm, 
       handleSubmit, 
       handleChange,
       inputs: {

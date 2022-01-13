@@ -43,7 +43,7 @@ export default function UserProvider(props) {
           const { user, token } = res.data;
           localStorage.setItem("token", token);
           localStorage.setItem("user", JSON.stringify(user));
-          getUserTodos()
+          getUserIssues()
           SetUserState((prevUserState) => ({
             ...prevUserState,
           }));
@@ -76,7 +76,7 @@ export default function UserProvider(props) {
       errMsg:""
     }))
   }
-  function getUserTodos() {
+  function getUserIssues() {
     userAxios.get("api/issue/user")
       .then(res => {
         SetUserState(prevState => ({
@@ -89,12 +89,12 @@ export default function UserProvider(props) {
   
   
   
-  function addTodo(newTodo) {
-  userAxios.post("/api/todo", newTodo)
+  function addIssue(newIssue) {
+  userAxios.post("/api/issue", newIssue)
     .then( res => {
         SetUserState(prevState => ({
             ...prevState,
-            todos: [...prevState.todos, res.data]
+            issues: [...prevState.issues, res.data]
         }))
     })
       
@@ -109,7 +109,8 @@ export default function UserProvider(props) {
           signup,
           login,
           logout,
-          addTodo,
+          addIssue,
+          getUserIssues,
           resetAuthErr
         }}
       >

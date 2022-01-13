@@ -1,13 +1,115 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    margin: 0;
+    padding: 0px;
+    margin-bottom: 0;
+    background-color: #f6f7f1;
+    color: black;
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
+  .wrapper {
+    display: grid;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    /* grid-row: 1/1; */
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3); */
+    grid-template-rows: 100px 200px 500px;
+  }
+  
+  #root {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px 500px 200px;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  footer {
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    text-align: center;
+    bottom: 0;
+  }
+  
+  .footerBox {
+    background-color: #db9487;
+    opacity: 0.8;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: 70px;
+    bottom: 0;
+    color: whitesmoke;
+  
+  }
+
+
+  .formWrapper {
+    display: inline-block;
+    /* align-self: center; */
+    /* margin-left: 5%; */
+    width: 300px;
+    grid-column: 2/3;
+    grid-row: 3/3;
+    border-radius: 10px;
+    width: fit-content;
+    height: 400px;
+    box-shadow: #a1c9c9 6px 2px 16px 0px,
+      rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  }
+  
+  h1 {
+    font-family: "Oranienbaum", serif;
+    text-align: center;
+  }
+  
+  h2 {
+    font-family: "Oranienbaum", serif;
+    grid-column: 2/3;
+    font-size: 22px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  
+  }
+  button {
+    background-color: #db9487;
+    border-radius: 5px;
+    border: none;
+  }
+
+  form {
+    margin-left: 3px;
+    width: 400px;
+    padding-top: 3px;
+    background-color: #f6f7f1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column: 2/3;
+    color: #34a0a4;
+    font-family: "Zilla Slab", serif;
+    font-weight: 300;
+    border-radius: 5px;
+    height: 300px;
+  }
+  
+  input {
+    margin-bottom: 7px;
+    margin-left: 4px;
+    border: none;
+    border-bottom: 1px solid #34a0a4;
+  }
+  input:focus {
+    border-bottom: 1px solid #db9487;
+  }
