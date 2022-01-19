@@ -21,9 +21,8 @@ function UserProvider(props) {
 
     const [userState, setUserState] = useState(initState)
     const [allIssues, setAllIssues] = useState([])
-    const [issueComments, setIssueComments] = useState([])
-    //const [comments, setComments] = useState([])
-    const [issueComment, setIssueComment] = useState("")
+    // const [issueComments, setIssueComments] = useState([])
+    // const [issueComment, setIssueComment] = useState("")
 
     function signup(credentials) {
         axios.post('/auth/signup', credentials)
@@ -88,7 +87,7 @@ function UserProvider(props) {
             .catch(err => console.log(err))
     }
 
-    function addUserIssue(newIssue) {
+    function addIssue(newIssue) {
         userAxios.post('/api/issue', newIssue)
             .then(res => {
                 setUserState(prevState => ({
@@ -99,7 +98,7 @@ function UserProvider(props) {
             .catch(err => console.log(err))
     }
 
-    function editUserIssue(newIssue, issueId) {
+    function editIssue(newIssue, issueId) {
         userAxios.put(`/api/issue/${issueId}`, newIssue)
             .then(res => setUserState(prevState => ({
                 ...prevState,
@@ -107,7 +106,7 @@ function UserProvider(props) {
             })))
     }
 
-    function deleteUserIssue(issueId) {
+    function deleteIssue(issueId) {
         userAxios.delete(`/api/issue/${issueId}`)
             .then(res => setUserState(prevState => ({
                 ...prevState,
@@ -127,10 +126,10 @@ function UserProvider(props) {
                 logout,
                 allIssues,
                 getAllUserIssues,
-                addUserIssue,
+                addIssue,
                 getUserIssues,
-                editUserIssue,
-                deleteUserIssue
+                editIssue,
+                deleteIssue
             }}>
 
             {props.children}

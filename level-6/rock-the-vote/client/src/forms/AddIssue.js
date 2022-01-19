@@ -9,7 +9,7 @@ const initInputs = {
 export default function AddIssue(props){
 
     const [inputs, setInputs] = useState(initInputs)
-    const { addUserIssue } = props
+    const { addIssue } = props
 
     function handleChange(e){
         const {name, value} = e.target
@@ -21,7 +21,7 @@ export default function AddIssue(props){
 
     function handleSubmit(e){
         e.preventDefault()
-        addUserIssue(inputs)
+        addIssue(inputs)
         setInputs(initInputs)
     }
 

@@ -9,7 +9,7 @@ export default function Profile() {
     const {
         user: { username },
         getUserIssues,
-        addUserIssue,
+        addIssue,
         issues
     } = useContext(UserContext)
 
@@ -24,7 +24,7 @@ export default function Profile() {
         <div className="profile">
             <h1>Welcome {username}! This is your private portal</h1>
             <h3>Post your Issue</h3>
-            <IssueForm addUserIssue={addUserIssue} />
+            <IssueForm addIssue={addIssue} />
             
 </div>
 

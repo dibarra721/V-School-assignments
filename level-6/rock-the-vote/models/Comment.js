@@ -20,6 +20,10 @@ const commentSchema = new Schema({
     ref: "User",
     required: true
 
+  },
+  date:{
+    type: Date,
+    default: Date.now
   }
 })
 

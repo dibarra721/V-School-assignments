@@ -8,7 +8,7 @@ export default function EditForm(props) {
         description: props.description || "",
     }
     const [inputs, setInputs] = useState(initInputs)
-    const { editUserIssue } = useContext(UserContext)
+    const { editIssue } = useContext(UserContext)
 
     function handleChange(e) {
         const { name, value } = e.target
@@ -21,12 +21,12 @@ export default function EditForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        editUserIssue(inputs, props._id)
+        editIssue(inputs, props._id)
         props.setEditToggle(prevState => !prevState)
     }
 
 
-    const { title, description, imgUrl } = inputs
+    const { title, description } = inputs
 
     return (
         <form onSubmit={handleSubmit}>
