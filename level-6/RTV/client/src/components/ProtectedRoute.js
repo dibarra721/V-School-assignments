@@ -1,5 +1,6 @@
 import React from 'react'
 import {Outlet, Navigate} from 'react-router-dom'
+import Auth from './Auth'
 
 export default function ProtectedRoute(props){
     
@@ -19,10 +20,7 @@ export default function ProtectedRoute(props){
              <Navigate to="/" />}
     
         
-
-
-
-    {/* <Routes>
+ {/* <Routes>
          <Route path={path} element={<C {...rest} />} />
     </Routes> */}
 
@@ -37,6 +35,7 @@ export default function ProtectedRoute(props){
         <Routes> 
         <Route path='/' element={<Auth />}/>
      </Routes>} */}
+
 
     </>
     )

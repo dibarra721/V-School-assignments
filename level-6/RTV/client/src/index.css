@@ -84,9 +84,10 @@ body {
   
   }
   button {
-    background-color: #db9487;
+    background-color: #003890;
     border-radius: 5px;
     border: none;
+    color: #b6bed3;
   }
 
   form {
@@ -97,7 +98,7 @@ body {
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column: 2/3;
-    color: #34a0a4;
+    color: #00314f;
     font-family: "Zilla Slab", serif;
     font-weight: 300;
     border-radius: 5px;
@@ -108,8 +109,59 @@ body {
     margin-bottom: 7px;
     margin-left: 4px;
     border: none;
-    border-bottom: 1px solid #34a0a4;
+    border-bottom: 1px solid #00314f;
   }
   input:focus {
     border-bottom: 1px solid #db9487;
+  }
+
+  nav ul li:first-child a {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  nav ul li:last-child a {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  ul {
+    /* margin-top: 45%; */
+    /* text-decoration: underline #34a0a4; */
+    list-style-type: none;
+    height: 100%;
+    /* margin-top: 60px; */
+    /* padding-top: 60px; */
+    display: inline;
+    /* width: 100%; */
+    overflow: hidden;
+    /* background-color: #f6f7f1; */
+    font-family: "Monda", sans-serif;
+    font-weight: 600;
+    grid-row: 1/1;
+  grid-column: 1/4;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  }
+  
+  .navBar {
+    background-color: #071724;
+   grid-column: 1/4;
+   grid-row: 1/1;
+  }
+
+  li {
+    float: left;
+  }
+  
+  li a {
+    /* width: 30%; */
+    display: block;
+    color: #b6bed3;
+    padding: 7px 70px;
+    text-decoration: none;
+  
+    grid-row: 1/1;
+    grid-column-start: 1;
+    grid-column-end: 4;
   }

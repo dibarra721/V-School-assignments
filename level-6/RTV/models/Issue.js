@@ -7,7 +7,8 @@ const IssueSchema = new Schema({
     required: true
   },
   description: {
-    type: String
+    type: String,
+    required :true
   },
   likes: {
     type: Number,

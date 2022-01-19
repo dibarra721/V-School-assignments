@@ -6,6 +6,7 @@ const initInputs = { username: "", password: "" }
 
 export default function Auth(props){
   const { login, signup, errMsg } = useContext(UserContext)
+  
   const [inputs, setInputs] = useState(initInputs)
   const [toggle, setToggle] = useState(false)
 
@@ -28,7 +29,7 @@ export default function Auth(props){
   }
 
   return (
-    <div className="auth-container">
+    <div className="formWrapper">
       <h1>Rock the Vote</h1>
       { !toggle ?
           <>

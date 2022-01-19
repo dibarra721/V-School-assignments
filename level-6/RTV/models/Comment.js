@@ -4,9 +4,10 @@ const Schema = mongoose.Schema
 const CommentSchema = new Schema({
   comment: {
     type: String,
+    required : true
     
   },
-  issue: {
+  issueId: {
     type: Schema.Types.ObjectId,
     required: true
   },
