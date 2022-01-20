@@ -4,7 +4,7 @@ import { UserContext } from "../context/UserProvider";
 export default function PublicIssues(props){
 
     const { addLikes, addDislikes, user: {_id} } = useContext(UserContext)
-    const { title, likes, dislikes, user, votedUser, description } = props
+    const { title, likes, dislikes, votedUser, description } = props
     const [newLikes, setNewLikes ] = useState(likes)
     const [newDislike, setNewDislike] = useState(dislikes)
     const [hasVoted, setHasVoted] = useState(false)
@@ -15,14 +15,14 @@ export default function PublicIssues(props){
 
     function AuthVoterLike(){
         if(votedUser.includes(_id)) {
-          alert("you already voted on that issue");
+          alert("You have already voted on this issue");
         } else {
           addLike(props._id)
         }
       }
       function AuthVoterDislike(){
         if(votedUser.includes(_id)) {
-          alert("you already voted on that issue");
+          alert("You have already voted on this issue");
         } else {
           addDislike(props._id)
         }

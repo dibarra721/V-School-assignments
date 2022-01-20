@@ -22,7 +22,7 @@ export default function Public(){
 
 <div className="publicIssues">
 <center>
-    <h1>Here is a list of all the Issues Submitted by our Community  </h1></center>
+    <h1>Here is a list of all the Issues Submitted by our Community.<br/> You can vote on an issue once  </h1></center>
 {sortIssues.map(issue => <PublicIssues {...issue} key={issue._id} />)}
 
 
