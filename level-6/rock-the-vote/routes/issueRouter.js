@@ -92,33 +92,42 @@ issueRouter.put("/:issueId", (req, res, next) => {
   )
 })
 
-//Upvote
-issueRouter.put("/upvotes/:issueId", (req, res, next) => {
+//Likes
+issueRouter.put("/like/:issueId", (req, res, next) => {
+  const userId = req.user._id
   Issue.findOneAndUpdate(
     { _id: req.params.issueId },
-    { $inc: { upVotes: 1 } },
+    { $push: { votedUser: userId  },
+      $inc: { likes: 1 }
+    },
     { new: true },
-    (err, issue) => {
-      if (err) {
+    (err, updatedIssue) => {
+      if(err){
         res.status(500)
         return next(err)
       }
-      return res.status(201).send(issue)
+      return res.status(201).send(updatedIssue)
     }
   )
 })
-//Downvote
-issueRouter.put("/downvotes/:issueId", (req, res, next) => {
-  Issue.findOneAndUpdate(
-    { _id: req.params.issueId },
-    { $inc: { downVotes: 1 } },
-    { new: true },
-    (err, issue) => {
-      if (err) {
-        res.status(500)
-      }
-      return res.status(200).send(issue)
+//Dislikes
+issueRouter.put("/dislike/:issueId", (req, res, next) => {
+  const userId = req.user._id 
+      console.log(userId)
+      Issue.findOneAndUpdate(
+        { _id: req.params.issueId },
+        { $push: { votedUser: userId  },
+          $inc: { dislikes: 1 }
+        },
+        { new: true },
+        (err, updatedIssue) => {
+          if(err){
+            res.status(500)
+            return next(err)
+          }
+          return res.status(201).send(updatedIssue)
+        }
+      )
     })
-})
 
 module.exports = issueRouter;

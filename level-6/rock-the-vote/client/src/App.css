@@ -14,14 +14,11 @@ body {
   width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  /* grid-row: 1/1; */
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 3;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(3); */
   grid-template-rows: 100px 200px 500px;
 }
 
@@ -58,8 +55,6 @@ footer {
 
 .formWrapper {
   display: inline-block;
-  /* align-self: center; */
-  /* margin-left: 5%; */
   width: 300px;
   grid-column: 2/3;
   grid-row: 3/3;
@@ -86,6 +81,8 @@ h2 {
 button {
   background-color: #003890;
   border-radius: 5px;
+  border: 1px;
+  border-color: whitesmoke;
   border: none;
   color: #b6bed3;
 }
@@ -119,15 +116,6 @@ input:focus {
   border-bottom: 1px solid #db9487;
 }
 
-/* nav  li:first-child a {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-nav  li:last-child a {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-} */
-
 
 .navBar {
   background-color: #003890;
@@ -155,7 +143,7 @@ li a {
 /* Change the link color  on hover */
 li a:hover {
   text-decoration: underline #f6f7f1;
-
+color: black;
   background-color: #b6bed3;
   transition: 2s;
 }
@@ -191,4 +179,22 @@ li a:hover {
 ::-webkit-scrollbar-thumb {
   background: #071724;
   border-radius: 10px;
+}
+
+.issue{
+  border-top:1px solid #FB3640;
+  border-bottom:1px solid #FB3640;
+  background-color: #F2E5D7;
+}
+
+h2{
+  text-align: center;
+}
+
+.publicIssues{
+  grid-row: 2/3;
+  grid-column: 2/3;
+  overflow-y: auto;
+  height: 600px;
+  width: max-content;
 }

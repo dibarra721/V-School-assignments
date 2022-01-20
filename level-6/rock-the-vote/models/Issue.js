@@ -10,18 +10,26 @@ const issueSchema = new Schema({
         type: String,
         required: true
     },
-    user: {
+    likes: {
+        type: Number,
+        default: 0
+      },
+      dislikes: {
+        type: Number,
+        default: 0
+      },
+      votedUser: [{
+        type: String
+      }],
+      dateCreated: {
+        type: Date,
+        default: Date.now
+      },
+      user: {
         type: Schema.Types.ObjectId,
         ref: "User",
         required: true
-    },
-   
-    upVotes: {
-        type: Number
-    },
-    downVotes: {
-        type: Number
-    }
-})
+      }
+    })
 
 module.exports = mongoose.model("Issue", issueSchema)

@@ -1,4 +1,4 @@
-import React, {useEffect, useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import IssueForm from '../forms/AddIssue.js'
 import IssueList from './IssueList.js'
 import { UserContext } from "../context/UserProvider.js"
@@ -8,13 +8,12 @@ export default function Profile() {
 
     const {
         user: { username },
-        getUserIssues,
         addIssue,
+        getUserIssues,
         issues
     } = useContext(UserContext)
 
-    
-    useEffect(() => {
+ useEffect(() => {
         getUserIssues()
     }, [])
 
@@ -23,7 +22,7 @@ export default function Profile() {
         <>
         <div className="profile">
             <h1>Welcome {username}! This is your private portal</h1>
-            <h3>Post your Issue</h3>
+            <center><h3>Post your Issue</h3></center>
             <IssueForm addIssue={addIssue} />
             
 </div>

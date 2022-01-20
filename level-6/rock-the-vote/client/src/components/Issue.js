@@ -4,9 +4,9 @@ import EditIssueForm from "../forms/EditIssueForm.js"
 
 export default function Issue(props) {
 
-  const { title, description, imgUrl, _id } = props
+  const { title, description, _id } = props
   const [editToggle, setEditToggle] = useState(false)
-  const { addUserIssue, deleteUserIssue } = useContext(UserContext)
+  const { addIssue, deleteIssue } = useContext(UserContext)
 
 
   return (
@@ -14,16 +14,16 @@ export default function Issue(props) {
       {
         !editToggle ?
           <>
-            <h1>{ title }</h1>
+            <h2>{ title }</h2>
             <h3>{ description }</h3>
-            <img src={imgUrl} alt={imgUrl} />
-            <button onClick={() => deleteUserIssue(_id)}>Delete Issue</button>
+            
+            <button onClick={() => deleteIssue(_id)}>Delete Issue</button>
             <button onClick={() => setEditToggle(prevState => !prevState)}>Edit Issue</button>
           </>
           :
           <>
-            <EditIssueForm {...props}  setEditToggle={setEditToggle} addUserIssue={addUserIssue} />
-            <button onClick={() => deleteUserIssue(_id)}>Delete Issue</button>
+            <EditIssueForm {...props}  setEditToggle={setEditToggle} addUserIssue={addIssue} />
+            <button onClick={() => deleteIssue(_id)}>Delete Issue</button>
             <button onClick={() => setEditToggle(prevState => !prevState)}>Cancel</button>
           </>
       }

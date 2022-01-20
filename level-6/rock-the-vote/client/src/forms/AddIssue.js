@@ -30,6 +30,7 @@ export default function AddIssue(props){
     const {title, description} = inputs
 
     return(
+        <center>
         <form onSubmit={handleSubmit}>
             Issue: 
             <input
@@ -51,5 +52,6 @@ export default function AddIssue(props){
             <br/>
             <button>Post Issue</button>
         </form>
+        </center>
     )
 }
