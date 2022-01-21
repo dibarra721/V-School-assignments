@@ -8,7 +8,6 @@ export default function Issue(props) {
   const [editToggle, setEditToggle] = useState(false)
   const { addIssue, deleteIssue } = useContext(UserContext)
 
-
   return (
     <div className="issue">
       {

@@ -46,6 +46,7 @@ commentRouter.post('/:issueId', (req, res, next) => {
         }
     )
 })
+
 commentRouter.put('/:issueId', (req, res, next) => {
     Comment.findByIdAndUpdate(
         { _id: req.params.issueId, user: req.user._id },

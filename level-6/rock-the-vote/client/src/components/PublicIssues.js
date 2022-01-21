@@ -1,5 +1,6 @@
 import React, {useContext, useState, useEffect} from "react";
 import { UserContext } from "../context/UserProvider";
+import { CommentContext } from "../context/CommentProvider";
 import CommentForm from "../forms/CommentForm.js"
 import Comment from "./Comment.js"
 import axios from "axios"
@@ -8,7 +9,7 @@ import swal from 'sweetalert';
 
 export default function PublicIssues(props){
 
-
+// const {getAllComments}= useContext(CommentContext)
 
   const userAxios = axios.create()
 
@@ -67,7 +68,7 @@ export default function PublicIssues(props){
 
 
       function getAllComments() {
-        userAxios.get(`/api/comment/${_id}`)
+        userAxios.get(`/api/comment/`)
         .then(res => {
             setUserComments(res.data)
             console.log(res.data)
