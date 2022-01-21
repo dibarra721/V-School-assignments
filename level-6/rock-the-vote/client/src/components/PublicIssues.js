@@ -1,5 +1,6 @@
 import React, {useContext, useState} from "react";
 import { UserContext } from "../context/UserProvider";
+import swal from 'sweetalert';
 
 export default function PublicIssues(props){
 
@@ -15,14 +16,14 @@ export default function PublicIssues(props){
 
     function AuthVoterLike(){
         if(votedUser.includes(_id)) {
-          alert("You have already voted on this issue");
+          swal("sorry", "You have already voted on the issue", "error");
         } else {
           addLike(props._id)
         }
       }
       function AuthVoterDislike(){
         if(votedUser.includes(_id)) {
-          alert("You have already voted on this issue");
+          swal("sorry", "You have already voted on the issue", "error");
         } else {
           addDislike(props._id)
         }
