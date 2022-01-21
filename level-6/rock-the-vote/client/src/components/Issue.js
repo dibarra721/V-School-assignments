@@ -4,7 +4,7 @@ import EditIssueForm from "../forms/EditIssueForm.js"
 
 export default function Issue(props) {
 
-  const { title, description, _id } = props
+  const { title, description, _id , submitComment} = props
   const [editToggle, setEditToggle] = useState(false)
   const { addIssue, deleteIssue } = useContext(UserContext)
 

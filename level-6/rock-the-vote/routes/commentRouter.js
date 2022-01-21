@@ -3,6 +3,20 @@ const commentRouter = express.Router()
 const Comment = require("../models/Comment.js")
 
 
+
+
+// get all comments
+
+commentRouter.get("/", (req, res, next) => {
+    Comment.find((err, comments) => {
+      if (err) {
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(comments)
+    })
+  })
+
 //get comment for a specific issue.
 commentRouter.get("/:issueId", (req, res, next) => {
     Comment.find(
@@ -47,6 +61,8 @@ commentRouter.put('/:issueId', (req, res, next) => {
         }
     )
 })
+
+
 
 commentRouter.delete('/:commentId', (req, res, next) => {
     Comment.findByIdAndDelete({

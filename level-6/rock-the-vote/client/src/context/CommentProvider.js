@@ -15,12 +15,11 @@ userAxios.interceptors.request.use(config => {
 function CommentProvider(props) {
 
     const [comments, setComments] = useState([])
-    const [comment, setComment ] = useState([])
     const [issueComment, setIssueComment] = useState("")
 
    
-    function getAllComments(_id) {
-        userAxios.get(`/api/comment`)
+    function getAllComments() {
+        userAxios.get("/api/comment")
         .then(res => {
             setComments(res.data)
             console.log(res.data)

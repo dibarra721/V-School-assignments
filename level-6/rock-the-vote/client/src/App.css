@@ -60,7 +60,7 @@ footer {
   grid-row: 3/3;
   border-radius: 10px;
   width: fit-content;
-  height: 400px;
+  height: 420px;
   box-shadow: #003890 6px 2px 16px 0px,
     rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
@@ -198,5 +198,21 @@ h2{
   overflow-y: auto;
   height: 600px;
   width: max-content;
-  background-color: #D8CBC7;
+  background-color: #EAFFDA;
+ 
 }
+
+.pissue{
+  font-family: 'Zilla Slab', serif;
+  font-weight: 300;
+    margin-top: 5px;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed deeppink;
+}
+
+
+h4{
+  font-family: 'Monda', sans-serif;
+
+}
+

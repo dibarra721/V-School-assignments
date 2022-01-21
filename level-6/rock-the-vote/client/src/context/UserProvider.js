@@ -77,16 +77,7 @@ function UserProvider(props) {
         .then(res => setAllIssues(res.data))
         .catch(err => console.log(err.response.data.errMsg))
 }
-    //     .then(res => {
-    //         localStorage.setItem("allissues", JSON.stringify(res.data))
-    //         setUserState(prevState => ({
-    //           ...prevState,
-    //           allIssues: res.data
-    //         }))
-    //       })
-    //       .catch(err => console.log(err))
-    //   }
-
+  
     function getUserIssues() {
         userAxios.get('/api/issue/user')
             .then(res => {

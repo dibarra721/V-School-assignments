@@ -1,8 +1,22 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import { UserContext } from "../context/UserProvider";
+import CommentForm from "../forms/CommentForm.js"
+import Comment from "./Comment.js"
+import axios from "axios"
 import swal from 'sweetalert';
 
+
 export default function PublicIssues(props){
+
+
+
+  const userAxios = axios.create()
+
+  userAxios.interceptors.request.use(config => {
+      const token = localStorage.getItem("token")
+      config.headers.Authorization = `Bearer ${token}`
+      return config
+  })
 
     const { addLikes, addDislikes, user: {_id} } = useContext(UserContext)
     const { title, likes, dislikes, votedUser, description } = props
@@ -10,8 +24,17 @@ export default function PublicIssues(props){
     const [newDislike, setNewDislike] = useState(dislikes)
     const [hasVoted, setHasVoted] = useState(false)
     const [usersWhoHaveVoted, setUsersWhoHaveVoted] = useState(votedUser)
-    console.log('usersWhoHaveVoted: ', usersWhoHaveVoted);
 
+
+    const [userComments, setUserComments] = useState([])
+    const [userComment, setUserComment] = useState("")
+    const [commentToggle, setCommentToggle] = useState(false)
+    const [allComments, setAllComments]=useState([])
+
+  
+
+
+// const {getAllComments, submitComment, deleteComment}= useContext(CommentContext)
 
 
     function AuthVoterLike(){
@@ -42,21 +65,72 @@ export default function PublicIssues(props){
         setHasVoted(prevStatus => !prevStatus)
       }
 
+
+      function getAllComments() {
+        userAxios.get(`/api/comment/${_id}`)
+        .then(res => {
+            setUserComments(res.data)
+            console.log(res.data)
+        }
+        )
+        .catch(err => console.log(err))
+    }
+
+
+      
+      useEffect(() => {
+        getAllComments()
+      }, [])
+
+   
+
+      function submitComment(newComment, issueId) {
+        userAxios.post(`/api/comment/${issueId}`, newComment)
+            .then(res => {
+                setUserComments(prevState => [...prevState, res.data])
+                setAllComments(prevState=> [...prevState, res.data])
+            })
+            .catch(err => console.log(err))
+        setUserComment("")
+        getAllComments()
+    }
+    function deleteComment(commentId) {
+        userAxios.delete(`/api/comment/${commentId}`)
+            .then(res => setUserComments(prevState => prevState.filter(comment => comment._id !== commentId)))
+            .catch(err => console.log(err))
+            getAllComments()
+    }
+
+
+
+
+
 return(
 
 
-<>
+
+
+!commentToggle ?
 <div className="pissue">
 
-Issue Topic: {title} <br/>
-Issue Descriptions: {description}
+<h4>Issue Topic:</h4> {title} <br/>
+<h4>Issue Description: </h4>{description}<br/>
 
 
 
-    <button disabled={hasVoted} onClick={() => AuthVoterLike()}>Like this Issue</button> {newLikes} 
-   <button disabled={hasVoted} onClick={() => AuthVoterDislike() }>Dislike this Issue </button> {newDislike}
-   
+    <button style={{backgroundColor:"green"}} disabled={hasVoted} onClick={() => AuthVoterLike()}>Like </button> {newLikes} 
+   <button style={{backgroundColor:"#EF3054"}} disabled={hasVoted} onClick={() => AuthVoterDislike() }>Dislike   </button> {newDislike}
+   <button onClick={() => setCommentToggle(prevToggle => !prevToggle)}>View Comments</button>
+
    </div>
- </>
+   
+   :
+   <div className="comment">
+                <CommentForm _id={_id} submitComment={submitComment}/>
+                {userComments.map(comment => <Comment key={comment._id} {...comment} deleteComment={deleteComment} />)}
+                <button onClick={() => setCommentToggle(prevToggle => !prevToggle)}>Close Comments</button>
+            </div>
+
+
 )
 }

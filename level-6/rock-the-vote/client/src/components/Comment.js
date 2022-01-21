@@ -6,7 +6,7 @@ const { username, deleteComment, _id, comment} = props
     return (
         <>
         <p>"{comment}"</p>
-        <h3>@{username}</h3>
+        <h3>Comment submitted by: @{username}</h3>
         <button onClick={()=> deleteComment(_id)}>Delete Comment</button>
         </>
     )

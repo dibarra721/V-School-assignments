@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react"
+import React, {useContext, useEffect, useState} from "react"
 import PublicIssues from "./PublicIssues"
 import { UserContext } from "../context/UserProvider"
 
@@ -17,12 +17,15 @@ export default function Public(){
 
 
 
+
+
+
   return(
     <>
 
 <div className="publicIssues">
 <center>
-    <h1>Here is a list of all the Issues Submitted by our Community.<br/> You can vote on an issue once  </h1></center>
+    <h1>Here is a list of all the Issues Submitted by our Community.</h1><br/> <h2>You can vote on an issue once <br/>You can also add a comment </h2></center>
 {sortIssues.map(issue => <PublicIssues {...issue} key={issue._id} />)}
 
 
