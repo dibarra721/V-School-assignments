@@ -1,3 +1,7 @@
+
+
+
+
 body{
   color:#000814;
   margin:0px;
@@ -41,7 +45,7 @@ ul {
   padding-left:0px;
   overflow: hidden;
   background-color: #000814;
-  background-image: url("https://i.ibb.co/d2qdjgB/PS-Overlay-Night-Sky-2.jpg");
+  background-image: url(./media/night.jpeg);
   font-family: 'M PLUS 1 Code', sans-serif;
   font-weight: 600;
   height: fit-content;
@@ -189,7 +193,6 @@ footer{
   
   border-top: 2px solid #4a38bc;
   width: 100%;
-  /* background-color:#000814;  */
   color: #d71db2;
   margin-top: auto;
   text-align: center;
@@ -238,7 +241,6 @@ span{
   width: 315px; height:100px;
  position: relative; 
   cursor: pointer ; 
-  /* background-color: #d71db2; */
 }
 
 .content{
@@ -269,7 +271,6 @@ span{
 }
 
 .sign{
-  /* margin: auto; */
-  /* align-items: center; */
+ 
   justify-content: center;
 }

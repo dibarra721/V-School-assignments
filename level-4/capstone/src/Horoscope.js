@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import astrowheel from "./media/astrowheel.png"
 
 export default function Horoscope() {
   // document.body.style.backgroundColor = "#d71db2";
@@ -40,7 +41,7 @@ export default function Horoscope() {
     <div className="intel">
       <center>
         <img
-          src="https://i.ibb.co/vdW6jMK/Toppng-com-astrology-wheel-constellations-astrology-wheel-800x796.png"
+          src={astrowheel}
           alt="astrology-wheel"
           border="0"
           
@@ -84,13 +85,7 @@ export default function Horoscope() {
 
       <div className="astrologyBox" >
         <form onSubmit={handleSubmit}>
-          {/* <input
-            type="text"
-            onChange={(e) => SetSign(e.target.value)}
-            value={sign}
-            placeholder="Enter Sign"
-            required
-          /> */}
+          
 <center>
 <select name="signs" id="sign"  onChange={(e) => SetSign(e.target.value)}  value={sign} required>
         <option value="cancer">Cancer</option> 

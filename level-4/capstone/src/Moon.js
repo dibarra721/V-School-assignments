@@ -1,12 +1,11 @@
 import React, { useContext} from "react"
 import { Context } from "./Context";
+import moon from "./media/moon.png"
 
 
 export default function Moon(){
-    // const [astroData, setAstro]=useState({})
 
     const context = useContext(Context);
-    // document.body.style.backgroundColor = "#4a38bc";
 
     function myFunction() {
         var dots = document.getElementById("dots");
@@ -31,7 +30,7 @@ return(
 
  <div className="moonDiv">
    <center>
-        <img className="img" alt="moonImg" src="https://i.ibb.co/fCJNbHg/Smallmoondd.png" />
+        <img className="img" alt="moonImg" src={moon} />
         </center>
         <br />
         <h6><center>The Moon is earth's oldest temple holding the potency of countless prayers since the dawn of time..
