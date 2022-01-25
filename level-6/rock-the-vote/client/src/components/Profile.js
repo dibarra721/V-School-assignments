@@ -1,23 +1,59 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import IssueForm from '../forms/AddIssue.js'
 import IssueList from './IssueList.js'
 import { UserContext } from "../context/UserProvider.js"
+import {CommentContext} from "../context/CommentProvider.js"
+import Comment from './Comment.js'
 
 
-export default function Profile() {
+
+export default function Profile(props) {
 
     const {
         user: { username },
         addIssue,
         getUserIssues,
-        issues
+        issues,
+  
+    
+        
+
+    
     } = useContext(UserContext)
+
+    const { _id, date, issueId, comment, userComments} = props
+    
+    const {getAllComments}= useContext(CommentContext)
+
+    
+    const [commentToggle, setCommentToggle] = useState(false)
+
+    function toggleComment() {
+        setCommentToggle(prevState => !prevState)
+      }
+
+
+
+      function getComments() {
+        setCommentToggle(prevState => !prevState)
+        if(!commentToggle){
+          getAllComments()
+          
+
+        }
+      }
+
+
 
  useEffect(() => {
         getUserIssues()
     }, [])
 
-
+   
+    
+    
+    
+    
     return (
         <>
         <div className="profile">
@@ -29,8 +65,29 @@ export default function Profile() {
 
             <div className="topics">
                <center> <h3>Issues you care about</h3></center>
-                <IssueList issues={issues} />
+                <IssueList issues={issues} /><br/>
+
+                <div className='comment'>
+              
+                {commentToggle ? <button onClick={toggleComment}>HIDE COMMENTS</button> : <button onClick={getComments}>View Your Comments</button>}
+                {/* {<Comment />} */}
+                {/* {commentToggle  ? <UserComments /> : ""} */}
+                </div>
+               
+
+                {/* <div className='usercomment'> */}
+                
+                
+                {/* <p>{comment}</p> */}
+                
+                 {/* <Comment {...comment}/> : "lmao"
+                 </div> */}
+            
             </div>
+           
+
+
+
             </>
        
     )

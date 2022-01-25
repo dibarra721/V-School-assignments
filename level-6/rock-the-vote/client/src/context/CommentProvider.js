@@ -44,12 +44,19 @@ function CommentProvider(props) {
         getAllComments()
     }
 
+
+function getCommentsForUser(){
+    
+}
+
+
     return (
         <CommentContext.Provider
             value={{
                 getAllComments,
                 deleteComment,
-                submitComment
+                submitComment,
+                
             }}>
 
             {props.children}

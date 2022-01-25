@@ -15,7 +15,8 @@ function UserProvider(props) {
         user: JSON.parse(localStorage.getItem('user')) || {},
         token: localStorage.getItem('token') || "",
         issues: JSON.parse(localStorage.getItem("issues")) ||[],
-        comment: [],
+        comment:JSON.parse(localStorage.getItem("comment")) ||[],
+        // userComments:[],
         errMsg: ""
     }
 
@@ -96,16 +97,7 @@ function UserProvider(props) {
                     ...prevState,
                     issues: [...prevState.issues, res.data],
                 }))
-                // const updateIssues = [
-                //     ...JSON.parse(localStorage.getItem("issues")),
-                //     { ...res.data}
-                //   ]
-                //   const updateAllIssues = [
-                //     ...JSON.parse(localStorage.getItem("allissues")),
-                //     { ...res.data}
-                //   ]
-                //   localStorage.setItem("allissues", JSON.stringify(updateAllIssues))
-                //   localStorage.setItem("issues", JSON.stringify(updateIssues))
+               
               })
             .catch(err => console.log(err))
     }
@@ -123,7 +115,6 @@ function UserProvider(props) {
             .then(res => setUserState(prevState => ({
                 ...prevState,
                 issues: prevState.issues.filter(issue => issue._id !== issueId),
-                // allIssues: prevState.allIssues.filter(issue => issue._id !== issueId)
 
             })))
             .catch(err => console.log(err)
@@ -131,6 +122,20 @@ function UserProvider(props) {
         return getUserIssues()
         
     }
+
+
+    // function getCommentsForUser() {
+    //     userAxios.get(`/api/comments/user/${userState.user._id}`) //grabs users id from user in context
+    //         .then(res => {
+    //             //adds res.data to userComments to be available in Context
+    //             setUserState(prevState => ({
+    //                 ...prevState,
+    //                 userComments: res.data
+    //             }))
+
+    //         })
+    //         .catch(err => console.log(err.response.data.errMsg))
+    // }
 
 
 
@@ -180,6 +185,8 @@ function UserProvider(props) {
                 addDislikes,
                 addLikes,
                 allIssues
+                // getCommentsForUser,
+             
             }}>
 
             {props.children}

@@ -31,9 +31,9 @@ export default function PublicIssues(props){
     const [userComment, setUserComment] = useState("")
     const [commentToggle, setCommentToggle] = useState(false)
     const [allComments, setAllComments]=useState([])
+    const [currentIssue, setCurrentIssue]=useState([])
 
   
-
 
 // const {getAllComments, submitComment, deleteComment}= useContext(CommentContext)
 
@@ -68,7 +68,7 @@ export default function PublicIssues(props){
 
 
       function getAllComments() {
-        userAxios.get(`/api/comment/`)
+        userAxios.get(`/api/comment/${_id}`)
         .then(res => {
             setUserComments(res.data)
             console.log(res.data)
@@ -77,6 +77,18 @@ export default function PublicIssues(props){
         .catch(err => console.log(err))
     }
 
+
+
+
+
+   
+  // function getIssueById(id){
+  //   userAxios.get(`/api/issue/${id}`)
+  //     .then(res => {
+  //       setCurrentIssue(res.data)
+  //     })
+  //     .catch(err => console.log(err.response.data.errMsg))
+  // }
 
       
       useEffect(() => {
@@ -94,6 +106,9 @@ export default function PublicIssues(props){
             .catch(err => console.log(err))
         setUserComment("")
         getAllComments()
+
+       
+
     }
     function deleteComment(commentId) {
         userAxios.delete(`/api/comment/${commentId}`)
@@ -118,7 +133,6 @@ return(
 <h4>Issue Description: </h4>{description}<br/>
 
 
-
     <button style={{backgroundColor:"green"}} disabled={hasVoted} onClick={() => AuthVoterLike()}>Like </button> {newLikes} 
    <button style={{backgroundColor:"#EF3054"}} disabled={hasVoted} onClick={() => AuthVoterDislike() }>Dislike   </button> {newDislike}
    <button onClick={() => setCommentToggle(prevToggle => !prevToggle)}>View Comments</button>
@@ -128,7 +142,7 @@ return(
    :
    <div className="comment">
                 <CommentForm _id={_id} submitComment={submitComment}/>
-                {userComments.map(comment => <Comment key={comment._id} {...comment} deleteComment={deleteComment} />)}
+                {userComments.map(comment => <Comment key={comment._id} userComments={userComments} {...comment}  deleteComment={deleteComment} />)}
                 <button onClick={() => setCommentToggle(prevToggle => !prevToggle)}>Close Comments</button>
             </div>
 
