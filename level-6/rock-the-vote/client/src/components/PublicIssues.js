@@ -9,7 +9,7 @@ import swal from 'sweetalert';
 
 export default function PublicIssues(props){
 
-// const {getAllComments}= useContext(CommentContext)
+const {deleteComment, submitComment}= useContext(CommentContext)
 
   const userAxios = axios.create()
 
@@ -60,6 +60,7 @@ export default function PublicIssues(props){
         setHasVoted(prevStatus => !prevStatus)
         setUsersWhoHaveVoted(prevState => [...prevState, _id])
       }
+      
       function addDislike(id){
         setNewDislike(prevCount => prevCount + 1)
         addDislikes(id)
@@ -78,44 +79,42 @@ export default function PublicIssues(props){
     }
 
 
-
-
-
    
-  // function getIssueById(id){
-  //   userAxios.get(`/api/issue/${id}`)
-  //     .then(res => {
-  //       setCurrentIssue(res.data)
-  //     })
-  //     .catch(err => console.log(err.response.data.errMsg))
-  // }
+  function getIssueById(id){
+    userAxios.get(`/api/issue/${id}`)
+      .then(res => {
+        setCurrentIssue(res.data)
+      })
+      .catch(err => console.log(err.response.data.errMsg))
+  }
 
       
       useEffect(() => {
         getAllComments()
-      }, [])
+        
+      }, [deleteComment, submitComment])
 
    
 
-      function submitComment(newComment, issueId) {
-        userAxios.post(`/api/comment/${issueId}`, newComment)
-            .then(res => {
-                setUserComments(prevState => [...prevState, res.data])
-                setAllComments(prevState=> [...prevState, res.data])
-            })
-            .catch(err => console.log(err))
-        setUserComment("")
-        getAllComments()
+    //   function submitComment(newComment, issueId) {
+    //     userAxios.post(`/api/comment/${issueId}`, newComment)
+    //         .then(res => {
+    //             setUserComments(prevState => [...prevState, res.data])
+    //             // setAllComments(prevState=> [...prevState, res.data])
+    //         })
+    //         .catch(err => console.log(err))
+    //     setUserComment("")
+    //     getAllComments()
 
        
 
-    }
-    function deleteComment(commentId) {
-        userAxios.delete(`/api/comment/${commentId}`)
-            .then(res => setUserComments(prevState => prevState.filter(comment => comment._id !== commentId)))
-            .catch(err => console.log(err))
-            getAllComments()
-    }
+    // }
+    // function deleteComment(commentId) {
+    //     userAxios.delete(`/api/comment/${commentId}`)
+    //         .then(res => setUserComments(prevState => prevState.filter(comment => comment._id !== commentId)))
+    //         .catch(err => console.log(err))
+    //         getAllComments()
+    // }
 
 
 

@@ -28,6 +28,8 @@ return(
 <form style={{height:"80px"}} onSubmit={(e) => {
                 e.preventDefault()
                 submitComment(inputs, _id)
+                setInputs(initInputs)
+
                 console.log(inputs)
             }}>
                 <input

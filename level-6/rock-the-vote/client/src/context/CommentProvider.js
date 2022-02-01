@@ -16,10 +16,11 @@ function CommentProvider(props) {
 
     const [comments, setComments] = useState([])
     const [issueComment, setIssueComment] = useState("")
+    const [comment, setComment]= useState([])
 
    
-    function getAllComments() {
-        userAxios.get("/api/comment")
+    function getAllComments(_id) {
+        userAxios.get(`/api/comment/`)
         .then(res => {
             setComments(res.data)
             console.log(res.data)
@@ -27,11 +28,36 @@ function CommentProvider(props) {
         .catch(err => console.log(err))
     }
     
+
+    // function getUserComments (userId){
+    //     userAxios.get(`/api/comment/${userId}`)
+    //      .then(res => {
+    //         setUserComments(res.data)
+    //         console.log(res.data)
+    //     })
+    //     .catch(err => console.log(err))
+    //   }
+      
+
+    // function getIssueComments(issueId){
+    //      userAxios.get(`/api/comment/${issueId}`)
+    //     .then(res => {
+    //       setIssueComment(prevState => ({
+    //         ...prevState,
+    //       }))
+    //       return res.data
+    //     })
+    //     .catch(err => console.log(err.response.data.errMsg))
+    //     // return userData
+    // }
+    
+
+
+
     function deleteComment(commentId) {
         userAxios.delete(`/api/comment/${commentId}`)
             .then(res => setComments(prevState => prevState.filter(comment => comment._id !== commentId)))
             .catch(err => console.log(err))
-            getAllComments()
     }
   
     function submitComment(newComment, issueId) {
@@ -41,13 +67,9 @@ function CommentProvider(props) {
             })
             .catch(err => console.log(err))
         setIssueComment("")
-        getAllComments()
     }
 
 
-function getCommentsForUser(){
-    
-}
 
 
     return (
@@ -56,6 +78,8 @@ function getCommentsForUser(){
                 getAllComments,
                 deleteComment,
                 submitComment,
+                    // getIssueComments,
+                comments
                 
             }}>
 

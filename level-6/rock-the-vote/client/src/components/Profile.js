@@ -14,16 +14,12 @@ export default function Profile(props) {
         addIssue,
         getUserIssues,
         issues,
-  
-    
-        
-
     
     } = useContext(UserContext)
 
     const { _id, date, issueId, comment, userComments} = props
     
-    const {getAllComments}= useContext(CommentContext)
+    const {getUserComments}= useContext(CommentContext)
 
     
     const [commentToggle, setCommentToggle] = useState(false)
@@ -37,7 +33,7 @@ export default function Profile(props) {
       function getComments() {
         setCommentToggle(prevState => !prevState)
         if(!commentToggle){
-          getAllComments()
+          getUserComments()
           
 
         }
@@ -69,7 +65,7 @@ export default function Profile(props) {
 
                 <div className='comment'>
               
-                {commentToggle ? <button onClick={toggleComment}>HIDE COMMENTS</button> : <button onClick={getComments}>View Your Comments</button>}
+                {commentToggle ? <button onClick={toggleComment}>HIDE COMMENTS</button> : <button onClick={getUserComments}>View Your Comments</button>}
                 {/* {<Comment />} */}
                 {/* {commentToggle  ? <UserComments /> : ""} */}
                 </div>
