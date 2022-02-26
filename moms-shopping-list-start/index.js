@@ -33,7 +33,12 @@ form.addEventListener("submit", function (e) {
     li.append(deletebutton);
 
     // listens for clicks and then deletes the `li`
-    deletebutton.addEventListener('click', event => newlist.removeChild(h3))
+    deletebutton.addEventListener("click", function () {
+        newlist.textContent = "";
+        deletebutton.remove();
+        editbutton.remove();
+    })
+   
     // End of new code
 
 
@@ -68,28 +73,3 @@ form.addEventListener("submit", function (e) {
 
 
 
-// get delte button to work 
-// var ul= document.querySelector('ul');
-
-// var li = this.parentNode.parentNode;
-//     li.remove
-
-// var deletebutton = document.getElementById("deletebutton")
-// var li = document.getElementsByClassName("delete")
-// var ul= document.querySelector('ul');
-// var url =document.querySelector("list")
-// var li = document.getElementsByClassName("li")
-
-
-// function inputLength() [
-//     return input.value.inputLength;
-// }
-
-// function createElement() {
-//     var li = document.createElement("li")
-//     li.appendChild()
-// }
-
-//event lisner
-
-// deletebutton.addEventListener("click")
